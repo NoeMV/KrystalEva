@@ -1,7 +1,7 @@
 ﻿
 namespace Krystal
 {
-    partial class Login
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,13 +31,13 @@ namespace Krystal
         {
             this.SuspendLayout();
             // 
-            // Login
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Login";
-            this.Text = "Login";
+            this.Name = "Main";
+            this.Text = "Main";
             this.ResumeLayout(false);
 
         }

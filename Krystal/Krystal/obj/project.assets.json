@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kilon\\source\\repos\\Krystal\\Krystal\\Krystal.csproj",
+      "projectUniqueName": "C:\\Users\\kilon\\OneDrive\\Documentos\\GitHub\\KrystalEva\\Krystal\\Krystal\\Krystal.csproj",
       "projectName": "Krystal",
-      "projectPath": "C:\\Users\\kilon\\source\\repos\\Krystal\\Krystal\\Krystal.csproj",
+      "projectPath": "C:\\Users\\kilon\\OneDrive\\Documentos\\GitHub\\KrystalEva\\Krystal\\Krystal\\Krystal.csproj",
       "packagesPath": "C:\\Users\\kilon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kilon\\source\\repos\\Krystal\\Krystal\\obj\\",
+      "outputPath": "C:\\Users\\kilon\\OneDrive\\Documentos\\GitHub\\KrystalEva\\Krystal\\Krystal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
