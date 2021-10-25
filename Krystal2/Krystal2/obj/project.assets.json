@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Apps\\Krystal2\\Krystal2\\Krystal2.csproj",
+      "projectUniqueName": "C:\\Apps\\KrystalEva\\Krystal2\\Krystal2\\Krystal2.csproj",
       "projectName": "Krystal2",
-      "projectPath": "C:\\Apps\\Krystal2\\Krystal2\\Krystal2.csproj",
+      "projectPath": "C:\\Apps\\KrystalEva\\Krystal2\\Krystal2\\Krystal2.csproj",
       "packagesPath": "C:\\Users\\kilon\\.nuget\\packages\\",
-      "outputPath": "C:\\Apps\\Krystal2\\Krystal2\\obj\\",
+      "outputPath": "C:\\Apps\\KrystalEva\\Krystal2\\Krystal2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
