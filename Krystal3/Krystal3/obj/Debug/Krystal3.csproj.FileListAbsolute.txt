@@ -1,0 +1,10 @@
+C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\Krystal3.exe.config
+C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\Krystal3.exe
+C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\Krystal3.pdb
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.AssemblyReference.cache
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Main.resources
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Properties.Resources.resources
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.GenerateResource.cache
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.CoreCompileInputs.cache
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.exe
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.pdb
