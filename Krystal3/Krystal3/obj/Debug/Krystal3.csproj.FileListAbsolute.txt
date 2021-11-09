@@ -8,3 +8,4 @@ C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.GenerateResource.
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.CoreCompileInputs.cache
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.exe
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.pdb
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Login.resources
