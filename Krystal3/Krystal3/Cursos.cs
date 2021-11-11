@@ -86,5 +86,10 @@ namespace Krystal3
             RegistrarCursos ventana = new RegistrarCursos();
             ventana.ShowDialog();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
