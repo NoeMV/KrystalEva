@@ -9,3 +9,5 @@ C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.CoreCompileInputs
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.exe
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.pdb
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Login.resources
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Instructores.resources
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.RegistrarInstructores.resources
