@@ -48,8 +48,8 @@ namespace Krystal3
 
         private void instructoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Instructores ventana = new Instructores();
-            ventana.ShowDialog();*/
+            Instructores ventana = new Instructores();
+            ventana.ShowDialog();
         }
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,5 +66,6 @@ namespace Krystal3
         {
             Application.Exit();
         }
+
     }
 }
