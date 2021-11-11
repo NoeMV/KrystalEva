@@ -60,8 +60,9 @@ namespace Krystal3
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(588, 390);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
             // 
             // columnaID
             // 
@@ -114,8 +115,11 @@ namespace Krystal3
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSalir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Instructores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Instructores";
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Instructores_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

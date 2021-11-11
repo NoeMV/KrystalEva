@@ -27,6 +27,8 @@ namespace Krystal3
         }
 
         private int claveTipoAgente;
+
+        public static Boolean si = false;
         /*{
             get
             {
@@ -100,6 +102,8 @@ namespace Krystal3
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             registrarInstructores();
+            si = true;
+            this.Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

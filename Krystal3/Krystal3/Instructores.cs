@@ -26,7 +26,7 @@ namespace Krystal3
             this.Dispose();
         }
 
-        private void consultarInstructores()
+        public void consultarInstructores()
         {
             ArrayList listaID = new ArrayList();
             ArrayList listaClave = new ArrayList();
@@ -83,10 +83,30 @@ namespace Krystal3
             consultarInstructores();
         }
 
+        private void hola(object sender, System.EventArgs e)
+        {
+            consultarInstructores();
+        }
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             RegistrarInstructores ventana = new RegistrarInstructores();
             ventana.ShowDialog();
+        }
+
+        private void Instructores_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+
+        }
+
+        private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (RegistrarInstructores.si == true)
+            {
+                consultarInstructores();
+                RegistrarInstructores.si = false;
+            }
         }
     }
 }

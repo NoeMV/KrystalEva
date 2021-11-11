@@ -103,6 +103,7 @@ namespace Krystal3
             this.Controls.Add(this.btnRegistrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "RegistrarInstructores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Instructores";
             this.ResumeLayout(false);
             this.PerformLayout();
