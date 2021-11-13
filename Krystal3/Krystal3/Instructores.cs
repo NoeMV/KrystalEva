@@ -15,6 +15,17 @@ namespace Krystal3
 {
     public partial class Instructores : Form
     {
+        private int instructorID = -1;
+        /*{
+            get
+            {
+                return instructorID;
+            }
+            set
+            {
+                instructorID = value;
+            }
+        }*/
         public Instructores()
         {
             InitializeComponent();
@@ -34,7 +45,7 @@ namespace Krystal3
 
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
             SqlConnection Conexion = new SqlConnection(miConexion);
-            String sql = "SELECT instructor_id, claveTipoAgente, rfcAgente FROM instructores";
+            String sql = "SELECT instructor_id, claveTipoAgente, rfcAgente FROM instructores WHERE status = 1";
 
             try
             {
@@ -61,6 +72,8 @@ namespace Krystal3
 
                         dataGridView1.Rows.Add(fila);
                     }
+
+                    instructorID = Convert.ToInt32(listaID[0]);
                 }
                 else
                 {
@@ -75,8 +88,6 @@ namespace Krystal3
         }
 
         //private Boolean modificarInstructores();
-
-        //private Boolean eliminarInstructores()
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -107,6 +118,23 @@ namespace Krystal3
                 consultarInstructores();
                 RegistrarInstructores.si = false;
             }
+            if (EliminarInstructores.si == true)
+            {
+                consultarInstructores();
+                EliminarInstructores.si = false;
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            instructorID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            System.Console.WriteLine(instructorID);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarInstructores ventana = new EliminarInstructores(instructorID);
+            ventana.ShowDialog();
         }
     }
 }

@@ -13,3 +13,4 @@ C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Instructores.resources
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.RegistrarInstructores.resources
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Cursos.resources
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.RegistrarCursos.resources
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.EliminarInstructores.resources

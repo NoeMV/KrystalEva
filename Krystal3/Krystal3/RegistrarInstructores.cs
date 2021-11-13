@@ -14,21 +14,9 @@ namespace Krystal3
 {
     public partial class RegistrarInstructores : Form
     {
-        private int instructorID
-        {
-            get
-            {
-                return instructorID;
-            }
-            set
-            {
-                instructorID = value;
-            }
-        }
+        public static Boolean si = false;
 
         private int claveTipoAgente;
-
-        public static Boolean si = false;
         /*{
             get
             {
