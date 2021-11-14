@@ -87,8 +87,6 @@ namespace Krystal3
             }
         }
 
-        //private Boolean modificarInstructores();
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             consultarInstructores();
@@ -123,6 +121,11 @@ namespace Krystal3
                 consultarInstructores();
                 EliminarInstructores.si = false;
             }
+            if (ModificarInstructores.si == true)
+            {
+                consultarInstructores();
+                ModificarInstructores.si = false;
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -134,6 +137,12 @@ namespace Krystal3
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EliminarInstructores ventana = new EliminarInstructores(instructorID);
+            ventana.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModificarInstructores ventana = new ModificarInstructores(instructorID);
             ventana.ShowDialog();
         }
     }

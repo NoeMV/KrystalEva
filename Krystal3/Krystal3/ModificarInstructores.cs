@@ -12,11 +12,41 @@ using System.Data.SqlClient;
 
 namespace Krystal3
 {
-    public partial class EliminarInstructores : Form
+    public partial class ModificarInstructores : Form
     {
         public static Boolean si = false;
 
-        public EliminarInstructores(int IdAgente)
+        private int claveTipoAgente;
+        /*{
+            get
+            {
+                return claveTipoAgente;
+            }
+            set
+            {
+                try
+                {
+                    claveTipoAgente = value;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Ingrese un valor valido para la Clave de Agente.\n" + e.Message);
+                }
+            }
+        }*/
+
+        private String rfcAgente;
+        /*{
+            get
+            {
+                return rfcAgente;
+            }
+            set
+            {
+                rfcAgente = value;
+            }
+        }*/
+        public ModificarInstructores(int IdAgente)
         {
             InitializeComponent();
 
@@ -30,24 +60,28 @@ namespace Krystal3
                 Conexion.Open();
                 SqlDataReader reader = command.ExecuteReader();
 
-                if(reader.Read())
+                if (reader.Read())
                 {
+                    claveTipoAgente = Convert.ToInt32(reader["claveTipoAgente"].ToString());
+                    rfcAgente = reader["rfcAgente"].ToString();
+
                     txtID.Text = IdAgente.ToString();
-                    txtClave.Text = reader["claveTipoAgente"].ToString();
-                    txtRFC.Text = reader["rfcAgente"].ToString();
+                    txtClave.Text = claveTipoAgente.ToString();
+                    txtRFC.Text = rfcAgente;
                 }
                 Conexion.Close();
             }
-            catch
+            catch 
             {
-
+                
             }
         }
-        private void eliminarInstructores()
+
+        private void modificarInstructores()
         {
             try
             {
-                if (!txtID.Text.Equals(""))
+                if (!txtID.Text.Equals("") && !txtClave.Text.Equals("") && !txtRFC.Text.Equals(""))
                 {
                     String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
                     SqlConnection Conexion = new SqlConnection(miConexion);
@@ -68,9 +102,9 @@ namespace Krystal3
                             else
                             {
                                 Conexion.Close();
-                                if (MessageBox.Show($"¿Seguro que quiere eliminar el siguiente instructor?\n{txtClave.Text}\n{txtRFC.Text}", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                if (MessageBox.Show($"¿Seguro que quiere modificar el siguiente instructor?\n{claveTipoAgente}\n{rfcAgente}", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                                 {
-                                    sql = $"UPDATE instructores SET status = 0 WHERE instructor_id = {Convert.ToInt32(txtID.Text)}";
+                                    sql = $"UPDATE instructores SET claveTipoAgente = {Convert.ToInt32(txtClave.Text)}, rfcAgente = '{txtRFC.Text}' WHERE instructor_id = {Convert.ToInt32(txtID.Text)}";
 
                                     try
                                     {
@@ -80,31 +114,33 @@ namespace Krystal3
 
                                         if (read == 1)
                                         {
-                                            MessageBox.Show("Se ha eliminado exitosamente.");
+                                            MessageBox.Show("Se ha modificado exitosamente.");
                                         }
                                         else if (read == 0)
                                         {
-                                            MessageBox.Show("No se pudo eliminar.");
+                                            MessageBox.Show("No se pudo modificar.");
                                         }
 
                                         Conexion.Close();
                                     }
                                     catch
                                     {
-                                        MessageBox.Show("No se pudo Eliminar.");
+                                        MessageBox.Show("No se pudo modificar.");
                                     }
                                 }
                             }
                         }
-                        else
-                        {
-                            MessageBox.Show("Indique un ID para eliminar.");
-                        }
+                        Conexion.Close();
                     }
                     catch
                     {
-                        MessageBox.Show("No se pudo eliminar.");
+                        MessageBox.Show("No se pudo modificar.");
                     }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Llene todos los campos para modificar.");
                 }
             }
             catch
@@ -116,18 +152,6 @@ namespace Krystal3
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            eliminarInstructores();
-            si = true;
-            this.Dispose();
-        }
-
-        private void txtID_Leave(object sender, EventArgs e)
-        {
-            
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
@@ -146,8 +170,11 @@ namespace Krystal3
 
                     if (reader.Read())
                     {
-                        txtClave.Text = reader["claveTipoAgente"].ToString();
-                        txtRFC.Text = reader["rfcAgente"].ToString();
+                        claveTipoAgente = Convert.ToInt32(reader["claveTipoAgente"].ToString());
+                        rfcAgente = reader["rfcAgente"].ToString();
+
+                        txtClave.Text = claveTipoAgente.ToString();
+                        txtRFC.Text = rfcAgente;
                     }
                     Conexion.Close();
                 }
@@ -164,6 +191,13 @@ namespace Krystal3
             {
 
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            modificarInstructores();
+            si = true;
+            this.Dispose();
         }
     }
 }
