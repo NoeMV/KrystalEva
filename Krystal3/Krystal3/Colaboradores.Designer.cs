@@ -1,5 +1,4 @@
-﻿
-namespace Krystal3
+﻿namespace Krystal3
 {
     partial class Colaboradores
     {
@@ -29,18 +28,10 @@ namespace Krystal3
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Colaboradores
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
-            this.Name = "Colaboradores";
             this.Text = "Colaboradores";
-            this.ResumeLayout(false);
-
         }
 
         #endregion
