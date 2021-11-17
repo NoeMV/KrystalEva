@@ -65,6 +65,12 @@
     <Compile Include="EliminarInstructores.Designer.cs">
       <DependentUpon>EliminarInstructores.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertarColaboradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarColaboradores.Designer.cs">
+      <DependentUpon>InsertarColaboradores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instructores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarInstructores.resx">
       <DependentUpon>EliminarInstructores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarColaboradores.resx">
+      <DependentUpon>InsertarColaboradores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instructores.resx">
       <DependentUpon>Instructores.cs</DependentUpon>

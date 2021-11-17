@@ -67,7 +67,7 @@ namespace Krystal3
                         DataGridViewRow fila = new DataGridViewRow();
 
                         fila.CreateCells(dataGridView1);
-                        fila.Cells[0].Value = Convert.ToInt32(listaColaboradorID[i]) - 485;
+                        fila.Cells[0].Value = Convert.ToInt32(listaColaboradorID[i]);
                         fila.Cells[1].Value = listaCurp[i];
                         fila.Cells[2].Value = listaNombre[i];
                         fila.Cells[3].Value = listaPrimerApellido[i];
@@ -94,6 +94,12 @@ namespace Krystal3
             {
                 MessageBox.Show("No se pudo establecer conexion.\n" + e.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            InsertarColaboradores ventana = new InsertarColaboradores();
+            ventana.ShowDialog();
         }
     }
 }
