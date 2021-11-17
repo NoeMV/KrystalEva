@@ -95,13 +95,13 @@ namespace Krystal3
                 }
                 Conexion.Close();
             }
+
             catch (Exception e)
             {
 
                 MessageBox.Show("No se pudo establecer conexion.\n" + e.Message);
 
             }
-
 
         }
 
@@ -143,8 +143,6 @@ namespace Krystal3
 
             }
 
-
-
         }
 
         private void CargarNivelesEstudio()
@@ -173,9 +171,61 @@ namespace Krystal3
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            String ocupacion = "";
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+            String sql = $"SELECT clave FROM ocupaciones WHERE descripcion = '" + cbxOcupaciones.Text + "';";
+            SqlCommand command = new SqlCommand(sql, Conexion);
+            Conexion.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                ocupacion = reader["clave"].ToString();
+                MessageBox.Show("Clave de ocupación: " + ocupacion);
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+            //this.Dispose();
+            MessageBox.Show("Municipio ID: " + Convert.ToString(cbxMunicipios.SelectedIndex));
+            MessageBox.Show("Ocupaciones ID: " + Convert.ToString(cbxOcupaciones.SelectedIndex));
+            Conexion.Close();
+
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro que quiere añadir al colaborador?", "Registrar colaborador", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                SqlConnection Conexion = new SqlConnection(miConexion);
+                String sql = $"INSERT INTO COLABORADORES (curp, nombre, primerApellido, segundoApellido, claveEstado, municipio_id, ocupacion_id, claveNivelEstudios, claveDocProbatorio, claveInstitucion, status) "
+                    + "VALUES ('" + txtCURP.Text + "','" + txtNombre.Text + "','" + txtPrimerApellido.Text + "','" + txtSegundoApellido.Text + "','" + Convert.ToString(cbxMunicipios.SelectedIndex) + "','" + Convert.ToString(cbxOcupaciones.SelectedIndex);
+
+                try
+                {
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    Conexion.Close();
+
+                    MessageBox.Show("Registro exitoso.");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo establecer conexión con la base de datos, contacte al administrador.");
+                }
+
+            }
+
         }
     }
 }
