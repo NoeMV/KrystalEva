@@ -49,13 +49,11 @@ namespace Krystal3
                     Conexion.Close();
 
 
-                    {
-                        MessageBox.Show("Ha ocurrido un error al conectar con la base de datos");
-                    }
 
                 }
                 catch (Exception exception)
                 {
+                    MessageBox.Show("Ha ocurrido un error al conectar con la base de datos");
                     MessageBox.Show(exception.Message);
                 }
 
