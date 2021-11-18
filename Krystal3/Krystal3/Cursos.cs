@@ -192,5 +192,10 @@ namespace Krystal3
         {
             dgvCursos.Rows.Clear();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

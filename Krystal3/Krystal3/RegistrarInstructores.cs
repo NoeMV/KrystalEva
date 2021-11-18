@@ -14,17 +14,7 @@ namespace Krystal3
 {
     public partial class RegistrarInstructores : Form
     {
-        private int instructorID
-        {
-            get
-            {
-                return instructorID;
-            }
-            set
-            {
-                instructorID = value;
-            }
-        }
+        public static Boolean si = false;
 
         private int claveTipoAgente;
         /*{
@@ -100,6 +90,8 @@ namespace Krystal3
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             registrarInstructores();
+            si = true;
+            this.Dispose();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

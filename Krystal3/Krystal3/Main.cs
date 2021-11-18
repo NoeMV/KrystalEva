@@ -42,8 +42,8 @@ namespace Krystal3
 
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Colaboradores ventana = new Colaboradores();
-            ventana.ShowDialog();*/
+            Colaboradores ventana = new Colaboradores();
+            ventana.ShowDialog();
         }
 
         private void instructoresToolStripMenuItem_Click(object sender, EventArgs e)

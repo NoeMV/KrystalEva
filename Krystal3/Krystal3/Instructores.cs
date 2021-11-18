@@ -15,6 +15,17 @@ namespace Krystal3
 {
     public partial class Instructores : Form
     {
+        private int instructorID = -1;
+        /*{
+            get
+            {
+                return instructorID;
+            }
+            set
+            {
+                instructorID = value;
+            }
+        }*/
         public Instructores()
         {
             InitializeComponent();
@@ -26,7 +37,7 @@ namespace Krystal3
             this.Dispose();
         }
 
-        private void consultarInstructores()
+        public void consultarInstructores()
         {
             ArrayList listaID = new ArrayList();
             ArrayList listaClave = new ArrayList();
@@ -34,7 +45,7 @@ namespace Krystal3
 
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
             SqlConnection Conexion = new SqlConnection(miConexion);
-            String sql = "SELECT instructor_id, claveTipoAgente, rfcAgente FROM instructores";
+            String sql = "SELECT instructor_id, claveTipoAgente, rfcAgente FROM instructores WHERE status = 1";
 
             try
             {
@@ -61,6 +72,8 @@ namespace Krystal3
 
                         dataGridView1.Rows.Add(fila);
                     }
+
+                    instructorID = Convert.ToInt32(listaID[0]);
                 }
                 else
                 {
@@ -74,11 +87,12 @@ namespace Krystal3
             }
         }
 
-        //private Boolean modificarInstructores();
-
-        //private Boolean eliminarInstructores()
-
         private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            consultarInstructores();
+        }
+
+        private void hola(object sender, System.EventArgs e)
         {
             consultarInstructores();
         }
@@ -86,6 +100,49 @@ namespace Krystal3
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             RegistrarInstructores ventana = new RegistrarInstructores();
+            ventana.ShowDialog();
+        }
+
+        private void Instructores_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+
+        }
+
+        private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (RegistrarInstructores.si == true)
+            {
+                consultarInstructores();
+                RegistrarInstructores.si = false;
+            }
+            if (EliminarInstructores.si == true)
+            {
+                consultarInstructores();
+                EliminarInstructores.si = false;
+            }
+            if (ModificarInstructores.si == true)
+            {
+                consultarInstructores();
+                ModificarInstructores.si = false;
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            instructorID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            System.Console.WriteLine(instructorID);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarInstructores ventana = new EliminarInstructores(instructorID);
+            ventana.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModificarInstructores ventana = new ModificarInstructores(instructorID);
             ventana.ShowDialog();
         }
     }
