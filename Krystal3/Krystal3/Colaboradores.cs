@@ -15,6 +15,7 @@ namespace Krystal3
 {
     public partial class Colaboradores : Form
     {
+        private static int colaboradorID = 0;
         public Colaboradores()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace Krystal3
             ArrayList listaOcupacionID = new ArrayList();
             ArrayList listaNivelEstudios = new ArrayList();
             ArrayList listaClaveDocProbatorio = new ArrayList();
-            ArrayList listaClaveInstitucion= new ArrayList();
+            ArrayList listaClaveInstitucion = new ArrayList();
 
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
             SqlConnection Conexion = new SqlConnection(miConexion);
@@ -96,10 +97,43 @@ namespace Krystal3
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnInsertar_Click(object sender, EventArgs e)
         {
+
             InsertarColaboradores ventana = new InsertarColaboradores();
             ventana.ShowDialog();
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro que quiere eliminar al colaborador?", "Eliminar colaborador", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                SqlConnection Conexion = new SqlConnection(miConexion);
+                String sql = "UPDATE colaboradores SET status = 0 WHERE colaborador_id = '" + colaboradorID + "';";
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                Conexion.Close();
+
+                MessageBox.Show("¡Colaborador eliminado satisfactoriamente!");
+                this.dataGridView1.Rows.Clear();
+                getColaboradores();
+
+            }
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            //colaboradorID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+
+
         }
     }
 }

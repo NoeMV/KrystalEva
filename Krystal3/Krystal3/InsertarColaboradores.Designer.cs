@@ -49,6 +49,8 @@ namespace Krystal3
             this.cbxDocProb = new System.Windows.Forms.ComboBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbxInstitucion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +60,7 @@ namespace Krystal3
             this.label1.Location = new System.Drawing.Point(16, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "CURP:";
             // 
@@ -69,7 +71,7 @@ namespace Krystal3
             this.label2.Location = new System.Drawing.Point(16, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre:";
             // 
@@ -80,47 +82,47 @@ namespace Krystal3
             this.label3.Location = new System.Drawing.Point(16, 82);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 16);
+            this.label3.Size = new System.Drawing.Size(126, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Primer apellido:";
             // 
             // txtCURP
             // 
             this.txtCURP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCURP.Location = new System.Drawing.Point(169, 15);
+            this.txtCURP.Location = new System.Drawing.Point(206, 15);
             this.txtCURP.Margin = new System.Windows.Forms.Padding(4);
             this.txtCURP.Name = "txtCURP";
-            this.txtCURP.Size = new System.Drawing.Size(357, 22);
+            this.txtCURP.Size = new System.Drawing.Size(357, 26);
             this.txtCURP.TabIndex = 3;
             this.txtCURP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(169, 48);
+            this.txtNombre.Location = new System.Drawing.Point(206, 48);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(357, 22);
+            this.txtNombre.Size = new System.Drawing.Size(357, 26);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrimerApellido
             // 
             this.txtPrimerApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrimerApellido.Location = new System.Drawing.Point(169, 81);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(206, 81);
             this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(357, 22);
+            this.txtPrimerApellido.Size = new System.Drawing.Size(357, 26);
             this.txtPrimerApellido.TabIndex = 5;
             this.txtPrimerApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtSegundoApellido
             // 
             this.txtSegundoApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSegundoApellido.Location = new System.Drawing.Point(169, 114);
+            this.txtSegundoApellido.Location = new System.Drawing.Point(206, 114);
             this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(357, 22);
+            this.txtSegundoApellido.Size = new System.Drawing.Size(357, 26);
             this.txtSegundoApellido.TabIndex = 6;
             this.txtSegundoApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -131,7 +133,7 @@ namespace Krystal3
             this.label4.Location = new System.Drawing.Point(16, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 16);
+            this.label4.Size = new System.Drawing.Size(141, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Segundo apellido:";
             // 
@@ -142,7 +144,7 @@ namespace Krystal3
             this.label5.Location = new System.Drawing.Point(16, 148);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.Size = new System.Drawing.Size(66, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Estado:";
             // 
@@ -153,7 +155,7 @@ namespace Krystal3
             this.label6.Location = new System.Drawing.Point(16, 181);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.Size = new System.Drawing.Size(90, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "Municipio: ";
             // 
@@ -164,7 +166,7 @@ namespace Krystal3
             this.label7.Location = new System.Drawing.Point(16, 214);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 16);
+            this.label7.Size = new System.Drawing.Size(94, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Ocupación:";
             // 
@@ -175,7 +177,7 @@ namespace Krystal3
             this.label8.Location = new System.Drawing.Point(16, 247);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 16);
+            this.label8.Size = new System.Drawing.Size(142, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Nivel de estudios:";
             // 
@@ -186,7 +188,7 @@ namespace Krystal3
             this.label9.Location = new System.Drawing.Point(16, 281);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 16);
+            this.label9.Size = new System.Drawing.Size(180, 20);
             this.label9.TabIndex = 17;
             this.label9.Text = "Documento probatorio:";
             // 
@@ -194,55 +196,55 @@ namespace Krystal3
             // 
             this.cbxEstados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstados.FormattingEnabled = true;
-            this.cbxEstados.Location = new System.Drawing.Point(169, 146);
+            this.cbxEstados.Location = new System.Drawing.Point(206, 146);
             this.cbxEstados.Margin = new System.Windows.Forms.Padding(4);
             this.cbxEstados.Name = "cbxEstados";
-            this.cbxEstados.Size = new System.Drawing.Size(357, 24);
+            this.cbxEstados.Size = new System.Drawing.Size(357, 28);
             this.cbxEstados.TabIndex = 18;
             // 
             // cbxMunicipios
             // 
             this.cbxMunicipios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMunicipios.FormattingEnabled = true;
-            this.cbxMunicipios.Location = new System.Drawing.Point(169, 180);
+            this.cbxMunicipios.Location = new System.Drawing.Point(206, 180);
             this.cbxMunicipios.Margin = new System.Windows.Forms.Padding(4);
             this.cbxMunicipios.Name = "cbxMunicipios";
-            this.cbxMunicipios.Size = new System.Drawing.Size(357, 24);
+            this.cbxMunicipios.Size = new System.Drawing.Size(357, 28);
             this.cbxMunicipios.TabIndex = 19;
             // 
             // cbxOcupaciones
             // 
             this.cbxOcupaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxOcupaciones.FormattingEnabled = true;
-            this.cbxOcupaciones.Location = new System.Drawing.Point(169, 213);
+            this.cbxOcupaciones.Location = new System.Drawing.Point(206, 213);
             this.cbxOcupaciones.Margin = new System.Windows.Forms.Padding(4);
             this.cbxOcupaciones.Name = "cbxOcupaciones";
-            this.cbxOcupaciones.Size = new System.Drawing.Size(358, 24);
+            this.cbxOcupaciones.Size = new System.Drawing.Size(358, 28);
             this.cbxOcupaciones.TabIndex = 20;
             // 
             // cbxNivelEstudios
             // 
             this.cbxNivelEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNivelEstudios.FormattingEnabled = true;
-            this.cbxNivelEstudios.Location = new System.Drawing.Point(169, 246);
+            this.cbxNivelEstudios.Location = new System.Drawing.Point(206, 246);
             this.cbxNivelEstudios.Margin = new System.Windows.Forms.Padding(4);
             this.cbxNivelEstudios.Name = "cbxNivelEstudios";
-            this.cbxNivelEstudios.Size = new System.Drawing.Size(358, 24);
+            this.cbxNivelEstudios.Size = new System.Drawing.Size(358, 28);
             this.cbxNivelEstudios.TabIndex = 21;
             // 
             // cbxDocProb
             // 
             this.cbxDocProb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDocProb.FormattingEnabled = true;
-            this.cbxDocProb.Location = new System.Drawing.Point(169, 279);
+            this.cbxDocProb.Location = new System.Drawing.Point(206, 279);
             this.cbxDocProb.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDocProb.Name = "cbxDocProb";
-            this.cbxDocProb.Size = new System.Drawing.Size(357, 24);
+            this.cbxDocProb.Size = new System.Drawing.Size(357, 28);
             this.cbxDocProb.TabIndex = 22;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(20, 325);
+            this.btnConfirmar.Location = new System.Drawing.Point(20, 360);
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(100, 28);
@@ -253,7 +255,7 @@ namespace Krystal3
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(428, 325);
+            this.btnCancelar.Location = new System.Drawing.Point(465, 360);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
@@ -262,11 +264,31 @@ namespace Krystal3
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 316);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(150, 20);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Tipo de institución:";
+            // 
+            // cbxInstitucion
+            // 
+            this.cbxInstitucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxInstitucion.FormattingEnabled = true;
+            this.cbxInstitucion.Location = new System.Drawing.Point(206, 313);
+            this.cbxInstitucion.Name = "cbxInstitucion";
+            this.cbxInstitucion.Size = new System.Drawing.Size(357, 28);
+            this.cbxInstitucion.TabIndex = 26;
+            // 
             // InsertarColaboradores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 370);
+            this.ClientSize = new System.Drawing.Size(587, 407);
+            this.Controls.Add(this.cbxInstitucion);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.cbxDocProb);
@@ -320,5 +342,7 @@ namespace Krystal3
         private System.Windows.Forms.ComboBox cbxDocProb;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbxInstitucion;
     }
 }
