@@ -21,11 +21,63 @@ namespace Krystal3
 
         private void RegistrarCursos_Load(object sender, EventArgs e)
         {
+            int instructorID = 0, competenciaID = 0;
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+            String sql = "select rfcAgente from instructores;";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    cmbInstructor.Items.Add(reader.GetString(0));
+
+                }
+                Conexion.Close();
+
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Ha ocurrido un error al conectar con la base de datos");
+                MessageBox.Show(exception.Message);
+            }
+
+            sql = "select descripcion from competencias;";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    cmbCompetencia.Items.Add(reader.GetString(0));
+
+                }
+                Conexion.Close();
+
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Ha ocurrido un error al conectar con la base de datos");
+                MessageBox.Show(exception.Message);
+            }
+
+
+
             if (Cursos.modificar)
             {
-                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-                SqlConnection Conexion = new SqlConnection(miConexion);
-                String sql = "select * from cursos where curso_id=" + Cursos.cursoID + ";";
+                
+                sql = "select * from cursos where curso_id=" + Cursos.cursoID + ";";
 
                 try
                 {
@@ -34,16 +86,21 @@ namespace Krystal3
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
+                        competenciaID = Convert.ToInt32(reader["competencia_id"].ToString());
+                        instructorID = Convert.ToInt32(reader["instructor_id"].ToString());
+                        string sqlInstructor = "select rfcAgente from instructores where instructor_id='" + instructorID + "';";
+                        string sqlCompetencia = "select descripcion from competencias where competencia_id='" + competenciaID + "';";
 
                         txtClaveCurso.Text = reader.GetString(1);
                         txtNombreCurso.Text = reader.GetString(2);
                         txtClaveAreaTema.Text = reader.GetString(3);
-                        cmbDuracion.SelectedItem = reader.GetString(4);
-                        dteFechaInicio.Value = Convert.ToDateTime(reader.GetString(5));
-                        dteFechaFin.Value = Convert.ToDateTime(reader.GetString(6));
-                        txtClaveObjetivo.Text = reader.GetString(7);
-                        cmbCompetencia.SelectedItem = reader.GetString(8);
-                        cmbInstructor.SelectedItem = reader.GetString(9);
+                        cmbDuracion.SelectedItem = Convert.ToString(Convert.ToInt32(reader["duracion"].ToString()));
+                        dteFechaInicio.Value = Convert.ToDateTime(reader["fechaInicio"].ToString());
+                        dteFechaFin.Value = Convert.ToDateTime(reader["fechaFin"].ToString());
+                        cmbClaveObjetivo.Text = reader.GetString(7);
+                        cmbClaveModalidad.Text = reader.GetString(8);
+                        cmbCompetencia.SelectedItem = obtenerDato(sqlCompetencia,0);
+                        cmbInstructor.SelectedItem = obtenerDato(sqlInstructor, 0);
 
                     }
                     Conexion.Close();
@@ -77,21 +134,148 @@ namespace Krystal3
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            int instructorID = 0, competenciaID = 0;
+            string fechaFin = Convert.ToString((Convert.ToDateTime(dteFechaFin.Value)).ToString("yyyy/MM/dd"));
+            string fechaInicio = Convert.ToString((Convert.ToDateTime(dteFechaInicio.Value)).ToString("yyyy/MM/dd"));
+
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+
+            String sql = "select instructor_id from instructores where rfcAgente='" + cmbInstructor.Text + "';";
+
+            try
+            {
+                MessageBox.Show("si entra");
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+
+                    instructorID = Convert.ToInt32(reader["instructor_id"].ToString());
+
+                }
+                Conexion.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Ha ocurrido un error al obtener instructorID");
+                MessageBox.Show(exception.Message);
+            }
+
+
+            sql = "select competencia_id from competencias where descripcion='" + (string)cmbCompetencia.SelectedItem + "';";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+
+                    competenciaID = Convert.ToInt32(reader["competencia_id"].ToString());
+
+                }
+                Conexion.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Ha ocurrido un error al obtener CompetenciaID");
+                MessageBox.Show(exception.Message);
+            }
+
+
+
             if (Cursos.modificar)
             {
-                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-                SqlConnection Conexion = new SqlConnection(miConexion);
-                String sql = "update cursos set claveCurso=" + txtClaveCurso.Text + ", nombreCurso=" + txtNombreCurso.Text +
-                              ",claveAreaTema=" + txtClaveAreaTema.Text + ",duracion=" + (string)cmbDuracion.SelectedItem +
-                              ",fechaInicio=" + dteFechaInicio.Value as string + ", fechaFin=" + dteFechaFin.Value as string +
-                              ", claveObjetivo=" + txtClaveObjetivo.Text + ",competencia_id=" + (string)cmbCompetencia.SelectedItem +
-                              ", instructor_id=" + (string)cmbInstructor.SelectedItem + " where curso_id=" + Cursos.cursoID + " ;";
+
+
+                sql = "update cursos set claveCurso='" + txtClaveCurso.Text + "', nombreCurso='" + txtNombreCurso.Text +
+                              "',claveAreaTema='" + txtClaveAreaTema.Text + "',duracion='" + (string)cmbDuracion.SelectedItem +
+                              "',fechaInicio='" + fechaInicio + "', fechaFin='" + fechaFin +
+                              "', claveObjetivo='" + cmbClaveObjetivo.Text + "',claveModalidad='" + cmbClaveModalidad + "',competencia_id='" + competenciaID +
+                              "', instructor_id='" + instructorID + "' where curso_id='" + Cursos.cursoID + "' ;";
+
+                try
+                {
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    command.ExecuteReader();
+                    Conexion.Close();
+                    MessageBox.Show("El curso de modifico con exito");
+                    this.Dispose();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Ha ocurrido un error al modificar el curso");
+                    MessageBox.Show(exception.Message);
+                }
             }
             else
             {
 
+                sql = "insert into cursos (claveCurso,nombreCurso,claveAreaTema,duracion,fechaInicio,fechaFin,claveObjetivo," +
+                    "claveModalidad,competencia_id,instructor_id,status) values ('" + txtClaveCurso.Text + "','" + txtNombreCurso.Text + "'," +
+                    "'" + txtClaveAreaTema.Text + "','" + (string)cmbDuracion.SelectedItem + "','" + fechaInicio + "','" + fechaFin + "'," +
+                    "'" + cmbClaveObjetivo.Text + "','" + cmbClaveModalidad.Text + "'," + competenciaID + "," + instructorID + ",1);";
+                try
+                {
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    command.ExecuteReader();
+                    Conexion.Close();
+                    MessageBox.Show("El curso se añadio con exito");
+                    this.Dispose();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Ha ocurrido un error al agregar curso");
+                    MessageBox.Show(exception.Message);
+                }
 
             }
+        }
+
+        private string obtenerDato(string sql, int datobd)
+        {
+            string dato = "";
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+
+
+
+            //String sql = "select instructor_id from instructores where rfcAgente='" + (string)cmbCompetencia.SelectedItem + "';";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+
+                    dato = reader.GetString(datobd);
+
+                }
+                Conexion.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Ha ocurrido un error al obtener instructorID");
+                MessageBox.Show(exception.Message);
+            }
+
+            return dato;
         }
     }
 }

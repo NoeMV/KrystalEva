@@ -37,7 +37,6 @@ namespace Krystal3
             this.cmbCompetencia = new System.Windows.Forms.ComboBox();
             this.dteFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.txtClaveAreaTema = new System.Windows.Forms.TextBox();
-            this.txtClaveObjetivo = new System.Windows.Forms.TextBox();
             this.txtClaveCurso = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,6 +48,9 @@ namespace Krystal3
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreCurso = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbClaveModalidad = new System.Windows.Forms.ComboBox();
+            this.cmbClaveObjetivo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dteFechaFin
@@ -63,7 +65,7 @@ namespace Krystal3
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(303, 425);
+            this.btnCancelar.Location = new System.Drawing.Point(303, 477);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 39;
@@ -73,7 +75,7 @@ namespace Krystal3
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(81, 425);
+            this.btnGuardar.Location = new System.Drawing.Point(81, 477);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 38;
@@ -84,6 +86,19 @@ namespace Krystal3
             // cmbDuracion
             // 
             this.cmbDuracion.FormattingEnabled = true;
+            this.cmbDuracion.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
             this.cmbDuracion.Location = new System.Drawing.Point(171, 144);
             this.cmbDuracion.Name = "cmbDuracion";
             this.cmbDuracion.Size = new System.Drawing.Size(200, 24);
@@ -92,7 +107,7 @@ namespace Krystal3
             // cmbInstructor
             // 
             this.cmbInstructor.FormattingEnabled = true;
-            this.cmbInstructor.Location = new System.Drawing.Point(171, 340);
+            this.cmbInstructor.Location = new System.Drawing.Point(171, 392);
             this.cmbInstructor.Name = "cmbInstructor";
             this.cmbInstructor.Size = new System.Drawing.Size(200, 24);
             this.cmbInstructor.TabIndex = 36;
@@ -100,7 +115,7 @@ namespace Krystal3
             // cmbCompetencia
             // 
             this.cmbCompetencia.FormattingEnabled = true;
-            this.cmbCompetencia.Location = new System.Drawing.Point(171, 304);
+            this.cmbCompetencia.Location = new System.Drawing.Point(171, 356);
             this.cmbCompetencia.Name = "cmbCompetencia";
             this.cmbCompetencia.Size = new System.Drawing.Size(200, 24);
             this.cmbCompetencia.TabIndex = 35;
@@ -122,13 +137,6 @@ namespace Krystal3
             this.txtClaveAreaTema.Size = new System.Drawing.Size(200, 22);
             this.txtClaveAreaTema.TabIndex = 33;
             // 
-            // txtClaveObjetivo
-            // 
-            this.txtClaveObjetivo.Location = new System.Drawing.Point(171, 266);
-            this.txtClaveObjetivo.Name = "txtClaveObjetivo";
-            this.txtClaveObjetivo.Size = new System.Drawing.Size(200, 22);
-            this.txtClaveObjetivo.TabIndex = 32;
-            // 
             // txtClaveCurso
             // 
             this.txtClaveCurso.Location = new System.Drawing.Point(171, 28);
@@ -139,7 +147,7 @@ namespace Krystal3
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(45, 343);
+            this.label9.Location = new System.Drawing.Point(45, 395);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 17);
             this.label9.TabIndex = 30;
@@ -148,7 +156,7 @@ namespace Krystal3
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(45, 304);
+            this.label8.Location = new System.Drawing.Point(45, 356);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 17);
             this.label8.TabIndex = 29;
@@ -224,11 +232,49 @@ namespace Krystal3
             this.txtNombreCurso.Size = new System.Drawing.Size(200, 22);
             this.txtNombreCurso.TabIndex = 21;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(45, 311);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 17);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "Clave modalidad";
+            // 
+            // cmbClaveModalidad
+            // 
+            this.cmbClaveModalidad.FormattingEnabled = true;
+            this.cmbClaveModalidad.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.cmbClaveModalidad.Location = new System.Drawing.Point(171, 311);
+            this.cmbClaveModalidad.Name = "cmbClaveModalidad";
+            this.cmbClaveModalidad.Size = new System.Drawing.Size(200, 24);
+            this.cmbClaveModalidad.TabIndex = 42;
+            // 
+            // cmbClaveObjetivo
+            // 
+            this.cmbClaveObjetivo.FormattingEnabled = true;
+            this.cmbClaveObjetivo.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbClaveObjetivo.Location = new System.Drawing.Point(171, 266);
+            this.cmbClaveObjetivo.Name = "cmbClaveObjetivo";
+            this.cmbClaveObjetivo.Size = new System.Drawing.Size(200, 24);
+            this.cmbClaveObjetivo.TabIndex = 43;
+            // 
             // RegistrarCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 535);
+            this.Controls.Add(this.cmbClaveObjetivo);
+            this.Controls.Add(this.cmbClaveModalidad);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.dteFechaFin);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -237,7 +283,6 @@ namespace Krystal3
             this.Controls.Add(this.cmbCompetencia);
             this.Controls.Add(this.dteFechaInicio);
             this.Controls.Add(this.txtClaveAreaTema);
-            this.Controls.Add(this.txtClaveObjetivo);
             this.Controls.Add(this.txtClaveCurso);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -269,7 +314,6 @@ namespace Krystal3
         private System.Windows.Forms.ComboBox cmbCompetencia;
         private System.Windows.Forms.DateTimePicker dteFechaInicio;
         private System.Windows.Forms.TextBox txtClaveAreaTema;
-        private System.Windows.Forms.TextBox txtClaveObjetivo;
         private System.Windows.Forms.TextBox txtClaveCurso;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -281,5 +325,8 @@ namespace Krystal3
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombreCurso;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbClaveModalidad;
+        private System.Windows.Forms.ComboBox cmbClaveObjetivo;
     }
 }
