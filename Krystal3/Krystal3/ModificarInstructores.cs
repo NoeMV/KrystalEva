@@ -77,7 +77,7 @@ namespace Krystal3
             }
         }
 
-        private void modificarInstructores()
+        private Boolean modificarInstructores()
         {
             try
             {
@@ -98,6 +98,8 @@ namespace Krystal3
                             if (reader["status"].ToString().Equals("0"))
                             {
                                 MessageBox.Show("Este Instructor no está disponible.");
+                                Conexion.Close();
+                                return false;
                             }
                             else
                             {
@@ -115,6 +117,8 @@ namespace Krystal3
                                         if (read == 1)
                                         {
                                             MessageBox.Show("Se ha modificado exitosamente.");
+                                            Conexion.Close();
+                                            return true;
                                         }
                                         else if (read == 0)
                                         {
@@ -126,6 +130,8 @@ namespace Krystal3
                                     catch
                                     {
                                         MessageBox.Show("No se pudo modificar.");
+                                        Conexion.Close();
+                                        return false;
                                     }
                                 }
                             }
@@ -135,18 +141,23 @@ namespace Krystal3
                     catch
                     {
                         MessageBox.Show("No se pudo modificar.");
+                        Conexion.Close();
+                        return false;
                     }
                     
                 }
                 else
                 {
                     MessageBox.Show("Llene todos los campos para modificar.");
+                    return false;
                 }
             }
             catch
             {
                 MessageBox.Show("Indique un ID valido.");
+                return false;
             }
+            return false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -195,9 +206,11 @@ namespace Krystal3
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            modificarInstructores();
-            si = true;
-            this.Dispose();
+            if (modificarInstructores())
+            {
+                si = true;
+                this.Dispose();
+            }
         }
     }
 }
