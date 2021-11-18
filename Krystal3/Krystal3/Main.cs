@@ -36,8 +36,8 @@ namespace Krystal3
 
         private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Cursos ventana = new Cursos();
-            ventana.ShowDialog();*/
+            Cursos ventana = new Cursos();
+            ventana.ShowDialog();
         }
 
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
