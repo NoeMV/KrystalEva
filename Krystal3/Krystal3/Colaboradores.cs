@@ -16,6 +16,8 @@ namespace Krystal3
     public partial class Colaboradores : Form
     {
         private static int colaboradorID = 0;
+        private static String colaboradorCURP = "";
+        private static int row = -1;
         public Colaboradores()
         {
             InitializeComponent();
@@ -131,9 +133,31 @@ namespace Krystal3
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            //colaboradorID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            row = e.RowIndex;
+            if (row >= 0)
+            {
 
+                colaboradorCURP = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
 
+            }
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (row <= -1)
+            {
+
+                MessageBox.Show("Favor de seleccionar un usuario de la lista.");
+
+            }
+            else if (row >= 0)
+            {
+
+                ModificarColaboradores modificar = new ModificarColaboradores(colaboradorCURP);
+                modificar.ShowDialog();
+                //MessageBox.Show(colaboradorCURP);
+            }
         }
     }
 }
