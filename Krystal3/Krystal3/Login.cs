@@ -26,52 +26,23 @@ namespace Krystal3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<String> usuarios = new List<string>();
-            List<String> passwords = new List<string>();
-            Boolean usu = false, pass = false;
+            
 
             if (txt_usuario.Text.Length != 0 && txt_contraseña.Text.Length != 0)
             {
+                Usuario u = new Usuario();
 
-                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-                SqlConnection Conexion = new SqlConnection(miConexion);
-                String sql = "select * from usuario";
-
-                try
+                if (u.verificarLogin(txt_usuario.Text, txt_contraseña.Text))
                 {
-                    SqlCommand command = new SqlCommand(sql, Conexion);
-                    Conexion.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        if (txt_usuario.Text.Equals(reader.GetString(2)))
-                        {
-                            usu = true;
-                        }
-                        if (txt_contraseña.Text.Equals(reader.GetString(3)))
-                        {
-                            pass = true;
-                        }
-                        
-                    }
-                    Conexion.Close();
-
-                    if (usu == true && pass == true)
-                    {
-                        MessageBox.Show("Se ha ingresado correctamente");
-                        Main ventana = new Main();
-                        ventana.Show();
-                        this.Visible = false;
-                    } else
-                    {
-                        MessageBox.Show("Los datos son incorrectos");
-                    }
-
-                }
-                catch (Exception exception)
+                    MessageBox.Show("Se ha ingresado correctamente");
+                    Main ventana = new Main();
+                    ventana.Show();
+                    this.Visible = false;
+                } else
                 {
-                    MessageBox.Show(exception.Message);
+                    MessageBox.Show("Los datos son incorrectos");
                 }
+
             } else
             {
                 MessageBox.Show("Por favor llena todos los campos");
@@ -82,6 +53,11 @@ namespace Krystal3
         private void boton_salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

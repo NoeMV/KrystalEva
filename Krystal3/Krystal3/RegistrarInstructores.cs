@@ -51,47 +51,57 @@ namespace Krystal3
             InitializeComponent();
         }
 
-        private void registrarInstructores()
+        private Boolean registrarInstructores()
         {
             if (!txtClave.Text.Equals("") && !txtRFC.Text.Equals(""))
             {
-                claveTipoAgente = Convert.ToInt32(txtClave.Text);
-                rfcAgente = txtRFC.Text;
-
-                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-                SqlConnection Conexion = new SqlConnection(miConexion);
-                String sql = $"INSERT INTO instructores (claveTipoAgente, rfcAgente, status) VALUES ({claveTipoAgente}, '{rfcAgente}', 1)";
-
                 try
                 {
-                    SqlCommand command = new SqlCommand(sql, Conexion);
-                    Conexion.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    Conexion.Close();
+                    claveTipoAgente = Convert.ToInt32(txtClave.Text);
+                    rfcAgente = txtRFC.Text;
 
-                    MessageBox.Show("Registro exitoso.");
-                    rfcAgente = "";
-                    claveTipoAgente = 0;
-                    txtClave.Text = "";
-                    txtRFC.Text = "";
+                    String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                    SqlConnection Conexion = new SqlConnection(miConexion);
+                    String sql = $"INSERT INTO instructores (claveTipoAgente, rfcAgente, status) VALUES ({claveTipoAgente}, '{rfcAgente}', 1)";
+
+                    try
+                    {
+                        SqlCommand command = new SqlCommand(sql, Conexion);
+                        Conexion.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+                        Conexion.Close();
+
+                        MessageBox.Show("Registro exitoso.");
+                        rfcAgente = "";
+                        claveTipoAgente = 0;
+                        txtClave.Text = "";
+                        txtRFC.Text = "";
+                        return true;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("No se pudo establecer conexion.\n" + e.Message);
+                    }
                 }
-                catch (Exception e)
+                catch
                 {
-                    MessageBox.Show("No se pudo establecer conexion.\n" + e.Message);
+                    MessageBox.Show("Ingrese una clave valida.");
                 }
-
             }
             else
             {
                 MessageBox.Show("Llene todos los campos para continuar.");
             }
+            return false;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            registrarInstructores();
-            si = true;
-            this.Dispose();
+            if (registrarInstructores())
+            {
+                si = true;
+                this.Dispose();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

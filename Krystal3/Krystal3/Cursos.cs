@@ -30,7 +30,7 @@ namespace Krystal3
         private void Cursos_Load(object sender, EventArgs e)
         {
             llenarTabla();
-            dgvCursos.CurrentCell = dgvCursos.Rows[-1].Cells[-1];
+            //dgvCursos.CurrentCell = dgvCursos.Rows[-1].Cells[-1];
         }
 
         private void dgvCursos_CellClick(object sender, DataGridViewCellEventArgs e)

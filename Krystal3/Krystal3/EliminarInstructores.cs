@@ -43,7 +43,7 @@ namespace Krystal3
 
             }
         }
-        private void eliminarInstructores()
+        private Boolean eliminarInstructores()
         {
             try
             {
@@ -64,6 +64,7 @@ namespace Krystal3
                             if (reader["status"].ToString().Equals("0"))
                             {
                                 MessageBox.Show("Este Instructor no está disponible.");
+                                return false;
                             }
                             else
                             {
@@ -81,6 +82,8 @@ namespace Krystal3
                                         if (read == 1)
                                         {
                                             MessageBox.Show("Se ha eliminado exitosamente.");
+                                            Conexion.Close();
+                                            return true;
                                         }
                                         else if (read == 0)
                                         {
@@ -92,6 +95,8 @@ namespace Krystal3
                                     catch
                                     {
                                         MessageBox.Show("No se pudo Eliminar.");
+                                        Conexion.Close();
+                                        return false;
                                     }
                                 }
                             }
@@ -99,18 +104,24 @@ namespace Krystal3
                         else
                         {
                             MessageBox.Show("Indique un ID para eliminar.");
+                            Conexion.Close();
+                            return false;
                         }
                     }
                     catch
                     {
                         MessageBox.Show("No se pudo eliminar.");
+                        Conexion.Close();
+                        return false;
                     }
                 }
             }
             catch
             {
                 MessageBox.Show("Indique un ID valido.");
+                return false;
             }
+            return false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -120,9 +131,11 @@ namespace Krystal3
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            eliminarInstructores();
-            si = true;
-            this.Dispose();
+            if (eliminarInstructores())
+            {
+                si = true;
+                this.Dispose();
+            }
         }
 
         private void txtID_Leave(object sender, EventArgs e)
