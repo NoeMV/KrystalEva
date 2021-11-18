@@ -115,6 +115,7 @@
     <Compile Include="RegistrarInstructores.Designer.cs">
       <DependentUpon>RegistrarInstructores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Colaboradores.resx">
       <DependentUpon>Colaboradores.cs</DependentUpon>
     </EmbeddedResource>
