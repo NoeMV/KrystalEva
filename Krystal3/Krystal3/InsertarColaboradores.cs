@@ -23,6 +23,7 @@ namespace Krystal3
             CargarOcupaciones();
             CargarNivelesEstudio();
             CargarDocProb();
+            CargarInstituciones();
 
         }
 
@@ -60,7 +61,9 @@ namespace Krystal3
             cbxEstados.Items.Add("TLAXCALA");
             cbxEstados.Items.Add("VERACRUZ DE IGNACIO DE LA LLAVE");
             cbxEstados.Items.Add("YUCATAN");
-            cbxEstados.Items.Add("ZACATECAS");            
+            cbxEstados.Items.Add("ZACATECAS");
+
+            cbxEstados.SelectedIndex = 0;
 
         }
 
@@ -85,6 +88,8 @@ namespace Krystal3
                     {
                         cbxMunicipios.Items.Add(reader["descripcion"].ToString());
                     }
+
+                    cbxMunicipios.SelectedIndex = 0;
 
                 }
                 else
@@ -127,6 +132,7 @@ namespace Krystal3
                         cbxOcupaciones.Items.Add(reader["descripcion"].ToString());
                     }
 
+                    cbxOcupaciones.SelectedIndex = 0;
                 }
                 else
                 {
@@ -158,6 +164,8 @@ namespace Krystal3
             cbxNivelEstudios.Items.Add("Maestría");
             cbxNivelEstudios.Items.Add("Doctorado");
 
+            cbxNivelEstudios.SelectedIndex = 0;
+
         }
 
         private void CargarDocProb()
@@ -169,30 +177,25 @@ namespace Krystal3
             cbxDocProb.Items.Add("Otro");
             cbxDocProb.Items.Add("Ninguno");
 
+            cbxDocProb.SelectedIndex = 0;
+
+        }
+
+        private void CargarInstituciones()
+        {
+
+            cbxInstitucion.Items.Add("Pública");
+            cbxInstitucion.Items.Add("Privada");
+            cbxInstitucion.Items.Add("Ninguna");
+
+            cbxInstitucion.SelectedIndex = 0;
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            String ocupacion = "";
-            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-            SqlConnection Conexion = new SqlConnection(miConexion);
-            String sql = $"SELECT clave FROM ocupaciones WHERE descripcion = '" + cbxOcupaciones.Text + "';";
-            SqlCommand command = new SqlCommand(sql, Conexion);
-            Conexion.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                ocupacion = reader["clave"].ToString();
-                MessageBox.Show("Clave de ocupación: " + ocupacion);
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-            //this.Dispose();
-            MessageBox.Show("Municipio ID: " + Convert.ToString(cbxMunicipios.SelectedIndex));
-            MessageBox.Show("Ocupaciones ID: " + Convert.ToString(cbxOcupaciones.SelectedIndex));
-            Conexion.Close();
+
+            this.Dispose();
 
         }
 
@@ -203,26 +206,51 @@ namespace Krystal3
 
             if (dialogResult == DialogResult.Yes)
             {
-
+                String ocupacion = "";
                 String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
                 SqlConnection Conexion = new SqlConnection(miConexion);
-                String sql = $"INSERT INTO COLABORADORES (curp, nombre, primerApellido, segundoApellido, claveEstado, municipio_id, ocupacion_id, claveNivelEstudios, claveDocProbatorio, claveInstitucion, status) "
-                    + "VALUES ('" + txtCURP.Text + "','" + txtNombre.Text + "','" + txtPrimerApellido.Text + "','" + txtSegundoApellido.Text + "','" + Convert.ToString(cbxMunicipios.SelectedIndex) + "','" + Convert.ToString(cbxOcupaciones.SelectedIndex);
+                String sql = $"SELECT clave FROM ocupaciones WHERE descripcion = '" + cbxOcupaciones.Text + "';";
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
 
-                try
+                if (reader.Read())
                 {
-                    SqlCommand command = new SqlCommand(sql, Conexion);
-                    Conexion.Open();
-                    SqlDataReader reader = command.ExecuteReader();
+                    ocupacion = reader["clave"].ToString();
                     Conexion.Close();
 
-                    MessageBox.Show("Registro exitoso.");
+                    MessageBox.Show("Clave de ocupación: " + ocupacion);
 
+                    int IDclaveEstudio = cbxNivelEstudios.SelectedIndex + 1;
+                    int IDclaveDoc = cbxDocProb.SelectedIndex + 1;
+                    int IDclaveInst = cbxInstitucion.SelectedIndex + 1;
+
+                    try
+                    {
+
+                        miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                        Conexion = new SqlConnection(miConexion);
+                        sql = $"INSERT INTO COLABORADORES (curp, nombre, primerApellido, segundoApellido, claveEstado, municipio_id, ocupacion_id, claveNivelEstudios, claveDocProbatorio, claveInstitucion, status) "
+                        + "VALUES ('" + txtCURP.Text + "','" + txtNombre.Text + "','" + txtPrimerApellido.Text + "','" + txtSegundoApellido.Text + "','" + Convert.ToString(cbxMunicipios.SelectedIndex) + "','" + ocupacion
+                        + "','" + Convert.ToString(IDclaveEstudio) + "','" + Convert.ToString(IDclaveDoc) + "','" + Convert.ToString(IDclaveInst) + "','" + Convert.ToString(1) + "');";
+                        command = new SqlCommand(sql, Conexion);
+                        Conexion.Open();
+                        reader = command.ExecuteReader();
+                        Conexion.Close();
+
+                        MessageBox.Show("Registro exitoso.");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudo establecer conexión con la base de datos, contacte al administrador.");
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("No se pudo establecer conexión con la base de datos, contacte al administrador.");
+                    MessageBox.Show("Error al tratar de obtener el ID de la ocupación, favor de contactar al administrador.");
                 }
+                Conexion.Close();
 
             }
 
