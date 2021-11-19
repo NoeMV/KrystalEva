@@ -241,7 +241,7 @@ namespace Krystal3
                         MessageBox.Show("Registro exitoso.");
 
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         MessageBox.Show("No se pudo establecer conexión con la base de datos, contacte al administrador.");
                     }

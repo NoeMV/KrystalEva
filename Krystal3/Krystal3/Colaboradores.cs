@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Krystal3
@@ -104,6 +97,8 @@ namespace Krystal3
 
             InsertarColaboradores ventana = new InsertarColaboradores();
             ventana.ShowDialog();
+            dataGridView1.Rows.Clear();
+            getColaboradores();
 
         }
 
@@ -156,7 +151,9 @@ namespace Krystal3
 
                 ModificarColaboradores modificar = new ModificarColaboradores(colaboradorCURP);
                 modificar.ShowDialog();
-                //MessageBox.Show(colaboradorCURP);
+                dataGridView1.Rows.Clear();
+                getColaboradores();
+
             }
         }
     }

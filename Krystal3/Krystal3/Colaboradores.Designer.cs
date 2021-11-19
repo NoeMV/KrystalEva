@@ -126,7 +126,7 @@
             this.colaborador_id.Name = "colaborador_id";
             this.colaborador_id.ReadOnly = true;
             this.colaborador_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colaborador_id.Width = 52;
+            this.colaborador_id.Width = 43;
             // 
             // curp
             // 
@@ -135,7 +135,7 @@
             this.curp.Name = "curp";
             this.curp.ReadOnly = true;
             this.curp.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.curp.Width = 99;
+            this.curp.Width = 82;
             // 
             // nombre
             // 
@@ -144,7 +144,7 @@
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
             this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nombre.Width = 132;
+            this.nombre.Width = 109;
             // 
             // primerApellido
             // 
@@ -153,7 +153,7 @@
             this.primerApellido.Name = "primerApellido";
             this.primerApellido.ReadOnly = true;
             this.primerApellido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.primerApellido.Width = 210;
+            this.primerApellido.Width = 176;
             // 
             // segundoApellido
             // 
@@ -162,7 +162,7 @@
             this.segundoApellido.Name = "segundoApellido";
             this.segundoApellido.ReadOnly = true;
             this.segundoApellido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.segundoApellido.Width = 234;
+            this.segundoApellido.Width = 194;
             // 
             // claveEstado
             // 
@@ -171,7 +171,7 @@
             this.claveEstado.Name = "claveEstado";
             this.claveEstado.ReadOnly = true;
             this.claveEstado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveEstado.Width = 189;
+            this.claveEstado.Width = 153;
             // 
             // municipio_id
             // 
@@ -180,7 +180,7 @@
             this.municipio_id.Name = "municipio_id";
             this.municipio_id.ReadOnly = true;
             this.municipio_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.municipio_id.Width = 210;
+            this.municipio_id.Width = 172;
             // 
             // ocupacion_id
             // 
@@ -189,7 +189,7 @@
             this.ocupacion_id.Name = "ocupacion_id";
             this.ocupacion_id.ReadOnly = true;
             this.ocupacion_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ocupacion_id.Width = 226;
+            this.ocupacion_id.Width = 182;
             // 
             // claveNivelEstudios
             // 
@@ -198,7 +198,7 @@
             this.claveNivelEstudios.Name = "claveNivelEstudios";
             this.claveNivelEstudios.ReadOnly = true;
             this.claveNivelEstudios.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveNivelEstudios.Width = 246;
+            this.claveNivelEstudios.Width = 202;
             // 
             // claveDocProbatorio
             // 
@@ -207,7 +207,7 @@
             this.claveDocProbatorio.Name = "claveDocProbatorio";
             this.claveDocProbatorio.ReadOnly = true;
             this.claveDocProbatorio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveDocProbatorio.Width = 285;
+            this.claveDocProbatorio.Width = 231;
             // 
             // claveInstitucion
             // 
@@ -216,7 +216,7 @@
             this.claveInstitucion.Name = "claveInstitucion";
             this.claveInstitucion.ReadOnly = true;
             this.claveInstitucion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveInstitucion.Width = 234;
+            this.claveInstitucion.Width = 189;
             // 
             // btnEditar
             // 
@@ -267,8 +267,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colaborador_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn curp;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -283,5 +281,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnInsertar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
