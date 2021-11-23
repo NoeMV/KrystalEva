@@ -29,6 +29,7 @@ namespace Krystal3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.MenuLateral = new System.Windows.Forms.Panel();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnEstadisticas = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@ namespace Krystal3
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelDashboard = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LabelTitulo = new System.Windows.Forms.Label();
             this.MenuLateral.SuspendLayout();
             this.PanelDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +66,8 @@ namespace Krystal3
             this.BtnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnSalir.FlatAppearance.BorderSize = 0;
+            this.BtnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(153)))));
+            this.BtnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
             this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalir.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSalir.Image = global::Krystal3.Properties.Resources.BtnCerrar;
@@ -80,6 +84,8 @@ namespace Krystal3
             // 
             this.BtnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnEstadisticas.FlatAppearance.BorderSize = 0;
+            this.BtnEstadisticas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(153)))));
+            this.BtnEstadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
             this.BtnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEstadisticas.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEstadisticas.Image = global::Krystal3.Properties.Resources.BtnEstadistica;
@@ -97,6 +103,8 @@ namespace Krystal3
             // 
             this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnReportes.FlatAppearance.BorderSize = 0;
+            this.BtnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(153)))));
+            this.BtnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
             this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReportes.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReportes.Image = global::Krystal3.Properties.Resources.BtnReporte;
@@ -114,6 +122,8 @@ namespace Krystal3
             // 
             this.BtnInstructores.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnInstructores.FlatAppearance.BorderSize = 0;
+            this.BtnInstructores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(168)))), ((int)(((byte)(153)))));
+            this.BtnInstructores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
             this.BtnInstructores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInstructores.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInstructores.Image = global::Krystal3.Properties.Resources.BtnInstructor;
@@ -131,6 +141,8 @@ namespace Krystal3
             // 
             this.BtnColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnColaboradores.FlatAppearance.BorderSize = 0;
+            this.BtnColaboradores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(125)))), ((int)(((byte)(102)))));
+            this.BtnColaboradores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
             this.BtnColaboradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnColaboradores.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnColaboradores.Image = global::Krystal3.Properties.Resources.BtnColaboradores;
@@ -148,6 +160,8 @@ namespace Krystal3
             // 
             this.BtnCursos.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnCursos.FlatAppearance.BorderSize = 0;
+            this.BtnCursos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(125)))), ((int)(((byte)(102)))));
+            this.BtnCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
             this.BtnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCursos.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCursos.Image = global::Krystal3.Properties.Resources.BtnCurso;
@@ -163,7 +177,7 @@ namespace Krystal3
             // 
             // PanelLogo
             // 
-            this.PanelLogo.BackgroundImage = global::Krystal3.Properties.Resources.Krystal_Logo;
+            this.PanelLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelLogo.BackgroundImage")));
             this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
@@ -173,6 +187,7 @@ namespace Krystal3
             // 
             // PanelDashboard
             // 
+            this.PanelDashboard.Controls.Add(this.LabelTitulo);
             this.PanelDashboard.Controls.Add(this.pictureBox1);
             this.PanelDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDashboard.Location = new System.Drawing.Point(200, 0);
@@ -182,13 +197,24 @@ namespace Krystal3
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Krystal3.Properties.Resources.Krystal_Logo;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(282, 113);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 300);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // LabelTitulo
+            // 
+            this.LabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelTitulo.Font = new System.Drawing.Font("Outfit", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTitulo.Location = new System.Drawing.Point(6, 449);
+            this.LabelTitulo.Name = "LabelTitulo";
+            this.LabelTitulo.Size = new System.Drawing.Size(882, 60);
+            this.LabelTitulo.TabIndex = 1;
+            this.LabelTitulo.Text = "Sistema de gestión de capacitaciones";
+            this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Main
             // 
@@ -224,6 +250,7 @@ namespace Krystal3
         private System.Windows.Forms.Panel PanelDashboard;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.Label LabelTitulo;
     }
 }
 

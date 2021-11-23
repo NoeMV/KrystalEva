@@ -75,7 +75,7 @@ namespace Krystal3
             this.dgvCursos.RowHeadersWidth = 51;
             this.dgvCursos.RowTemplate.Height = 24;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCursos.Size = new System.Drawing.Size(884, 521);
+            this.dgvCursos.Size = new System.Drawing.Size(884, 537);
             this.dgvCursos.TabIndex = 11;
             this.dgvCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursos_CellClick);
             this.dgvCursos.Enter += new System.EventHandler(this.dgvCursos_Enter);
@@ -115,7 +115,7 @@ namespace Krystal3
             this.coluClaveArea.Name = "coluClaveArea";
             this.coluClaveArea.ReadOnly = true;
             this.coluClaveArea.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluClaveArea.Width = 83;
+            this.coluClaveArea.Width = 77;
             // 
             // coluDuracion
             // 
@@ -133,7 +133,7 @@ namespace Krystal3
             this.coluFechaIni.Name = "coluFechaIni";
             this.coluFechaIni.ReadOnly = true;
             this.coluFechaIni.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluFechaIni.Width = 89;
+            this.coluFechaIni.Width = 82;
             // 
             // coluFechaFin
             // 
@@ -142,7 +142,7 @@ namespace Krystal3
             this.coluFechaFin.Name = "coluFechaFin";
             this.coluFechaFin.ReadOnly = true;
             this.coluFechaFin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluFechaFin.Width = 79;
+            this.coluFechaFin.Width = 73;
             // 
             // coluClaveObjetivo
             // 
@@ -151,7 +151,7 @@ namespace Krystal3
             this.coluClaveObjetivo.Name = "coluClaveObjetivo";
             this.coluClaveObjetivo.ReadOnly = true;
             this.coluClaveObjetivo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluClaveObjetivo.Width = 99;
+            this.coluClaveObjetivo.Width = 91;
             // 
             // claveModalidad
             // 
@@ -160,7 +160,7 @@ namespace Krystal3
             this.claveModalidad.Name = "claveModalidad";
             this.claveModalidad.ReadOnly = true;
             this.claveModalidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveModalidad.Width = 110;
+            this.claveModalidad.Width = 101;
             // 
             // coluCompetencia
             // 
