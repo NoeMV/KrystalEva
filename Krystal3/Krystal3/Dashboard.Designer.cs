@@ -1,17 +1,17 @@
 ﻿
 namespace Krystal3
 {
-    partial class Main
+    partial class Dashboard
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,16 +21,17 @@ namespace Krystal3
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.MenuLateral = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            this.PanelBarra = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnEstadisticas = new System.Windows.Forms.Button();
             this.BtnReportes = new System.Windows.Forms.Button();
@@ -38,29 +39,44 @@ namespace Krystal3
             this.BtnColaboradores = new System.Windows.Forms.Button();
             this.BtnCursos = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelDashboard = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LabelTitulo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.MenuLateral.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2.SuspendLayout();
+            this.PanelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.PanelDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // MenuLateral
+            // PanelBarra
             // 
-            this.MenuLateral.Controls.Add(this.BtnSalir);
-            this.MenuLateral.Controls.Add(this.BtnEstadisticas);
-            this.MenuLateral.Controls.Add(this.BtnReportes);
-            this.MenuLateral.Controls.Add(this.BtnInstructores);
-            this.MenuLateral.Controls.Add(this.BtnColaboradores);
-            this.MenuLateral.Controls.Add(this.BtnCursos);
-            this.MenuLateral.Controls.Add(this.PanelLogo);
-            this.MenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuLateral.Location = new System.Drawing.Point(0, 0);
-            this.MenuLateral.Name = "MenuLateral";
-            this.MenuLateral.Size = new System.Drawing.Size(200, 850);
-            this.MenuLateral.TabIndex = 2;
+            this.PanelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(69)))), ((int)(((byte)(57)))));
+            this.PanelBarra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelBarra.Location = new System.Drawing.Point(0, 0);
+            this.PanelBarra.Name = "PanelBarra";
+            this.PanelBarra.Size = new System.Drawing.Size(1100, 45);
+            this.PanelBarra.TabIndex = 0;
+            this.PanelBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarra_MouseDown);
+            this.PanelBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelBarra_MouseMove);
+            this.PanelBarra.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PanelBarra_MouseUp);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
+            this.panel2.Controls.Add(this.BtnSalir);
+            this.panel2.Controls.Add(this.BtnEstadisticas);
+            this.panel2.Controls.Add(this.BtnReportes);
+            this.panel2.Controls.Add(this.BtnInstructores);
+            this.panel2.Controls.Add(this.BtnColaboradores);
+            this.panel2.Controls.Add(this.BtnCursos);
+            this.panel2.Controls.Add(this.PanelLogo);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 45);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 805);
+            this.panel2.TabIndex = 1;
             // 
             // BtnSalir
             // 
@@ -73,10 +89,10 @@ namespace Krystal3
             this.BtnSalir.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSalir.Image = global::Krystal3.Properties.Resources.BtnCerrar;
             this.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSalir.Location = new System.Drawing.Point(0, 805);
+            this.BtnSalir.Location = new System.Drawing.Point(0, 760);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(200, 45);
-            this.BtnSalir.TabIndex = 5;
+            this.BtnSalir.TabIndex = 10;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
@@ -95,10 +111,9 @@ namespace Krystal3
             this.BtnEstadisticas.Name = "BtnEstadisticas";
             this.BtnEstadisticas.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnEstadisticas.Size = new System.Drawing.Size(200, 45);
-            this.BtnEstadisticas.TabIndex = 4;
+            this.BtnEstadisticas.TabIndex = 9;
             this.BtnEstadisticas.Text = "Estadísticas";
             this.BtnEstadisticas.UseVisualStyleBackColor = true;
-            this.BtnEstadisticas.Click += new System.EventHandler(this.BtnEstadisticas_Click);
             // 
             // BtnReportes
             // 
@@ -114,10 +129,9 @@ namespace Krystal3
             this.BtnReportes.Name = "BtnReportes";
             this.BtnReportes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnReportes.Size = new System.Drawing.Size(200, 45);
-            this.BtnReportes.TabIndex = 3;
+            this.BtnReportes.TabIndex = 8;
             this.BtnReportes.Text = "Reportes";
             this.BtnReportes.UseVisualStyleBackColor = true;
-            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // BtnInstructores
             // 
@@ -133,10 +147,9 @@ namespace Krystal3
             this.BtnInstructores.Name = "BtnInstructores";
             this.BtnInstructores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnInstructores.Size = new System.Drawing.Size(200, 45);
-            this.BtnInstructores.TabIndex = 2;
+            this.BtnInstructores.TabIndex = 7;
             this.BtnInstructores.Text = "Instructores";
             this.BtnInstructores.UseVisualStyleBackColor = true;
-            this.BtnInstructores.Click += new System.EventHandler(this.BtnInstructores_Click);
             // 
             // BtnColaboradores
             // 
@@ -152,7 +165,7 @@ namespace Krystal3
             this.BtnColaboradores.Name = "BtnColaboradores";
             this.BtnColaboradores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnColaboradores.Size = new System.Drawing.Size(200, 45);
-            this.BtnColaboradores.TabIndex = 1;
+            this.BtnColaboradores.TabIndex = 6;
             this.BtnColaboradores.Text = "Trabajadores";
             this.BtnColaboradores.UseVisualStyleBackColor = true;
             this.BtnColaboradores.Click += new System.EventHandler(this.BtnColaboradores_Click);
@@ -171,31 +184,54 @@ namespace Krystal3
             this.BtnCursos.Name = "BtnCursos";
             this.BtnCursos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnCursos.Size = new System.Drawing.Size(200, 45);
-            this.BtnCursos.TabIndex = 0;
+            this.BtnCursos.TabIndex = 5;
             this.BtnCursos.Text = "Cursos";
             this.BtnCursos.UseVisualStyleBackColor = true;
             this.BtnCursos.Click += new System.EventHandler(this.BtnCursos_Click);
             // 
             // PanelLogo
             // 
-            this.PanelLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelLogo.BackgroundImage")));
             this.PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PanelLogo.Controls.Add(this.pictureBox2);
             this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Name = "PanelLogo";
             this.PanelLogo.Size = new System.Drawing.Size(200, 145);
-            this.PanelLogo.TabIndex = 0;
+            this.PanelLogo.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Krystal3.Properties.Resources.Krystal_Logo;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(200, 145);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // PanelDashboard
             // 
-            this.PanelDashboard.Controls.Add(this.panel1);
+            this.PanelDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.PanelDashboard.Controls.Add(this.LabelTitulo);
             this.PanelDashboard.Controls.Add(this.pictureBox1);
             this.PanelDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelDashboard.Location = new System.Drawing.Point(200, 0);
+            this.PanelDashboard.Location = new System.Drawing.Point(200, 45);
             this.PanelDashboard.Name = "PanelDashboard";
-            this.PanelDashboard.Size = new System.Drawing.Size(900, 850);
-            this.PanelDashboard.TabIndex = 3;
+            this.PanelDashboard.Size = new System.Drawing.Size(900, 805);
+            this.PanelDashboard.TabIndex = 4;
+            // 
+            // LabelTitulo
+            // 
+            this.LabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabelTitulo.Font = new System.Drawing.Font("Outfit", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTitulo.Location = new System.Drawing.Point(15, 531);
+            this.LabelTitulo.Name = "LabelTitulo";
+            this.LabelTitulo.Size = new System.Drawing.Size(882, 60);
+            this.LabelTitulo.TabIndex = 1;
+            this.LabelTitulo.Text = "Sistema de gestión de capacitaciones";
+            this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -207,42 +243,21 @@ namespace Krystal3
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // LabelTitulo
-            // 
-            this.LabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelTitulo.Font = new System.Drawing.Font("Outfit", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTitulo.Location = new System.Drawing.Point(15, 554);
-            this.LabelTitulo.Name = "LabelTitulo";
-            this.LabelTitulo.Size = new System.Drawing.Size(882, 60);
-            this.LabelTitulo.TabIndex = 1;
-            this.LabelTitulo.Text = "Sistema de gestión de capacitaciones";
-            this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 45);
-            this.panel1.TabIndex = 2;
-            // 
-            // Main
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1100, 850);
-            this.ControlBox = false;
             this.Controls.Add(this.PanelDashboard);
-            this.Controls.Add(this.MenuLateral);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(750, 450);
-            this.Name = "Main";
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.PanelBarra);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
-            this.Load += new System.EventHandler(this.Main_Load);
-            this.MenuLateral.ResumeLayout(false);
+            this.Text = "Dashboard";
+            this.panel2.ResumeLayout(false);
+            this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.PanelDashboard.ResumeLayout(false);
             this.PanelDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -251,18 +266,19 @@ namespace Krystal3
         }
 
         #endregion
-        private System.Windows.Forms.Panel MenuLateral;
-        private System.Windows.Forms.Button BtnCursos;
-        private System.Windows.Forms.Panel PanelLogo;
+
+        private System.Windows.Forms.Panel PanelBarra;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button BtnEstadisticas;
         private System.Windows.Forms.Button BtnReportes;
         private System.Windows.Forms.Button BtnInstructores;
         private System.Windows.Forms.Button BtnColaboradores;
-        private System.Windows.Forms.Button BtnEstadisticas;
-        private System.Windows.Forms.Panel PanelDashboard;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BtnCursos;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.Panel PanelDashboard;
         private System.Windows.Forms.Label LabelTitulo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel PanelLogo;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
-

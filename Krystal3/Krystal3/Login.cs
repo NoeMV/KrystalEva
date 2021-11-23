@@ -37,7 +37,7 @@ namespace Krystal3
                 if (u.verificarLogin(txt_usuario.Text, txt_contraseña.Text))
                 {
                     MessageBox.Show("Se ha ingresado correctamente");
-                    Main ventana = new Main();
+                    Dashboard ventana = new Dashboard();
                     ventana.Show();
                     this.Visible = false;
                 } else

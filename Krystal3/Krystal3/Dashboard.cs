@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,20 +10,14 @@ using System.Windows.Forms;
 
 namespace Krystal3
 {
-    public partial class Main : Form
+    public partial class Dashboard : Form
     {
-        public Main()
+        public Dashboard()
         {
             InitializeComponent();
         }
 
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private Form activeForm = null;
-
         private void AbrirFormulario(Form formulario)
         {
             if (activeForm != null)
@@ -70,6 +62,30 @@ namespace Krystal3
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private bool mouseDown;
+        private Point offset;
+
+        private void PanelBarra_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void PanelBarra_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void PanelBarra_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }
