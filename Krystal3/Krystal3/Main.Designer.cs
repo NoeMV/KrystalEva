@@ -29,13 +29,6 @@ namespace Krystal3
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instructoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuLateral = new System.Windows.Forms.Panel();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.BtnEstadisticas = new System.Windows.Forms.Button();
@@ -46,70 +39,10 @@ namespace Krystal3
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelDashboard = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
             this.MenuLateral.SuspendLayout();
             this.PanelDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cursosToolStripMenuItem,
-            this.colaboradoresToolStripMenuItem,
-            this.instructoresToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.estadisticasToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1100, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cursosToolStripMenuItem
-            // 
-            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.cursosToolStripMenuItem.Text = "Cursos";
-            this.cursosToolStripMenuItem.Click += new System.EventHandler(this.CursosToolStripMenuItem_Click);
-            // 
-            // colaboradoresToolStripMenuItem
-            // 
-            this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
-            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
-            this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.ColaboradoresToolStripMenuItem_Click);
-            // 
-            // instructoresToolStripMenuItem
-            // 
-            this.instructoresToolStripMenuItem.Name = "instructoresToolStripMenuItem";
-            this.instructoresToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.instructoresToolStripMenuItem.Text = "Instructores";
-            this.instructoresToolStripMenuItem.Click += new System.EventHandler(this.instructoresToolStripMenuItem_Click);
-            // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.ReportesToolStripMenuItem_Click);
-            // 
-            // estadisticasToolStripMenuItem
-            // 
-            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
-            this.estadisticasToolStripMenuItem.Click += new System.EventHandler(this.EstadisticasToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // MenuLateral
             // 
@@ -121,7 +54,7 @@ namespace Krystal3
             this.MenuLateral.Controls.Add(this.BtnCursos);
             this.MenuLateral.Controls.Add(this.PanelLogo);
             this.MenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuLateral.Location = new System.Drawing.Point(0, 24);
+            this.MenuLateral.Location = new System.Drawing.Point(0, 0);
             this.MenuLateral.Name = "MenuLateral";
             this.MenuLateral.Size = new System.Drawing.Size(200, 650);
             this.MenuLateral.TabIndex = 2;
@@ -207,7 +140,7 @@ namespace Krystal3
             this.BtnColaboradores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnColaboradores.Size = new System.Drawing.Size(200, 45);
             this.BtnColaboradores.TabIndex = 1;
-            this.BtnColaboradores.Text = "Trabjadores";
+            this.BtnColaboradores.Text = "Trabajadores";
             this.BtnColaboradores.UseVisualStyleBackColor = true;
             this.BtnColaboradores.Click += new System.EventHandler(this.BtnColaboradores_Click);
             // 
@@ -242,7 +175,7 @@ namespace Krystal3
             // 
             this.PanelDashboard.Controls.Add(this.pictureBox1);
             this.PanelDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelDashboard.Location = new System.Drawing.Point(200, 24);
+            this.PanelDashboard.Location = new System.Drawing.Point(200, 0);
             this.PanelDashboard.Name = "PanelDashboard";
             this.PanelDashboard.Size = new System.Drawing.Size(900, 650);
             this.PanelDashboard.TabIndex = 3;
@@ -261,38 +194,26 @@ namespace Krystal3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 674);
+            this.ClientSize = new System.Drawing.Size(1100, 650);
             this.ControlBox = false;
             this.Controls.Add(this.PanelDashboard);
             this.Controls.Add(this.MenuLateral);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(750, 450);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.MenuLateral.ResumeLayout(false);
             this.PanelDashboard.ResumeLayout(false);
             this.PanelDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem instructoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.Panel MenuLateral;
         private System.Windows.Forms.Button BtnCursos;
         private System.Windows.Forms.Panel PanelLogo;
