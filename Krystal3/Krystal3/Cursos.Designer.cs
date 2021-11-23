@@ -51,6 +51,7 @@ namespace Krystal3
             // 
             this.dgvCursos.AllowUserToAddRows = false;
             this.dgvCursos.AllowUserToDeleteRows = false;
+            this.dgvCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -96,7 +97,7 @@ namespace Krystal3
             this.coluClave.Name = "coluClave";
             this.coluClave.ReadOnly = true;
             this.coluClave.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluClave.Width = 125;
+            this.coluClave.Width = 59;
             // 
             // coluNombre
             // 
@@ -105,7 +106,7 @@ namespace Krystal3
             this.coluNombre.Name = "coluNombre";
             this.coluNombre.ReadOnly = true;
             this.coluNombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.coluNombre.Width = 125;
+            this.coluNombre.Width = 69;
             // 
             // coluClaveArea
             // 
@@ -114,7 +115,7 @@ namespace Krystal3
             this.coluClaveArea.Name = "coluClaveArea";
             this.coluClaveArea.ReadOnly = true;
             this.coluClaveArea.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluClaveArea.Width = 125;
+            this.coluClaveArea.Width = 83;
             // 
             // coluDuracion
             // 
@@ -123,7 +124,7 @@ namespace Krystal3
             this.coluDuracion.Name = "coluDuracion";
             this.coluDuracion.ReadOnly = true;
             this.coluDuracion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluDuracion.Width = 125;
+            this.coluDuracion.Width = 75;
             // 
             // coluFechaIni
             // 
@@ -132,7 +133,7 @@ namespace Krystal3
             this.coluFechaIni.Name = "coluFechaIni";
             this.coluFechaIni.ReadOnly = true;
             this.coluFechaIni.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluFechaIni.Width = 125;
+            this.coluFechaIni.Width = 89;
             // 
             // coluFechaFin
             // 
@@ -141,7 +142,7 @@ namespace Krystal3
             this.coluFechaFin.Name = "coluFechaFin";
             this.coluFechaFin.ReadOnly = true;
             this.coluFechaFin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluFechaFin.Width = 125;
+            this.coluFechaFin.Width = 79;
             // 
             // coluClaveObjetivo
             // 
@@ -150,7 +151,7 @@ namespace Krystal3
             this.coluClaveObjetivo.Name = "coluClaveObjetivo";
             this.coluClaveObjetivo.ReadOnly = true;
             this.coluClaveObjetivo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluClaveObjetivo.Width = 125;
+            this.coluClaveObjetivo.Width = 99;
             // 
             // claveModalidad
             // 
@@ -159,7 +160,7 @@ namespace Krystal3
             this.claveModalidad.Name = "claveModalidad";
             this.claveModalidad.ReadOnly = true;
             this.claveModalidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveModalidad.Width = 125;
+            this.claveModalidad.Width = 110;
             // 
             // coluCompetencia
             // 
@@ -167,7 +168,7 @@ namespace Krystal3
             this.coluCompetencia.MinimumWidth = 6;
             this.coluCompetencia.Name = "coluCompetencia";
             this.coluCompetencia.ReadOnly = true;
-            this.coluCompetencia.Width = 125;
+            this.coluCompetencia.Width = 94;
             // 
             // coluInstructor
             // 
@@ -175,7 +176,7 @@ namespace Krystal3
             this.coluInstructor.MinimumWidth = 6;
             this.coluInstructor.Name = "coluInstructor";
             this.coluInstructor.ReadOnly = true;
-            this.coluInstructor.Width = 125;
+            this.coluInstructor.Width = 76;
             // 
             // btnEliminar
             // 
