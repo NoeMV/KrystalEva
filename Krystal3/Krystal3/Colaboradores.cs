@@ -11,14 +11,18 @@ namespace Krystal3
         private static int colaboradorID = 0;
         private static String colaboradorCURP = "";
         private static int row = -1;
+        private static String[,] arrayMunicipios = new String[2460, 2];
+        private static String claveID = "";
+
         public Colaboradores()
         {
             InitializeComponent();
-            getColaboradores();
+            GetClaveMunicipio(0, "");
+            GetColaboradores();
         }
 
 
-        public void getColaboradores()
+        public void GetColaboradores()
         {
             ArrayList listaColaboradorID = new ArrayList();
             ArrayList listaCurp = new ArrayList();
@@ -69,7 +73,8 @@ namespace Krystal3
                         fila.Cells[3].Value = listaPrimerApellido[i];
                         fila.Cells[4].Value = listaSegundoApellido[i];
                         fila.Cells[5].Value = listaClaveEstado[i];
-                        fila.Cells[6].Value = listaMunicipioID[i];
+                        GetClaveMunicipio(1, Convert.ToString(listaMunicipioID[i]));
+                        fila.Cells[6].Value = claveID;
                         fila.Cells[7].Value = listaOcupacionID[i];
                         fila.Cells[8].Value = listaNivelEstudios[i];
                         fila.Cells[9].Value = listaClaveDocProbatorio[i];
@@ -92,17 +97,17 @@ namespace Krystal3
             }
         }
 
-        private void btnInsertar_Click(object sender, EventArgs e)
+        private void BtnInsertar_Click(object sender, EventArgs e)
         {
 
             InsertarColaboradores ventana = new InsertarColaboradores();
             ventana.ShowDialog();
             dataGridView1.Rows.Clear();
-            getColaboradores();
+            GetColaboradores();
 
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
 
             DialogResult dialogResult = MessageBox.Show("¿Está seguro que quiere eliminar al colaborador?", "Eliminar colaborador", MessageBoxButtons.YesNo);
@@ -119,13 +124,13 @@ namespace Krystal3
 
                 MessageBox.Show("¡Colaborador eliminado satisfactoriamente!");
                 this.dataGridView1.Rows.Clear();
-                getColaboradores();
+                GetColaboradores();
 
             }
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
             row = e.RowIndex;
@@ -138,7 +143,7 @@ namespace Krystal3
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
             if (row <= -1)
             {
@@ -152,8 +157,62 @@ namespace Krystal3
                 ModificarColaboradores modificar = new ModificarColaboradores(colaboradorCURP);
                 modificar.ShowDialog();
                 dataGridView1.Rows.Clear();
-                getColaboradores();
+                GetColaboradores();
 
+            }
+        }
+
+        private void GetClaveMunicipio(int funcion, String clave)
+        {
+            if (funcion == 0)
+            {
+                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                SqlConnection Conexion = new SqlConnection(miConexion);
+                String sql = "SELECT municipio_id, clave FROM municipios";
+
+                try
+                {
+
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+
+                        int x = 0;
+                        while (reader.Read())
+                        {
+
+                            arrayMunicipios[x, 0] = reader["municipio_id"].ToString();
+                            arrayMunicipios[x, 1] = reader["clave"].ToString();
+
+                            x++;
+
+                        }
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Error al cargar datos de municipios, si el problema persiste contacte al administrador.");
+
+                    }
+                    Conexion.Close();
+                }
+
+                catch (Exception e)
+                {
+
+                    MessageBox.Show("2: No se pudo establecer conexion.\n" + e.Message);
+
+                }
+            }
+
+            else if (funcion == 1)
+            {
+                int x = Convert.ToInt32(clave) - 1;
+                claveID = arrayMunicipios[x, 1];
             }
         }
     }

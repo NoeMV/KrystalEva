@@ -58,7 +58,7 @@ namespace Krystal3
             this.cbxInstitucion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxInstitucion.FormattingEnabled = true;
             this.cbxInstitucion.Location = new System.Drawing.Point(155, 255);
-            this.cbxInstitucion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxInstitucion.Margin = new System.Windows.Forms.Padding(2);
             this.cbxInstitucion.Name = "cbxInstitucion";
             this.cbxInstitucion.Size = new System.Drawing.Size(269, 21);
             this.cbxInstitucion.TabIndex = 46;
@@ -118,6 +118,7 @@ namespace Krystal3
             this.cbxEstados.Name = "cbxEstados";
             this.cbxEstados.Size = new System.Drawing.Size(269, 21);
             this.cbxEstados.TabIndex = 40;
+            this.cbxEstados.SelectionChangeCommitted += new System.EventHandler(this.CbxEstados_SelectionChangeCommitted);
             // 
             // label9
             // 
@@ -293,7 +294,7 @@ namespace Krystal3
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ModificarColaboradores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarColaboradores";

@@ -157,6 +157,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegistrarCursos.resx">
       <DependentUpon>RegistrarCursos.cs</DependentUpon>
@@ -176,6 +177,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="krystal-vallarta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Krystal-Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BtnSalir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BtnCerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BtnColaboradores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BtnCurso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BtnEstadistica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BtnInstructor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BtnReporte.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

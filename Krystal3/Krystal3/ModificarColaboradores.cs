@@ -16,8 +16,8 @@ namespace Krystal3
         public ModificarColaboradores(String CURP)
         {
             InitializeComponent();
-            CargarEstados();
             GetMunicipios(0, "");
+            CargarEstados();            
             GetOcupaciones(0, "");
             CargarNivelesEstudio();
             CargarDocProb();
@@ -98,6 +98,7 @@ namespace Krystal3
 
                         Estados(0, claveEstado);
                         GetMunicipios(1, claveMunicipio);
+                        GetMunicipios(3, "");
                         GetOcupaciones(1, claveOcupacion);
                         Estudios(0, claveEstudios);
                         Docs(0, claveDoc);
@@ -173,15 +174,14 @@ namespace Krystal3
                 }
             }
 
-            if (funcion == 1)
+            else if (funcion == 1)
             {
                 int x = Convert.ToInt32(municipio) - 1;
                 cbxMunicipios.Text = arrayMunicipios[x, 2];
                 claveMunicipio = arrayMunicipios[x, 0];
-                MessageBox.Show("Municipio: " + arrayMunicipios[x, 2] + "\nMunicipio ID: " + arrayMunicipios[x, 0]);
             }
             
-            if (funcion == 2)
+            else if (funcion == 2)
             {
                 for (int x = 0; x < 2460; x++)
                 {
@@ -190,6 +190,298 @@ namespace Krystal3
                         cbxMunicipios.Text = arrayMunicipios[x, 2];
                         claveMunicipio = arrayMunicipios[x, 0];
                         break;
+                    }
+                }
+            }
+
+            else if (funcion == 3)
+            {
+                if (cbxEstados.SelectedIndex == 0)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 0; x < 11; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 1)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 11; x < 16; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 2)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 16; x < 21; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 3)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 21; x < 32; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 4)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 32; x < 155; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 5)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 155; x < 222; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 6)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 222; x < 260; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 7)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 260; x < 270; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 8)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 270; x < 286; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 9)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 286; x < 325; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 10)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 325; x < 371; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 11)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 371; x < 452; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 12)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 452; x < 536; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 13)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 536; x < 660; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 14)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 660; x < 785; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 15)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 785; x < 898; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 16)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 898; x < 931; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 17)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 931; x < 951; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 18)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 951; x < 1003; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 19)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1003; x < 1573; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 20)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1573; x < 1790; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 21)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1790; x < 1808; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 22)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1808; x < 1819; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 23)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1819; x < 1877; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 24)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1877; x < 1895; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 25)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1895; x < 1965; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 26)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1965; x < 1982; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 27)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1982; x < 2025; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 28)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 2025; x < 2085; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 29)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 2085; x < 2297; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 30)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 2297; x < 2403; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 31)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 2403; x < 2460; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
                     }
                 }
             }
@@ -312,6 +604,15 @@ namespace Krystal3
         {
 
             this.Dispose();
+
+        }
+
+        private void CbxEstados_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (arrayMunicipios[0,0] != null)
+            {
+                GetMunicipios(3, "");
+            }
 
         }
 
