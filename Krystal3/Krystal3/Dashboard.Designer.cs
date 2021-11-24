@@ -52,11 +52,11 @@ namespace Krystal3
             // 
             // PanelBarra
             // 
-            this.PanelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(69)))), ((int)(((byte)(57)))));
+            this.PanelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(76)))), ((int)(((byte)(66)))));
             this.PanelBarra.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBarra.Location = new System.Drawing.Point(0, 0);
             this.PanelBarra.Name = "PanelBarra";
-            this.PanelBarra.Size = new System.Drawing.Size(1100, 45);
+            this.PanelBarra.Size = new System.Drawing.Size(1100, 40);
             this.PanelBarra.TabIndex = 0;
             this.PanelBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBarra_MouseDown);
             this.PanelBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelBarra_MouseMove);
@@ -73,36 +73,37 @@ namespace Krystal3
             this.panel2.Controls.Add(this.BtnCursos);
             this.panel2.Controls.Add(this.PanelLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 45);
+            this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 805);
+            this.panel2.Size = new System.Drawing.Size(200, 710);
             this.panel2.TabIndex = 1;
             // 
             // BtnSalir
             // 
+            this.BtnSalir.BackColor = System.Drawing.Color.Transparent;
             this.BtnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnSalir.FlatAppearance.BorderSize = 0;
-            this.BtnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(217)))));
-            this.BtnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
+            this.BtnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(182)))), ((int)(((byte)(175)))));
+            this.BtnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(215)))));
             this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalir.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSalir.Image = global::Krystal3.Properties.Resources.BtnCerrar;
             this.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSalir.Location = new System.Drawing.Point(0, 760);
+            this.BtnSalir.Location = new System.Drawing.Point(0, 665);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(200, 45);
             this.BtnSalir.TabIndex = 10;
             this.BtnSalir.Text = "Salir";
-            this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // BtnEstadisticas
             // 
             this.BtnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnEstadisticas.FlatAppearance.BorderSize = 0;
-            this.BtnEstadisticas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(217)))));
-            this.BtnEstadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
+            this.BtnEstadisticas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(182)))), ((int)(((byte)(175)))));
+            this.BtnEstadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(215)))));
             this.BtnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEstadisticas.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEstadisticas.Image = global::Krystal3.Properties.Resources.BtnEstadistica;
@@ -119,8 +120,8 @@ namespace Krystal3
             // 
             this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnReportes.FlatAppearance.BorderSize = 0;
-            this.BtnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(217)))));
-            this.BtnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
+            this.BtnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(182)))), ((int)(((byte)(175)))));
+            this.BtnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(215)))));
             this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReportes.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReportes.Image = global::Krystal3.Properties.Resources.BtnReporte;
@@ -137,8 +138,8 @@ namespace Krystal3
             // 
             this.BtnInstructores.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnInstructores.FlatAppearance.BorderSize = 0;
-            this.BtnInstructores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(217)))));
-            this.BtnInstructores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
+            this.BtnInstructores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(182)))), ((int)(((byte)(175)))));
+            this.BtnInstructores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(215)))));
             this.BtnInstructores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInstructores.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInstructores.Image = global::Krystal3.Properties.Resources.BtnInstructor;
@@ -150,13 +151,14 @@ namespace Krystal3
             this.BtnInstructores.TabIndex = 7;
             this.BtnInstructores.Text = "Instructores";
             this.BtnInstructores.UseVisualStyleBackColor = true;
+            this.BtnInstructores.Click += new System.EventHandler(this.BtnInstructores_Click);
             // 
             // BtnColaboradores
             // 
             this.BtnColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnColaboradores.FlatAppearance.BorderSize = 0;
-            this.BtnColaboradores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(217)))));
-            this.BtnColaboradores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
+            this.BtnColaboradores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(182)))), ((int)(((byte)(175)))));
+            this.BtnColaboradores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(215)))));
             this.BtnColaboradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnColaboradores.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnColaboradores.Image = global::Krystal3.Properties.Resources.BtnColaboradores;
@@ -174,8 +176,8 @@ namespace Krystal3
             // 
             this.BtnCursos.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnCursos.FlatAppearance.BorderSize = 0;
-            this.BtnCursos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(217)))));
-            this.BtnCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(229)))));
+            this.BtnCursos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(182)))), ((int)(((byte)(175)))));
+            this.BtnCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(215)))));
             this.BtnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCursos.Font = new System.Drawing.Font("Outfit", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCursos.Image = global::Krystal3.Properties.Resources.BtnCurso;
@@ -217,18 +219,19 @@ namespace Krystal3
             this.PanelDashboard.Controls.Add(this.LabelTitulo);
             this.PanelDashboard.Controls.Add(this.pictureBox1);
             this.PanelDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelDashboard.Location = new System.Drawing.Point(200, 45);
+            this.PanelDashboard.Location = new System.Drawing.Point(200, 40);
             this.PanelDashboard.Name = "PanelDashboard";
-            this.PanelDashboard.Size = new System.Drawing.Size(900, 805);
+            this.PanelDashboard.Size = new System.Drawing.Size(900, 710);
             this.PanelDashboard.TabIndex = 4;
             // 
             // LabelTitulo
             // 
             this.LabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LabelTitulo.Font = new System.Drawing.Font("Outfit", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTitulo.Location = new System.Drawing.Point(15, 531);
+            this.LabelTitulo.ForeColor = System.Drawing.Color.Black;
+            this.LabelTitulo.Location = new System.Drawing.Point(0, 503);
             this.LabelTitulo.Name = "LabelTitulo";
-            this.LabelTitulo.Size = new System.Drawing.Size(882, 60);
+            this.LabelTitulo.Size = new System.Drawing.Size(900, 60);
             this.LabelTitulo.TabIndex = 1;
             this.LabelTitulo.Text = "Sistema de gestión de capacitaciones";
             this.LabelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,7 +250,7 @@ namespace Krystal3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 850);
+            this.ClientSize = new System.Drawing.Size(1100, 750);
             this.Controls.Add(this.PanelDashboard);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PanelBarra);

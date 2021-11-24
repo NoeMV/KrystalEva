@@ -42,9 +42,10 @@ namespace Krystal3
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(525, 12);
+            this.btnSalir.Location = new System.Drawing.Point(374, 592);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 33);
+            this.btnSalir.Size = new System.Drawing.Size(56, 27);
             this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Cerrar";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -57,11 +58,13 @@ namespace Krystal3
             this.columnaID,
             this.columnaClaveTipoAgente,
             this.ColumnaRfcAgente});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 51);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(884, 565);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
@@ -89,9 +92,10 @@ namespace Krystal3
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(41, 12);
+            this.btnRegistrar.Location = new System.Drawing.Point(11, 592);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(87, 33);
+            this.btnRegistrar.Size = new System.Drawing.Size(65, 27);
             this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -99,9 +103,10 @@ namespace Krystal3
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(180, 12);
+            this.btnModificar.Location = new System.Drawing.Point(115, 592);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(87, 33);
+            this.btnModificar.Size = new System.Drawing.Size(65, 27);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -109,9 +114,10 @@ namespace Krystal3
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(324, 12);
+            this.btnEliminar.Location = new System.Drawing.Point(223, 592);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(87, 33);
+            this.btnEliminar.Size = new System.Drawing.Size(65, 27);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -119,9 +125,9 @@ namespace Krystal3
             // 
             // Instructores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(884, 671);
             this.ControlBox = false;
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -129,6 +135,7 @@ namespace Krystal3
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Instructores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Instructores";
