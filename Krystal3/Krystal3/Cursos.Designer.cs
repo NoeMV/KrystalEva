@@ -51,6 +51,8 @@ namespace Krystal3
             // 
             this.dgvCursos.AllowUserToAddRows = false;
             this.dgvCursos.AllowUserToDeleteRows = false;
+            this.dgvCursos.AllowUserToResizeColumns = false;
+            this.dgvCursos.AllowUserToResizeRows = false;
             this.dgvCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -68,14 +70,14 @@ namespace Krystal3
             this.coluInstructor});
             this.dgvCursos.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvCursos.Location = new System.Drawing.Point(0, 0);
-            this.dgvCursos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCursos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCursos.MultiSelect = false;
             this.dgvCursos.Name = "dgvCursos";
             this.dgvCursos.ReadOnly = true;
             this.dgvCursos.RowHeadersWidth = 51;
             this.dgvCursos.RowTemplate.Height = 24;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCursos.Size = new System.Drawing.Size(884, 537);
+            this.dgvCursos.Size = new System.Drawing.Size(1179, 661);
             this.dgvCursos.TabIndex = 11;
             this.dgvCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursos_CellClick);
             this.dgvCursos.Enter += new System.EventHandler(this.dgvCursos_Enter);
@@ -97,7 +99,7 @@ namespace Krystal3
             this.coluClave.Name = "coluClave";
             this.coluClave.ReadOnly = true;
             this.coluClave.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluClave.Width = 59;
+            this.coluClave.Width = 72;
             // 
             // coluNombre
             // 
@@ -106,7 +108,7 @@ namespace Krystal3
             this.coluNombre.Name = "coluNombre";
             this.coluNombre.ReadOnly = true;
             this.coluNombre.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.coluNombre.Width = 69;
+            this.coluNombre.Width = 87;
             // 
             // coluClaveArea
             // 
@@ -115,7 +117,7 @@ namespace Krystal3
             this.coluClaveArea.Name = "coluClaveArea";
             this.coluClaveArea.ReadOnly = true;
             this.coluClaveArea.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluClaveArea.Width = 77;
+            this.coluClaveArea.Width = 97;
             // 
             // coluDuracion
             // 
@@ -124,7 +126,7 @@ namespace Krystal3
             this.coluDuracion.Name = "coluDuracion";
             this.coluDuracion.ReadOnly = true;
             this.coluDuracion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluDuracion.Width = 75;
+            this.coluDuracion.Width = 94;
             // 
             // coluFechaIni
             // 
@@ -133,7 +135,7 @@ namespace Krystal3
             this.coluFechaIni.Name = "coluFechaIni";
             this.coluFechaIni.ReadOnly = true;
             this.coluFechaIni.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluFechaIni.Width = 82;
+            this.coluFechaIni.Width = 103;
             // 
             // coluFechaFin
             // 
@@ -142,7 +144,7 @@ namespace Krystal3
             this.coluFechaFin.Name = "coluFechaFin";
             this.coluFechaFin.ReadOnly = true;
             this.coluFechaFin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluFechaFin.Width = 73;
+            this.coluFechaFin.Width = 91;
             // 
             // coluClaveObjetivo
             // 
@@ -151,7 +153,7 @@ namespace Krystal3
             this.coluClaveObjetivo.Name = "coluClaveObjetivo";
             this.coluClaveObjetivo.ReadOnly = true;
             this.coluClaveObjetivo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.coluClaveObjetivo.Width = 91;
+            this.coluClaveObjetivo.Width = 115;
             // 
             // claveModalidad
             // 
@@ -160,7 +162,7 @@ namespace Krystal3
             this.claveModalidad.Name = "claveModalidad";
             this.claveModalidad.ReadOnly = true;
             this.claveModalidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveModalidad.Width = 101;
+            this.claveModalidad.Width = 129;
             // 
             // coluCompetencia
             // 
@@ -168,7 +170,7 @@ namespace Krystal3
             this.coluCompetencia.MinimumWidth = 6;
             this.coluCompetencia.Name = "coluCompetencia";
             this.coluCompetencia.ReadOnly = true;
-            this.coluCompetencia.Width = 94;
+            this.coluCompetencia.Width = 119;
             // 
             // coluInstructor
             // 
@@ -176,14 +178,14 @@ namespace Krystal3
             this.coluInstructor.MinimumWidth = 6;
             this.coluInstructor.Name = "coluInstructor";
             this.coluInstructor.ReadOnly = true;
-            this.coluInstructor.Width = 76;
+            this.coluInstructor.Width = 96;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(131, 581);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(175, 715);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(56, 19);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -191,10 +193,10 @@ namespace Krystal3
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(71, 581);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Location = new System.Drawing.Point(95, 715);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(56, 19);
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -202,10 +204,10 @@ namespace Krystal3
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(11, 581);
-            this.btnCrear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrear.Location = new System.Drawing.Point(15, 715);
+            this.btnCrear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(56, 19);
+            this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 8;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
@@ -213,14 +215,14 @@ namespace Krystal3
             // 
             // Cursos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 611);
+            this.ClientSize = new System.Drawing.Size(1179, 752);
             this.Controls.Add(this.dgvCursos);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnCrear);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Cursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

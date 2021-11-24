@@ -15,7 +15,7 @@ namespace Krystal3
     public partial class Cursos : Form
     {
         public static string cursoID="";
-        public static Boolean modificar = false, seleccion=false;
+        public static Boolean modificar = false, seleccion=true;
         public Cursos()
         {
             InitializeComponent();
@@ -25,6 +25,8 @@ namespace Krystal3
         {
             RegistrarCursos ventana = new RegistrarCursos();
             ventana.ShowDialog();
+            vaciarTabla();
+            llenarTabla();
         }
 
         private void Cursos_Load(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace Krystal3
             
             if (n != -1)
             {
-               
+
                 modificar = true;
                 seleccion = true;
                 cursoID = (string)dgvCursos.Rows[n].Cells[0].Value;
@@ -51,9 +53,13 @@ namespace Krystal3
         {
             if (seleccion)
             {
-
+                cursoID = dgvCursos.CurrentRow.Cells[0].Value.ToString();
+                //MessageBox.Show(cursoID);
+                modificar = true;
                 RegistrarCursos ventana = new RegistrarCursos();
                 ventana.ShowDialog();
+                vaciarTabla();
+                llenarTabla();
 
             }
             else
@@ -70,13 +76,15 @@ namespace Krystal3
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (seleccion)
+           DialogResult resultado=MessageBox.Show("¿Desea eliminar el curso seleccionado?", "Eliminar Curso", MessageBoxButtons.YesNoCancel);
+
+            if (seleccion && resultado==System.Windows.Forms.DialogResult.Yes)
             {
 
                 String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
                 SqlConnection Conexion = new SqlConnection(miConexion);
                 String sql = "update cursos set status='0' where curso_id='" + cursoID + "';";
-
+                //MessageBox.Show(cursoID);
 
                 try
                 {
@@ -87,7 +95,7 @@ namespace Krystal3
                     Conexion.Close();
                     vaciarTabla();
                     llenarTabla();
-                    
+                    modificar = false;
 
                 }
                 catch (Exception exception)
