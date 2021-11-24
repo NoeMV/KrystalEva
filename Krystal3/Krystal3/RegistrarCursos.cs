@@ -44,7 +44,7 @@ namespace Krystal3
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Ha ocurrido un error al conectar con la base de datos");
+                MessageBox.Show("Ha ocurrido un error al obtener instructor");
                 MessageBox.Show(exception.Message);
             }
 
@@ -68,7 +68,7 @@ namespace Krystal3
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Ha ocurrido un error al conectar con la base de datos");
+                MessageBox.Show("Ha ocurrido un error al obtener competencia");
                 MessageBox.Show(exception.Message);
             }
 
@@ -145,7 +145,7 @@ namespace Krystal3
 
             try
             {
-                MessageBox.Show("si entra");
+                //MessageBox.Show("si entra");
                 SqlCommand command = new SqlCommand(sql, Conexion);
                 Conexion.Open();
                 SqlDataReader reader = command.ExecuteReader();
@@ -200,7 +200,7 @@ namespace Krystal3
                 sql = "update cursos set claveCurso='" + txtClaveCurso.Text + "', nombreCurso='" + txtNombreCurso.Text +
                               "',claveAreaTema='" + txtClaveAreaTema.Text + "',duracion='" + (string)cmbDuracion.SelectedItem +
                               "',fechaInicio='" + fechaInicio + "', fechaFin='" + fechaFin +
-                              "', claveObjetivo='" + cmbClaveObjetivo.Text + "',claveModalidad='" + cmbClaveModalidad + "',competencia_id='" + competenciaID +
+                              "', claveObjetivo='" + getClaveObjetivo(cmbClaveObjetivo.Text)  + "',claveModalidad='" + getClaveModalidad(cmbClaveModalidad.Text)  + "',competencia_id='" + competenciaID +
                               "', instructor_id='" + instructorID + "' where curso_id='" + Cursos.cursoID + "' ;";
 
                 try
@@ -224,7 +224,7 @@ namespace Krystal3
                 sql = "insert into cursos (claveCurso,nombreCurso,claveAreaTema,duracion,fechaInicio,fechaFin,claveObjetivo," +
                     "claveModalidad,competencia_id,instructor_id,status) values ('" + txtClaveCurso.Text + "','" + txtNombreCurso.Text + "'," +
                     "'" + txtClaveAreaTema.Text + "','" + (string)cmbDuracion.SelectedItem + "','" + fechaInicio + "','" + fechaFin + "'," +
-                    "'" + cmbClaveObjetivo.Text + "','" + cmbClaveModalidad.Text + "'," + competenciaID + "," + instructorID + ",1);";
+                    "'" + getClaveObjetivo(cmbClaveObjetivo.Text) + "','" + getClaveModalidad(cmbClaveModalidad.Text) + "'," + competenciaID + "," + instructorID + ",1);";
                 try
                 {
                     SqlCommand command = new SqlCommand(sql, Conexion);
@@ -276,6 +276,62 @@ namespace Krystal3
             }
 
             return dato;
+        }
+
+        private string getClaveObjetivo(string objetivo)
+        {
+            string clave = "";
+
+            switch (objetivo)
+            {
+
+                case "Actualizar y perfeccionar conocimientos y habilidades":
+                    clave = "1";
+                    break;
+
+                case "Proporcionar informacion de nuevas tecnologias":
+                    clave = "2";
+                    break;
+
+                case "Preparar para ocupar vacantes o puestos de nueva creacion":
+                    clave = "3";
+                    break;
+
+                case "Prevenir riesgos de trabajo":
+                    clave = "4";
+                    break;
+
+                case "Incremento a la productividad":
+                    clave = "5";
+                    break;
+            }
+
+            return clave;
+
+        }
+
+        private string getClaveModalidad(string modalidad)
+        {
+            string clave = "";
+
+            switch (modalidad)
+            {
+
+                case "Presencial":
+                    clave = "1";
+                    break;
+
+                case "En linea":
+                    clave = "2";
+                    break;
+
+                case "Mixta":
+                    clave = "3";
+                    break;
+            }
+
+            return clave;
+
         }
     }
 }

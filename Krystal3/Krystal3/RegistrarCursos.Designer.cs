@@ -51,6 +51,7 @@ namespace Krystal3
             this.label10 = new System.Windows.Forms.Label();
             this.cmbClaveModalidad = new System.Windows.Forms.ComboBox();
             this.cmbClaveObjetivo = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dteFechaFin
@@ -60,25 +61,25 @@ namespace Krystal3
             this.dteFechaFin.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
             this.dteFechaFin.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dteFechaFin.Name = "dteFechaFin";
-            this.dteFechaFin.Size = new System.Drawing.Size(200, 22);
-            this.dteFechaFin.TabIndex = 40;
+            this.dteFechaFin.Size = new System.Drawing.Size(480, 22);
+            this.dteFechaFin.TabIndex = 26;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(303, 477);
+            this.btnCancelar.Location = new System.Drawing.Point(417, 468);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 39;
+            this.btnCancelar.TabIndex = 32;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(81, 477);
+            this.btnGuardar.Location = new System.Drawing.Point(195, 468);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 38;
+            this.btnGuardar.TabIndex = 31;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -101,24 +102,24 @@ namespace Krystal3
             "12"});
             this.cmbDuracion.Location = new System.Drawing.Point(171, 144);
             this.cmbDuracion.Name = "cmbDuracion";
-            this.cmbDuracion.Size = new System.Drawing.Size(200, 24);
-            this.cmbDuracion.TabIndex = 37;
+            this.cmbDuracion.Size = new System.Drawing.Size(428, 24);
+            this.cmbDuracion.TabIndex = 24;
             // 
             // cmbInstructor
             // 
             this.cmbInstructor.FormattingEnabled = true;
             this.cmbInstructor.Location = new System.Drawing.Point(171, 392);
             this.cmbInstructor.Name = "cmbInstructor";
-            this.cmbInstructor.Size = new System.Drawing.Size(200, 24);
-            this.cmbInstructor.TabIndex = 36;
+            this.cmbInstructor.Size = new System.Drawing.Size(480, 24);
+            this.cmbInstructor.TabIndex = 30;
             // 
             // cmbCompetencia
             // 
             this.cmbCompetencia.FormattingEnabled = true;
             this.cmbCompetencia.Location = new System.Drawing.Point(171, 356);
             this.cmbCompetencia.Name = "cmbCompetencia";
-            this.cmbCompetencia.Size = new System.Drawing.Size(200, 24);
-            this.cmbCompetencia.TabIndex = 35;
+            this.cmbCompetencia.Size = new System.Drawing.Size(480, 24);
+            this.cmbCompetencia.TabIndex = 29;
             // 
             // dteFechaInicio
             // 
@@ -127,22 +128,22 @@ namespace Krystal3
             this.dteFechaInicio.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
             this.dteFechaInicio.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dteFechaInicio.Name = "dteFechaInicio";
-            this.dteFechaInicio.Size = new System.Drawing.Size(200, 22);
-            this.dteFechaInicio.TabIndex = 34;
+            this.dteFechaInicio.Size = new System.Drawing.Size(480, 22);
+            this.dteFechaInicio.TabIndex = 25;
             // 
             // txtClaveAreaTema
             // 
             this.txtClaveAreaTema.Location = new System.Drawing.Point(171, 107);
             this.txtClaveAreaTema.Name = "txtClaveAreaTema";
-            this.txtClaveAreaTema.Size = new System.Drawing.Size(200, 22);
-            this.txtClaveAreaTema.TabIndex = 33;
+            this.txtClaveAreaTema.Size = new System.Drawing.Size(480, 22);
+            this.txtClaveAreaTema.TabIndex = 23;
             // 
             // txtClaveCurso
             // 
             this.txtClaveCurso.Location = new System.Drawing.Point(171, 28);
             this.txtClaveCurso.Name = "txtClaveCurso";
-            this.txtClaveCurso.Size = new System.Drawing.Size(200, 22);
-            this.txtClaveCurso.TabIndex = 31;
+            this.txtClaveCurso.Size = new System.Drawing.Size(480, 22);
+            this.txtClaveCurso.TabIndex = 21;
             // 
             // label9
             // 
@@ -229,8 +230,8 @@ namespace Krystal3
             // 
             this.txtNombreCurso.Location = new System.Drawing.Point(171, 69);
             this.txtNombreCurso.Name = "txtNombreCurso";
-            this.txtNombreCurso.Size = new System.Drawing.Size(200, 22);
-            this.txtNombreCurso.TabIndex = 21;
+            this.txtNombreCurso.Size = new System.Drawing.Size(480, 22);
+            this.txtNombreCurso.TabIndex = 22;
             // 
             // label10
             // 
@@ -245,33 +246,43 @@ namespace Krystal3
             // 
             this.cmbClaveModalidad.FormattingEnabled = true;
             this.cmbClaveModalidad.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
+            "Presencial",
+            "En linea",
+            "Mixta"});
             this.cmbClaveModalidad.Location = new System.Drawing.Point(171, 311);
             this.cmbClaveModalidad.Name = "cmbClaveModalidad";
-            this.cmbClaveModalidad.Size = new System.Drawing.Size(200, 24);
-            this.cmbClaveModalidad.TabIndex = 42;
+            this.cmbClaveModalidad.Size = new System.Drawing.Size(480, 24);
+            this.cmbClaveModalidad.TabIndex = 28;
             // 
             // cmbClaveObjetivo
             // 
             this.cmbClaveObjetivo.FormattingEnabled = true;
             this.cmbClaveObjetivo.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
+            "Actualizar y perfeccionar conocimientos y habilidades",
+            "Proporcionar informacion de nuevas tecnologias",
+            "Preparar para ocupar vacantes o puestos de nueva creacion",
+            "Prevenir riesgos de trabajo",
+            "Incremento a la productividad"});
             this.cmbClaveObjetivo.Location = new System.Drawing.Point(171, 266);
             this.cmbClaveObjetivo.Name = "cmbClaveObjetivo";
-            this.cmbClaveObjetivo.Size = new System.Drawing.Size(200, 24);
-            this.cmbClaveObjetivo.TabIndex = 43;
+            this.cmbClaveObjetivo.Size = new System.Drawing.Size(480, 24);
+            this.cmbClaveObjetivo.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(605, 147);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 17);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Horas";
             // 
             // RegistrarCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 535);
+            this.ClientSize = new System.Drawing.Size(687, 535);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbClaveObjetivo);
             this.Controls.Add(this.cmbClaveModalidad);
             this.Controls.Add(this.label10);
@@ -295,6 +306,7 @@ namespace Krystal3
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombreCurso);
             this.Name = "RegistrarCursos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegistrarCursos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrarCursos_FormClosed);
             this.Load += new System.EventHandler(this.RegistrarCursos_Load);
@@ -328,5 +340,6 @@ namespace Krystal3
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbClaveModalidad;
         private System.Windows.Forms.ComboBox cmbClaveObjetivo;
+        private System.Windows.Forms.Label label11;
     }
 }
