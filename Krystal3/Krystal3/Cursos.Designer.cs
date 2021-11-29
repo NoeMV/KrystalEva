@@ -44,6 +44,7 @@ namespace Krystal3
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
+            this.btnMatricula = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,11 +214,22 @@ namespace Krystal3
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
+            // btnMatricula
+            // 
+            this.btnMatricula.Location = new System.Drawing.Point(284, 715);
+            this.btnMatricula.Name = "btnMatricula";
+            this.btnMatricula.Size = new System.Drawing.Size(200, 23);
+            this.btnMatricula.TabIndex = 12;
+            this.btnMatricula.Text = "Registrar Colaboradores";
+            this.btnMatricula.UseVisualStyleBackColor = true;
+            this.btnMatricula.Click += new System.EventHandler(this.btnMatricula_Click);
+            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 752);
+            this.Controls.Add(this.btnMatricula);
             this.Controls.Add(this.dgvCursos);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -251,5 +263,6 @@ namespace Krystal3
         private System.Windows.Forms.DataGridViewTextBoxColumn claveModalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn coluCompetencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn coluInstructor;
+        private System.Windows.Forms.Button btnMatricula;
     }
 }

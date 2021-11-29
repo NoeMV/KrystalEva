@@ -15,6 +15,10 @@ namespace Krystal3
     public partial class Cursos : Form
     {
         public static string cursoID="";
+        public static string cursoNombre = "";
+        public static string cursoDuracion = "";
+        public static string cursoFechaInicio = "";
+        public static string cursoFechaFin = "";
         public static Boolean modificar = false, seleccion=true;
         public Cursos()
         {
@@ -45,6 +49,10 @@ namespace Krystal3
                 modificar = true;
                 seleccion = true;
                 cursoID = (string)dgvCursos.Rows[n].Cells[0].Value;
+                cursoNombre = (string)dgvCursos.Rows[n].Cells[2].Value;
+                cursoDuracion = (string)dgvCursos.Rows[n].Cells[4].Value;
+                cursoFechaInicio = (string)dgvCursos.Rows[n].Cells[5].Value;
+                cursoFechaFin = (string)dgvCursos.Rows[n].Cells[6].Value;
 
             }
         }
@@ -199,6 +207,11 @@ namespace Krystal3
         public void vaciarTabla()
         {
             dgvCursos.Rows.Clear();
+        }
+
+        private void btnMatricula_Click(object sender, EventArgs e)
+        {
+            new Matricular().ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

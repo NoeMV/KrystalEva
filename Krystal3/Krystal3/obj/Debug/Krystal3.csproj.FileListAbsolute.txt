@@ -25,3 +25,4 @@ C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Interop.WMPLib.dll
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\AxInterop.WMPLib.dll
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.ResolveComReference.cache
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Welcome.resources
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Matricular.resources
