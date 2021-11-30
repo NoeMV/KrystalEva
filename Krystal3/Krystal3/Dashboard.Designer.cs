@@ -52,7 +52,7 @@ namespace Krystal3
             // 
             // PanelBarra
             // 
-            this.PanelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(76)))), ((int)(((byte)(66)))));
+            this.PanelBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(89)))), ((int)(((byte)(75)))));
             this.PanelBarra.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBarra.Location = new System.Drawing.Point(0, 0);
             this.PanelBarra.Name = "PanelBarra";
@@ -64,7 +64,7 @@ namespace Krystal3
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.panel2.Controls.Add(this.BtnSalir);
             this.panel2.Controls.Add(this.BtnEstadisticas);
             this.panel2.Controls.Add(this.BtnReportes);
@@ -215,7 +215,7 @@ namespace Krystal3
             // 
             // PanelDashboard
             // 
-            this.PanelDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.PanelDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.PanelDashboard.Controls.Add(this.LabelTitulo);
             this.PanelDashboard.Controls.Add(this.pictureBox1);
             this.PanelDashboard.Dock = System.Windows.Forms.DockStyle.Fill;

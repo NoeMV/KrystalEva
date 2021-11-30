@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Krystal3
@@ -153,12 +154,32 @@ namespace Krystal3
             }
             else if (row >= 0)
             {
+                Form BackgroundForm = new Form();
+                using (ModificarColaboradores ModCol = new ModificarColaboradores(colaboradorCURP))
+                {
+                    BackgroundForm.StartPosition = FormStartPosition.Manual;
+                    BackgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    BackgroundForm.Opacity = .70d;
+                    BackgroundForm.BackColor = Color.Black;
+                    BackgroundForm.Left = 0;
+                    BackgroundForm.Top = 0;
+                    BackgroundForm.Width = Screen.PrimaryScreen.WorkingArea.Width;
+                    BackgroundForm.Height = Screen.PrimaryScreen.WorkingArea.Height;
+                    //BackgroundForm.WindowState = FormWindowState.Maximized;
+                    BackgroundForm.TopMost = true;
+                    BackgroundForm.Location = this.Location;
+                    BackgroundForm.ShowInTaskbar = false;
+                    BackgroundForm.Show();
 
-                ModificarColaboradores modificar = new ModificarColaboradores(colaboradorCURP);
-                modificar.ShowDialog();
-                dataGridView1.Rows.Clear();
-                GetColaboradores();
+                    ModCol.Owner = BackgroundForm;
+                    ModCol.ShowDialog();
 
+                    BackgroundForm.Dispose();
+                    this.Focus();
+                    this.BringToFront();
+                    dataGridView1.Rows.Clear();
+                    GetColaboradores();
+                }
             }
         }
 
