@@ -32,8 +32,6 @@ namespace Krystal3
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartCursos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartCursos)).BeginInit();
             this.SuspendLayout();
@@ -44,25 +42,21 @@ namespace Krystal3
             this.chartCursos.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartCursos.Legends.Add(legend1);
-            this.chartCursos.Location = new System.Drawing.Point(323, 22);
+            this.chartCursos.Location = new System.Drawing.Point(308, 110);
             this.chartCursos.Name = "chartCursos";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Cursos";
             this.chartCursos.Series.Add(series1);
-            this.chartCursos.Size = new System.Drawing.Size(380, 351);
+            this.chartCursos.Size = new System.Drawing.Size(300, 300);
             this.chartCursos.TabIndex = 0;
-            this.chartCursos.Text = "Cursos";
-            title1.Name = "Diciembre";
-            title2.Name = "Enero";
-            this.chartCursos.Titles.Add(title1);
-            this.chartCursos.Titles.Add(title2);
+            this.chartCursos.Text = "chart1";
             // 
             // Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 453);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chartCursos);
             this.Name = "Estadisticas";
             this.Text = "Estadisticas";

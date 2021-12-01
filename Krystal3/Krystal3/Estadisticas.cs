@@ -21,7 +21,7 @@ namespace Krystal3
 
         private void Estadisticas_Load(object sender, EventArgs e)
         {
-
+            llenarCursos();
         }
 
         public int cantidadCursos(String sql)
@@ -69,13 +69,22 @@ namespace Krystal3
             int noviembre = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-11-01' AND fechaFin<= '2021-11-30'");
             int diciembre = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-12-01' AND fechaFin<= '2021-12-31'");
 
-
+            chartCursos.Series[0].Points.AddXY("ENERO",enero);
+            chartCursos.Series[0].Points.AddXY("FEBRERO",febrero);
+            chartCursos.Series[0].Points.AddXY("MARZO",marzo);
+            chartCursos.Series[0].Points.AddXY("ABRIL",abril);
+            chartCursos.Series[0].Points.AddXY("MAYO",mayo);
+            chartCursos.Series[0].Points.AddXY("JUNIO",junio);
+            chartCursos.Series[0].Points.AddXY("JULIO",julio);
+            chartCursos.Series[0].Points.AddXY("AGOSTO",agosto);
+            chartCursos.Series[0].Points.AddXY("SEPTIEMBRE",septiembre);
+            chartCursos.Series[0].Points.AddXY("OCTUBRE",octubre);
+            chartCursos.Series[0].Points.AddXY("NOVIEMBRE",noviembre);
+            chartCursos.Series[0].Points.AddXY("DICIEMBRE",diciembre);
 
 
 
 
         }
-
     }
-    
 }
