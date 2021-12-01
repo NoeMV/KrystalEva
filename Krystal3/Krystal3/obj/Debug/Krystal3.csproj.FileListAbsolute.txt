@@ -25,11 +25,6 @@ C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\AxInterop.WMPLib.dll
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.ResolveComReference.cache
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Welcome.resources
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Matricular.resources
-C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\AxShockwaveFlashObjects.dll
-C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\CrystalDecisions.Shared.dll
-C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\ShockwaveFlashObjects.dll
 C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
@@ -45,5 +40,5 @@ C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\CrystalDecisions.ReportAppServer.
 C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\stdole.dll
 C:\Apps\KrystalEva\Krystal3\Krystal3\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Reportes.resources
-C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.CopyComplete
 C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.csproj.AssemblyReference.cache
+C:\Apps\KrystalEva\Krystal3\Krystal3\obj\Debug\Krystal3.Estadisticas.resources

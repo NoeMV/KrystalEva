@@ -14,16 +14,22 @@ namespace Krystal3
 {
     public partial class InsertarColaboradores : Form
     {
+
+        private String[,] arrayOcupaciones = new String[4737, 3];
+        private String[,] arrayMunicipios = new String[2460, 3];
+
         public InsertarColaboradores()
         {
 
             InitializeComponent();
             CargarEstados();
-            CargarMunicipios();
+            CargarMunicipios(0);
+            CargarMunicipios(1);
             CargarOcupaciones();
             CargarNivelesEstudio();
             CargarDocProb();
             CargarInstituciones();
+            cbxOcupaciones.DropDownWidth = CbxAncho(cbxOcupaciones);
 
         }
 
@@ -67,47 +73,347 @@ namespace Krystal3
 
         }
 
-        private void CargarMunicipios()
+        private void CargarMunicipios(int funcion)
         {
 
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
             SqlConnection Conexion = new SqlConnection(miConexion);
-            String sql = "SELECT descripcion FROM municipios";
+            String sql = "SELECT * FROM municipios";
 
-            try
+            if (funcion == 0)
             {
-
-                SqlCommand command = new SqlCommand(sql, Conexion);
-                Conexion.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
+                try
                 {
 
-                    while (reader.Read())
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
                     {
-                        cbxMunicipios.Items.Add(reader["descripcion"].ToString());
+
+                        int x = 0;
+                        while (reader.Read())
+                        {
+                            arrayMunicipios[x, 0] = reader["municipio_id"].ToString();
+                            arrayMunicipios[x, 1] = reader["clave"].ToString();
+                            arrayMunicipios[x, 2] = reader["descripcion"].ToString();
+
+                            cbxMunicipios.Items.Add(reader["descripcion"].ToString());
+                            x++;
+                        }
+
+                        cbxMunicipios.SelectedIndex = 0;
+
                     }
+                    else
+                    {
 
-                    cbxMunicipios.SelectedIndex = 0;
+                        MessageBox.Show("Error al cargar datos de municipios, si el problema persiste contacte al administrador.");
 
+                    }
+                    Conexion.Close();
                 }
-                else
+
+                catch (Exception e)
                 {
 
-                    MessageBox.Show("Error al cargar datos de municipios, si el problema persiste contacte al administrador.");
+                    MessageBox.Show("No se pudo establecer conexion.\n" + e.Message);
 
                 }
-                Conexion.Close();
             }
 
-            catch (Exception e)
+            if (funcion == 1)
             {
-
-                MessageBox.Show("No se pudo establecer conexion.\n" + e.Message);
-
+                if (cbxEstados.SelectedIndex == 0)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 0; x < 11; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 1)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 11; x < 16; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 2)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 16; x < 21; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 3)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 21; x < 32; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 4)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 32; x < 155; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 5)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 155; x < 222; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 6)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 222; x < 260; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 7)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 260; x < 270; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 8)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 270; x < 286; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 9)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 286; x < 325; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 10)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 325; x < 371; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 11)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 371; x < 452; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 12)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 452; x < 536; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 13)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 536; x < 660; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 14)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 660; x < 785; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 15)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 785; x < 898; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 16)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 898; x < 931; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 17)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 931; x < 951; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 18)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 951; x < 1003; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 19)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1003; x < 1573; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 20)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1573; x < 1790; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 21)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1790; x < 1808; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 22)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1808; x < 1819; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 23)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1819; x < 1877; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 24)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1877; x < 1895; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 25)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1895; x < 1965; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 26)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1965; x < 1982; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 27)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 1982; x < 2025; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 28)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 2025; x < 2085; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 29)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 2085; x < 2297; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 30)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 2297; x < 2403; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
+                else if (cbxEstados.SelectedIndex == 31)
+                {
+                    cbxMunicipios.Items.Clear();
+                    for (int x = 2403; x < 2460; x++)
+                    {
+                        cbxMunicipios.Items.Add(arrayMunicipios[x, 2]);
+                        cbxMunicipios.SelectedIndex = 0;
+                    }
+                }
             }
-
         }
 
         private void CargarOcupaciones()
@@ -192,14 +498,14 @@ namespace Krystal3
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
 
             this.Dispose();
 
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void BtnConfirmar_Click(object sender, EventArgs e)
         {
 
             DialogResult dialogResult = MessageBox.Show("¿Está seguro que quiere añadir al colaborador?", "Registrar colaborador", MessageBoxButtons.YesNo);
@@ -254,6 +560,33 @@ namespace Krystal3
 
             }
 
+        }
+
+        private void CbxEstados_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (arrayMunicipios[0, 0] != null)
+            {
+                CargarMunicipios(1);
+            }
+        }
+
+        private int CbxAncho(ComboBox myCombo)
+        {
+            int maxWidth = 0;
+            int temp = 0;
+            Label label1 = new Label();
+
+            foreach (var obj in myCombo.Items)
+            {
+                label1.Text = obj.ToString();
+                temp = label1.PreferredWidth;
+                if (temp > maxWidth)
+                {
+                    maxWidth = temp;
+                }
+            }
+            label1.Dispose();
+            return maxWidth;
         }
     }
 }

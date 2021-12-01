@@ -62,14 +62,14 @@ namespace Krystal3
             this.cbxInstitucion.Location = new System.Drawing.Point(298, 375);
             this.cbxInstitucion.Margin = new System.Windows.Forms.Padding(2);
             this.cbxInstitucion.Name = "cbxInstitucion";
-            this.cbxInstitucion.Size = new System.Drawing.Size(269, 33);
+            this.cbxInstitucion.Size = new System.Drawing.Size(270, 33);
             this.cbxInstitucion.TabIndex = 46;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(14, 374);
             this.label10.Margin = new System.Windows.Forms.Padding(5);
             this.label10.Name = "label10";
@@ -85,7 +85,7 @@ namespace Krystal3
             this.cbxDocProb.FormattingEnabled = true;
             this.cbxDocProb.Location = new System.Drawing.Point(298, 335);
             this.cbxDocProb.Name = "cbxDocProb";
-            this.cbxDocProb.Size = new System.Drawing.Size(269, 33);
+            this.cbxDocProb.Size = new System.Drawing.Size(270, 33);
             this.cbxDocProb.TabIndex = 44;
             // 
             // cbxNivelEstudios
@@ -116,9 +116,9 @@ namespace Krystal3
             this.cbxMunicipios.Font = new System.Drawing.Font("Outfit", 15F);
             this.cbxMunicipios.ForeColor = System.Drawing.Color.Black;
             this.cbxMunicipios.FormattingEnabled = true;
-            this.cbxMunicipios.Location = new System.Drawing.Point(298, 215);
+            this.cbxMunicipios.Location = new System.Drawing.Point(297, 215);
             this.cbxMunicipios.Name = "cbxMunicipios";
-            this.cbxMunicipios.Size = new System.Drawing.Size(269, 33);
+            this.cbxMunicipios.Size = new System.Drawing.Size(270, 33);
             this.cbxMunicipios.TabIndex = 41;
             // 
             // cbxEstados
@@ -127,9 +127,9 @@ namespace Krystal3
             this.cbxEstados.Font = new System.Drawing.Font("Outfit", 15F);
             this.cbxEstados.ForeColor = System.Drawing.Color.Black;
             this.cbxEstados.FormattingEnabled = true;
-            this.cbxEstados.Location = new System.Drawing.Point(298, 175);
+            this.cbxEstados.Location = new System.Drawing.Point(297, 175);
             this.cbxEstados.Name = "cbxEstados";
-            this.cbxEstados.Size = new System.Drawing.Size(269, 33);
+            this.cbxEstados.Size = new System.Drawing.Size(270, 33);
             this.cbxEstados.TabIndex = 40;
             this.cbxEstados.SelectionChangeCommitted += new System.EventHandler(this.CbxEstados_SelectionChangeCommitted);
             // 
@@ -137,7 +137,7 @@ namespace Krystal3
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(14, 334);
             this.label9.Margin = new System.Windows.Forms.Padding(5);
             this.label9.Name = "label9";
@@ -149,7 +149,7 @@ namespace Krystal3
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(14, 294);
             this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
@@ -161,7 +161,7 @@ namespace Krystal3
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(14, 254);
             this.label7.Margin = new System.Windows.Forms.Padding(5);
             this.label7.Name = "label7";
@@ -173,7 +173,7 @@ namespace Krystal3
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(14, 214);
             this.label6.Margin = new System.Windows.Forms.Padding(5);
             this.label6.Name = "label6";
@@ -185,7 +185,7 @@ namespace Krystal3
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(14, 174);
             this.label5.Margin = new System.Windows.Forms.Padding(5);
             this.label5.Name = "label5";
@@ -197,7 +197,7 @@ namespace Krystal3
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(14, 134);
             this.label4.Margin = new System.Windows.Forms.Padding(5);
             this.label4.Name = "label4";
@@ -211,9 +211,10 @@ namespace Krystal3
             this.txtSegundoApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Outfit", 15F);
             this.txtSegundoApellido.ForeColor = System.Drawing.Color.Black;
-            this.txtSegundoApellido.Location = new System.Drawing.Point(298, 135);
+            this.txtSegundoApellido.Location = new System.Drawing.Point(297, 136);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(269, 33);
+            this.txtSegundoApellido.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSegundoApellido.Size = new System.Drawing.Size(270, 33);
             this.txtSegundoApellido.TabIndex = 33;
             // 
             // txtPrimerApellido
@@ -222,9 +223,10 @@ namespace Krystal3
             this.txtPrimerApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Outfit", 15F);
             this.txtPrimerApellido.ForeColor = System.Drawing.Color.Black;
-            this.txtPrimerApellido.Location = new System.Drawing.Point(298, 94);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(297, 96);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(269, 33);
+            this.txtPrimerApellido.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPrimerApellido.Size = new System.Drawing.Size(270, 33);
             this.txtPrimerApellido.TabIndex = 32;
             // 
             // txtNombre
@@ -233,9 +235,10 @@ namespace Krystal3
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Font = new System.Drawing.Font("Outfit", 15F);
             this.txtNombre.ForeColor = System.Drawing.Color.Black;
-            this.txtNombre.Location = new System.Drawing.Point(298, 55);
+            this.txtNombre.Location = new System.Drawing.Point(297, 56);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(269, 33);
+            this.txtNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtNombre.Size = new System.Drawing.Size(270, 33);
             this.txtNombre.TabIndex = 31;
             // 
             // txtCURP
@@ -244,16 +247,17 @@ namespace Krystal3
             this.txtCURP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCURP.Font = new System.Drawing.Font("Outfit", 15F);
             this.txtCURP.ForeColor = System.Drawing.Color.Black;
-            this.txtCURP.Location = new System.Drawing.Point(298, 15);
+            this.txtCURP.Location = new System.Drawing.Point(297, 16);
             this.txtCURP.Name = "txtCURP";
-            this.txtCURP.Size = new System.Drawing.Size(269, 33);
+            this.txtCURP.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCURP.Size = new System.Drawing.Size(270, 33);
             this.txtCURP.TabIndex = 30;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(14, 94);
             this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
@@ -265,7 +269,7 @@ namespace Krystal3
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(14, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
@@ -277,7 +281,7 @@ namespace Krystal3
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(66)))), ((int)(((byte)(57)))));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(14, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
