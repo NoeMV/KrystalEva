@@ -751,7 +751,7 @@ namespace Krystal3
                 }
             }
 
-            if (funcion == 1)
+            else if (funcion == 1)
             {
                 if (estado == "AGUASCALIENTES")
                 { 
