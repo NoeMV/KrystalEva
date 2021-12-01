@@ -202,7 +202,7 @@ namespace Krystal3
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(14, 340);
+            this.label9.Location = new System.Drawing.Point(14, 334);
             this.label9.Margin = new System.Windows.Forms.Padding(5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(276, 30);
