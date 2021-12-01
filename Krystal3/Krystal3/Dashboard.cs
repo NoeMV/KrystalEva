@@ -51,7 +51,7 @@ namespace Krystal3
 
         private void BtnReportes_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario(new Reportes());
+            
         }
 
         private void BtnEstadisticas_Click(object sender, EventArgs e)
@@ -86,6 +86,11 @@ namespace Krystal3
         private void PanelBarra_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void BtnReportes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Reportes());
         }
     }
 }
