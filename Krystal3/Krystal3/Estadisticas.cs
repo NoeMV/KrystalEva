@@ -38,7 +38,7 @@ namespace Krystal3
                 while (reader.Read())
                 {
 
-                    cantCursos = Convert.ToInt32(reader.GetString(0));
+                    cantCursos = Convert.ToInt32(reader["cantidad"].ToString());
 
                 }
                 Conexion.Close();
@@ -56,18 +56,18 @@ namespace Krystal3
 
         public void llenarCursos()
         {
-            int enero = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-01-01' AND fechaFin<= '2021-01-31'");
-            int febrero = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-02-01' AND fechaFin<= '2021-02-28'");
-            int marzo = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-03-01' AND fechaFin<= '2021-03-31'");
-            int abril = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-04-01' AND fechaFin<= '2021-04-30'");
-            int mayo = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-05-01' AND fechaFin<= '2021-05-31'");
-            int junio = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-06-01' AND fechaFin<= '2021-06-30'");
-            int julio = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-07-01' AND fechaFin<= '2021-07-31'");
-            int agosto = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-08-01' AND fechaFin<= '2021-08-31'");
-            int septiembre = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-09-01' AND fechaFin<= '2021-09-30'");
-            int octubre = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-01-10' AND fechaFin<= '2021-10-31'");
-            int noviembre = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-11-01' AND fechaFin<= '2021-11-30'");
-            int diciembre = cantidadCursos("SELECT count(*) FROM Cursos where status=1 AND fechaInicio>= '2021-12-01' AND fechaFin<= '2021-12-31'");
+            int enero = Convert.ToInt32(cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-11-01' AND fechaFin<= '2021-11-30'"));
+            int febrero = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-02-01' AND fechaFin<= '2021-02-28'");
+            int marzo = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-03-01' AND fechaFin<= '2021-03-31'");
+            int abril = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-04-01' AND fechaFin<= '2021-04-30'");
+            int mayo = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-05-01' AND fechaFin<= '2021-05-31'");
+            int junio = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-06-01' AND fechaFin<= '2021-06-30'");
+            int julio = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-07-01' AND fechaFin<= '2021-07-31'");
+            int agosto = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-08-01' AND fechaFin<= '2021-08-31'");
+            int septiembre = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-09-01' AND fechaFin<= '2021-09-30'");
+            int octubre = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-01-10' AND fechaFin<= '2021-10-31'");
+            int noviembre = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-11-01' AND fechaFin<= '2021-11-30'");
+            int diciembre = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-12-01' AND fechaFin<= '2021-12-31'");
 
             chartCursos.Series[0].Points.AddXY("ENERO",enero);
             chartCursos.Series[0].Points.AddXY("FEBRERO",febrero);

@@ -38,6 +38,12 @@ namespace Krystal3
             // 
             // chartCursos
             // 
+            chartArea1.AxisX.IsStartedFromZero = false;
+            chartArea1.AxisX.Title = "Cursos efectuados por mes";
+            chartArea1.AxisY.Crossing = -1.7976931348623157E+308D;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.IsStartedFromZero = false;
+            chartArea1.AxisY.LabelAutoFitMaxFontSize = 12;
             chartArea1.Name = "ChartArea1";
             this.chartCursos.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -48,7 +54,7 @@ namespace Krystal3
             series1.Legend = "Legend1";
             series1.Name = "Cursos";
             this.chartCursos.Series.Add(series1);
-            this.chartCursos.Size = new System.Drawing.Size(300, 300);
+            this.chartCursos.Size = new System.Drawing.Size(387, 300);
             this.chartCursos.TabIndex = 0;
             this.chartCursos.Text = "chart1";
             // 
