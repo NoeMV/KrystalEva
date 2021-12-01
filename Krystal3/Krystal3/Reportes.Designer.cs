@@ -29,25 +29,14 @@ namespace Krystal3
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.dteFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dteFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.reportebueno1 = new Krystal3.reportebueno();
             this.SuspendLayout();
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(96, 188);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.reportebueno1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(986, 552);
-            this.crystalReportViewer1.TabIndex = 0;
             // 
             // button1
             // 
@@ -96,6 +85,25 @@ namespace Krystal3
             this.label2.Size = new System.Drawing.Size(90, 17);
             this.label2.TabIndex = 30;
             this.label2.Text = "Fecha de Fin";
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(96, 188);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ReportSource = this.reportebueno1;
+            this.crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
+            this.crystalReportViewer1.ShowCloseButton = false;
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowLogo = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(986, 552);
+            this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.ReportRefresh += new CrystalDecisions.Windows.Forms.RefreshEventHandler(this.crystalReportViewer1_ReportRefresh);
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // Reportes
             // 
