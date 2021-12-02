@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -21,7 +22,9 @@ namespace Krystal3
 
         private void Estadisticas_Load(object sender, EventArgs e)
         {
+            
             llenarCursos();
+            llenarHoM();
         }
 
         public int cantidadCursos(String sql)
@@ -56,7 +59,7 @@ namespace Krystal3
 
         public void llenarCursos()
         {
-            int enero = Convert.ToInt32(cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-11-01' AND fechaFin<= '2021-11-30'"));
+            int enero = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-11-01' AND fechaFin<= '2021-11-30'");
             int febrero = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-02-01' AND fechaFin<= '2021-02-28'");
             int marzo = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-03-01' AND fechaFin<= '2021-03-31'");
             int abril = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-04-01' AND fechaFin<= '2021-04-30'");
@@ -86,5 +89,191 @@ namespace Krystal3
 
 
         }
+
+        public String getOcupacion(String sql) {
+
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+            String ocupacion="";
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    ocupacion=reader["descripcion"].ToString();
+
+                }
+                Conexion.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                MessageBox.Show("Ha ocurrido un error al obtener la ocupacion");
+            }
+
+            return ocupacion;
+
+        }
+
+        public void llenarHoM()
+        {
+            String sql = "Select DISTINCT colaborador_id from Registros where status=1;";
+            ArrayList sexoM = new ArrayList();
+            ArrayList colaboradorID= new ArrayList();
+            int cantHombres = 0, cantMujeres=0;
+
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+            
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                   colaboradorID.Add(Convert.ToString(Convert.ToInt32(reader["colaborador_id"].ToString())));
+
+
+                }
+                Conexion.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                MessageBox.Show("Ha ocurrido un error al obtener el colaborador id");
+            }
+
+            
+            try
+            {
+               
+                for (int i=0;i<colaboradorID.Count;i++)
+                {
+                    sql = "select curp from Colaboradores where colaborador_id='" + Convert.ToString(colaboradorID[i]) + "';";
+
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //MessageBox.Show("Si entra");
+                        String curp = reader["curp"].ToString();
+                        sexoM.Add(curp.Substring(10, 1));
+
+                        if ((sexoM[i].ToString()).Equals("H"))
+                        {
+                            cantHombres = cantHombres + 1;
+
+                        }else if ((sexoM[i].ToString()).Equals("M"))
+                        {
+                            cantMujeres = cantMujeres + 1;
+
+                        }
+                        
+                    }
+                    Conexion.Close();
+                }
+                
+                
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                MessageBox.Show("Ha ocurrido un error al obtener el genero del colaborador");
+            }
+
+            chartHoM.Series[0].Points.AddXY("Hombres", cantHombres);
+            chartHoM.Series[0].Points.AddXY("Mujeres", cantMujeres);
+
+        }
+
+        public void llenarOcupacion()
+        {
+
+            String sql = "Select DISTINCT colaborador_id from Registros where status=1;";
+            ArrayList puestos = new ArrayList();
+            ArrayList colaboradorID = new ArrayList();
+           
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    colaboradorID.Add(Convert.ToString(Convert.ToInt32(reader["colaborador_id"].ToString())));
+
+
+                }
+                Conexion.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                MessageBox.Show("Ha ocurrido un error al obtener el colaborador id");
+            }
+
+
+            try
+            {
+
+                for (int i = 0; i < colaboradorID.Count; i++)
+                {
+                    sql = "select DISTINCT ocupacion_id from Colaboradores where colaborador_id='" + Convert.ToString(colaboradorID[i]) + "';";
+                    String ocupacion= getOcupacion(sql);
+
+                    sql = "select DISTINCT descripcion from Ocupaciones where ocupacion_id='" + ocupacion + "';";
+
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //MessageBox.Show("Si entra");
+                        
+                        puestos.Add(reader["descripcion"].ToString());
+
+                        
+
+                    }
+                    Conexion.Close();
+                }
+
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                MessageBox.Show("Ha ocurrido un error al obtener el genero del colaborador");
+            }
+
+            for (int i = 0; i < puestos.Count; i++)
+            {
+                chartHoM.Series[0].Points.AddXY(puestos[i]);
+               
+
+
+            }
+            
+
+
+        }
+
+
     }
+    
 }
