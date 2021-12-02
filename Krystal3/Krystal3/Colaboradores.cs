@@ -117,7 +117,7 @@ namespace Krystal3
 
                 String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
                 SqlConnection Conexion = new SqlConnection(miConexion);
-                String sql = "UPDATE colaboradores SET status = 0 WHERE colaborador_id = '" + colaboradorID + "';";
+                String sql = "UPDATE colaboradores SET status = 0 WHERE curp = '" + Convert.ToString(colaboradorCURP) + "';";
                 SqlCommand command = new SqlCommand(sql, Conexion);
                 Conexion.Open();
                 SqlDataReader reader = command.ExecuteReader();

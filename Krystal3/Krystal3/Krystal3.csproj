@@ -147,7 +147,7 @@
     <Compile Include="RegistrarInstructores.Designer.cs">
       <DependentUpon>RegistrarInstructores.cs</DependentUpon>
     </Compile>
-    <Compile Include="reportebueno.cs">
+    <Compile Include="Reportes\reportebueno.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>reportebueno.rpt</DependentUpon>
@@ -218,7 +218,7 @@
     <EmbeddedResource Include="RegistrarInstructores.resx">
       <DependentUpon>RegistrarInstructores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportebueno.rpt">
+    <EmbeddedResource Include="Reportes\reportebueno.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reportebueno.cs</LastGenOutput>
     </EmbeddedResource>
