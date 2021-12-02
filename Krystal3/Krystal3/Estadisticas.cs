@@ -25,6 +25,7 @@ namespace Krystal3
             
             llenarCursos();
             llenarHoM();
+            horascursos();
         }
 
         public int cantidadCursos(String sql)
@@ -59,7 +60,7 @@ namespace Krystal3
 
         public void llenarCursos()
         {
-            int enero = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-11-01' AND fechaFin<= '2021-11-30'");
+            int enero = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-01-01' AND fechaFin<= '2021-01-30'");
             int febrero = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-02-01' AND fechaFin<= '2021-02-28'");
             int marzo = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-03-01' AND fechaFin<= '2021-03-31'");
             int abril = cantidadCursos("SELECT count(*) as cantidad FROM Cursos where status=1 AND fechaInicio>= '2021-04-01' AND fechaFin<= '2021-04-30'");
@@ -124,6 +125,7 @@ namespace Krystal3
             String sql = "Select DISTINCT colaborador_id from Registros where status=1;";
             ArrayList sexoM = new ArrayList();
             ArrayList colaboradorID= new ArrayList();
+            
             int cantHombres = 0, cantMujeres=0;
 
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
@@ -273,7 +275,130 @@ namespace Krystal3
 
         }
 
+        public void horascursos()
+        {
+            String sql = "Select DISTINCT claveObjetivo from Cursos where status=1 order by claveObjetivo asc";
+            ArrayList claveObjetivo = new ArrayList();
+            ArrayList horasPorObjetivo = new ArrayList();
+            ArrayList objetivoID = new ArrayList();
 
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    claveObjetivo.Add((Convert.ToInt32(reader["claveObjetivo"].ToString())));
+
+
+                }
+                Conexion.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                MessageBox.Show("Ha ocurrido un error al obtener el la clave objetivo");
+            }
+
+            for(int i = 0; i < claveObjetivo.Count; i++)
+            {
+
+                sql = "select sum(duracion) as duracion FROM Cursos where claveObjetivo = '" + Convert.ToString(claveObjetivo[i])+"' and status='1';";
+
+                miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                Conexion = new SqlConnection(miConexion);
+
+                try
+                {
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        objetivoID.Add(claveObjetivo[i]);
+                        horasPorObjetivo.Add((reader["duracion"].ToString()));
+
+
+                    }
+                    Conexion.Close();
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    MessageBox.Show("Ha ocurrido un error al obtener las horas de los cursos");
+                }
+            }
+
+            for (int i = 0; i < claveObjetivo.Count; i++)
+            {
+                chartHoras.Series[0].Points.AddXY(getObjetivo(Convert.ToInt32(objetivoID[i])),horasPorObjetivo[i]);
+
+
+
+            }
+
+
+
+        }
+
+        private string getObjetivo(int clave)
+        {
+            string objetivo = "";
+
+            switch (clave)
+            {
+
+                case 1:
+                    objetivo = "Actualizar y perfeccionar conocimientos y habilidades";
+                    break;
+
+                case 2:
+                    objetivo = "Proporcionar informacion de nuevas tecnologias";
+                    break;
+
+                case 3:
+                    objetivo = "Preparar para ocupar vacantes o puestos de nueva creacion";
+                    break;
+
+                case 4:
+                    objetivo = "Prevenir riesgos de trabajo";
+                    break;
+
+                case 5:
+                    objetivo = "Incremento a la productividad";
+                    break;
+            }
+
+            return objetivo;
+
+        }
+
+        private void btnHoras_Click(object sender, EventArgs e)
+        {
+            chartHoras.Visible = true;
+            chartHoM.Visible = false;
+            chartCursos.Visible = false;
+        }
+
+        private void btnGenero_Click(object sender, EventArgs e)
+        {
+            chartHoras.Visible = false;
+            chartHoM.Visible = true;
+            chartCursos.Visible = false;
+        }
+
+        private void btnMeses_Click(object sender, EventArgs e)
+        {
+            chartHoras.Visible = false;
+            chartHoM.Visible = false;
+            chartCursos.Visible = true;
+        }
     }
     
 }
