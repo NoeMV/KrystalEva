@@ -56,36 +56,51 @@ namespace Krystal3
             // 
             // dteFechaFin
             // 
+            this.dteFechaFin.Font = new System.Drawing.Font("Outfit", 15F);
             this.dteFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dteFechaFin.Location = new System.Drawing.Point(171, 227);
+            this.dteFechaFin.Location = new System.Drawing.Point(236, 214);
+            this.dteFechaFin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dteFechaFin.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
             this.dteFechaFin.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dteFechaFin.Name = "dteFechaFin";
-            this.dteFechaFin.Size = new System.Drawing.Size(480, 22);
+            this.dteFechaFin.Size = new System.Drawing.Size(407, 33);
             this.dteFechaFin.TabIndex = 26;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(417, 468);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(131)))), ((int)(((byte)(107)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(230)))), ((int)(((byte)(227)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(143)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Outfit", 15F);
+            this.btnCancelar.Location = new System.Drawing.Point(540, 413);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(103, 36);
             this.btnCancelar.TabIndex = 32;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(195, 468);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(131)))), ((int)(((byte)(107)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(230)))), ((int)(((byte)(227)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(143)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Outfit", 15F);
+            this.btnGuardar.Location = new System.Drawing.Point(19, 413);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(107, 36);
             this.btnGuardar.TabIndex = 31;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Text = "Registrar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cmbDuracion
             // 
+            this.cmbDuracion.Font = new System.Drawing.Font("Outfit", 15F);
             this.cmbDuracion.FormattingEnabled = true;
             this.cmbDuracion.Items.AddRange(new object[] {
             "1",
@@ -100,162 +115,198 @@ namespace Krystal3
             "10",
             "11",
             "12"});
-            this.cmbDuracion.Location = new System.Drawing.Point(171, 144);
+            this.cmbDuracion.Location = new System.Drawing.Point(236, 135);
+            this.cmbDuracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDuracion.Name = "cmbDuracion";
-            this.cmbDuracion.Size = new System.Drawing.Size(428, 24);
+            this.cmbDuracion.Size = new System.Drawing.Size(322, 33);
             this.cmbDuracion.TabIndex = 24;
             // 
             // cmbInstructor
             // 
+            this.cmbInstructor.Font = new System.Drawing.Font("Outfit", 15F);
             this.cmbInstructor.FormattingEnabled = true;
-            this.cmbInstructor.Location = new System.Drawing.Point(171, 392);
+            this.cmbInstructor.Location = new System.Drawing.Point(236, 375);
+            this.cmbInstructor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbInstructor.Name = "cmbInstructor";
-            this.cmbInstructor.Size = new System.Drawing.Size(480, 24);
+            this.cmbInstructor.Size = new System.Drawing.Size(407, 33);
             this.cmbInstructor.TabIndex = 30;
             // 
             // cmbCompetencia
             // 
+            this.cmbCompetencia.Font = new System.Drawing.Font("Outfit", 15F);
             this.cmbCompetencia.FormattingEnabled = true;
-            this.cmbCompetencia.Location = new System.Drawing.Point(171, 356);
+            this.cmbCompetencia.Location = new System.Drawing.Point(236, 335);
+            this.cmbCompetencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCompetencia.Name = "cmbCompetencia";
-            this.cmbCompetencia.Size = new System.Drawing.Size(480, 24);
+            this.cmbCompetencia.Size = new System.Drawing.Size(407, 33);
             this.cmbCompetencia.TabIndex = 29;
             // 
             // dteFechaInicio
             // 
+            this.dteFechaInicio.Font = new System.Drawing.Font("Outfit", 15F);
             this.dteFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dteFechaInicio.Location = new System.Drawing.Point(171, 186);
+            this.dteFechaInicio.Location = new System.Drawing.Point(236, 174);
+            this.dteFechaInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dteFechaInicio.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
             this.dteFechaInicio.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dteFechaInicio.Name = "dteFechaInicio";
-            this.dteFechaInicio.Size = new System.Drawing.Size(480, 22);
+            this.dteFechaInicio.Size = new System.Drawing.Size(407, 33);
             this.dteFechaInicio.TabIndex = 25;
             // 
             // txtClaveAreaTema
             // 
-            this.txtClaveAreaTema.Location = new System.Drawing.Point(171, 107);
+            this.txtClaveAreaTema.Font = new System.Drawing.Font("Outfit", 15F);
+            this.txtClaveAreaTema.Location = new System.Drawing.Point(236, 95);
+            this.txtClaveAreaTema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtClaveAreaTema.Name = "txtClaveAreaTema";
-            this.txtClaveAreaTema.Size = new System.Drawing.Size(480, 22);
+            this.txtClaveAreaTema.Size = new System.Drawing.Size(407, 33);
             this.txtClaveAreaTema.TabIndex = 23;
             // 
             // txtClaveCurso
             // 
-            this.txtClaveCurso.Location = new System.Drawing.Point(171, 28);
+            this.txtClaveCurso.Font = new System.Drawing.Font("Outfit", 15F);
+            this.txtClaveCurso.Location = new System.Drawing.Point(236, 15);
+            this.txtClaveCurso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtClaveCurso.Name = "txtClaveCurso";
-            this.txtClaveCurso.Size = new System.Drawing.Size(480, 22);
+            this.txtClaveCurso.Size = new System.Drawing.Size(407, 33);
             this.txtClaveCurso.TabIndex = 21;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(45, 395);
+            this.label9.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(14, 374);
+            this.label9.Margin = new System.Windows.Forms.Padding(5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 17);
+            this.label9.Size = new System.Drawing.Size(133, 30);
             this.label9.TabIndex = 30;
-            this.label9.Text = "Instructor";
+            this.label9.Text = "Instructor:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(45, 356);
+            this.label8.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(14, 334);
+            this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 17);
+            this.label8.Size = new System.Drawing.Size(168, 30);
             this.label8.TabIndex = 29;
-            this.label8.Text = "Competencia";
+            this.label8.Text = "Competencia:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 266);
+            this.label7.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(14, 254);
+            this.label7.Margin = new System.Windows.Forms.Padding(5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 17);
+            this.label7.Size = new System.Drawing.Size(179, 30);
             this.label7.TabIndex = 28;
-            this.label7.Text = "Clave objetivo";
+            this.label7.Text = "Clave objetivo:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 227);
+            this.label6.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(14, 214);
+            this.label6.Margin = new System.Windows.Forms.Padding(5);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 17);
+            this.label6.Size = new System.Drawing.Size(154, 30);
             this.label6.TabIndex = 27;
-            this.label6.Text = "Fecha de Fin";
+            this.label6.Text = "Fecha de fin:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 153);
+            this.label5.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(14, 134);
+            this.label5.Margin = new System.Windows.Forms.Padding(5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 17);
+            this.label5.Size = new System.Drawing.Size(122, 30);
             this.label5.TabIndex = 26;
-            this.label5.Text = "Duracion";
+            this.label5.Text = "Duración:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 191);
+            this.label4.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(14, 174);
+            this.label4.Margin = new System.Windows.Forms.Padding(5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 17);
+            this.label4.Size = new System.Drawing.Size(182, 30);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Fecha de inicio";
+            this.label4.Text = "Fecha de inicio:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 112);
+            this.label3.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(14, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 17);
+            this.label3.Size = new System.Drawing.Size(203, 30);
             this.label3.TabIndex = 24;
-            this.label3.Text = "Clave area tema";
+            this.label3.Text = "Clave área tema:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 72);
+            this.label2.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(14, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 17);
+            this.label2.Size = new System.Drawing.Size(215, 30);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Nombre del curso";
+            this.label2.Text = "Nombre del curso:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 31);
+            this.label1.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(14, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 17);
+            this.label1.Size = new System.Drawing.Size(187, 30);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Clave del curso";
+            this.label1.Text = "Clave del curso:";
             // 
             // txtNombreCurso
             // 
-            this.txtNombreCurso.Location = new System.Drawing.Point(171, 69);
+            this.txtNombreCurso.Font = new System.Drawing.Font("Outfit", 15F);
+            this.txtNombreCurso.Location = new System.Drawing.Point(236, 55);
+            this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombreCurso.Name = "txtNombreCurso";
-            this.txtNombreCurso.Size = new System.Drawing.Size(480, 22);
+            this.txtNombreCurso.Size = new System.Drawing.Size(407, 33);
             this.txtNombreCurso.TabIndex = 22;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(45, 311);
+            this.label10.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(14, 294);
+            this.label10.Margin = new System.Windows.Forms.Padding(5);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(112, 17);
+            this.label10.Size = new System.Drawing.Size(205, 30);
             this.label10.TabIndex = 41;
-            this.label10.Text = "Clave modalidad";
+            this.label10.Text = "Clave modalidad:";
             // 
             // cmbClaveModalidad
             // 
+            this.cmbClaveModalidad.Font = new System.Drawing.Font("Outfit", 15F);
             this.cmbClaveModalidad.FormattingEnabled = true;
             this.cmbClaveModalidad.Items.AddRange(new object[] {
             "Presencial",
             "En linea",
             "Mixta"});
-            this.cmbClaveModalidad.Location = new System.Drawing.Point(171, 311);
+            this.cmbClaveModalidad.Location = new System.Drawing.Point(236, 295);
+            this.cmbClaveModalidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbClaveModalidad.Name = "cmbClaveModalidad";
-            this.cmbClaveModalidad.Size = new System.Drawing.Size(480, 24);
+            this.cmbClaveModalidad.Size = new System.Drawing.Size(407, 33);
             this.cmbClaveModalidad.TabIndex = 28;
             // 
             // cmbClaveObjetivo
             // 
+            this.cmbClaveObjetivo.Font = new System.Drawing.Font("Outfit", 15F);
             this.cmbClaveObjetivo.FormattingEnabled = true;
             this.cmbClaveObjetivo.Items.AddRange(new object[] {
             "Actualizar y perfeccionar conocimientos y habilidades",
@@ -263,25 +314,29 @@ namespace Krystal3
             "Preparar para ocupar vacantes o puestos de nueva creacion",
             "Prevenir riesgos de trabajo",
             "Incremento a la productividad"});
-            this.cmbClaveObjetivo.Location = new System.Drawing.Point(171, 266);
+            this.cmbClaveObjetivo.Location = new System.Drawing.Point(236, 255);
+            this.cmbClaveObjetivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbClaveObjetivo.Name = "cmbClaveObjetivo";
-            this.cmbClaveObjetivo.Size = new System.Drawing.Size(480, 24);
+            this.cmbClaveObjetivo.Size = new System.Drawing.Size(407, 33);
             this.cmbClaveObjetivo.TabIndex = 27;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(605, 147);
+            this.label11.Font = new System.Drawing.Font("Outfit", 18F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(562, 138);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 17);
+            this.label11.Size = new System.Drawing.Size(81, 30);
             this.label11.TabIndex = 42;
             this.label11.Text = "Horas";
             // 
             // RegistrarCursos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 535);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(663, 463);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbClaveObjetivo);
             this.Controls.Add(this.cmbClaveModalidad);
@@ -305,7 +360,10 @@ namespace Krystal3
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombreCurso);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RegistrarCursos";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegistrarCursos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrarCursos_FormClosed);

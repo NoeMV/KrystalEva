@@ -33,6 +33,7 @@ namespace Krystal3
                 {
                     MessageBox.Show("Se ha ingresado correctamente");
                     Dashboard ventana = new Dashboard();
+                    //Welcome ventana = new Welcome();
                     ventana.Show();
                     this.Visible = false;
                 } else

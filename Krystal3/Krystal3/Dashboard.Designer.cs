@@ -217,7 +217,7 @@ namespace Krystal3
             // 
             // PanelDashboard
             // 
-            this.PanelDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.PanelDashboard.BackColor = System.Drawing.Color.White;
             this.PanelDashboard.Controls.Add(this.LabelTitulo);
             this.PanelDashboard.Controls.Add(this.pictureBox1);
             this.PanelDashboard.Dock = System.Windows.Forms.DockStyle.Fill;

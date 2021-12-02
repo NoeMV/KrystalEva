@@ -46,7 +46,7 @@ namespace Krystal3
             if (n != -1)
             {
 
-                modificar = true;
+                //modificar = true;
                 seleccion = true;
                 cursoID = (string)dgvCursos.Rows[n].Cells[0].Value;
                 cursoNombre = (string)dgvCursos.Rows[n].Cells[2].Value;

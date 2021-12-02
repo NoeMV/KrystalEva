@@ -121,6 +121,7 @@ namespace Krystal3
             this.txt_contraseña.Location = new System.Drawing.Point(448, 440);
             this.txt_contraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txt_contraseña.Name = "txt_contraseña";
+            this.txt_contraseña.PasswordChar = '*';
             this.txt_contraseña.Size = new System.Drawing.Size(305, 33);
             this.txt_contraseña.TabIndex = 1;
             // 
