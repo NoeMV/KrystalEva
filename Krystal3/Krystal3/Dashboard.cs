@@ -51,7 +51,7 @@ namespace Krystal3
 
         private void BtnReportes_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new Reportes());
+            AbrirFormulario(new btnDecsargar());
         }
 
         private void BtnEstadisticas_Click(object sender, EventArgs e)

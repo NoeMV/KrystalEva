@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Krystal3 {
+namespace Krystal3.Reportes {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace Krystal3 {
         
         public override string FullResourceName {
             get {
-                return "Krystal3.reportebueno.rpt";
+                return "Krystal3.Reportes.reportebueno.rpt";
             }
             set {
                 // Do nothing
