@@ -11,23 +11,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrystalDecisions.ReportSource;
+using CrystalDecisions.Shared;
+using Krystal3.Reportes;
+using System.IO;
 
 namespace Krystal3
 {
-    public partial class Reportes : Form
+    public partial class btnDecsargar : Form
     {
-        public Reportes()
+        public btnDecsargar()
         {
             InitializeComponent();
             cargarReportes();
+            cbxDescarga.SelectedIndex = 0;
         }
 
         reportebueno obj = new reportebueno();
-        
+        DataTable Product = new DataTable();
+        string fechaInicio = "";
+        string fechaFin = "";
 
         private void cargarReportes()
         {
-            DataTable Product = new DataTable();
+            Product.Clear();
+            Product.Reset();
             Product.Columns.Add("CURP");
             Product.Columns.Add("NOMBRE");
             Product.Columns.Add("PRIMER_APELLIDO");
@@ -48,8 +55,8 @@ namespace Krystal3
             Product.Columns.Add("RFC_AGENTE_STPS");
             Product.Columns.Add("CLAVE_MODALIDAD");
 
-            string fechaInicio = Convert.ToString((Convert.ToDateTime(dteFechaInicio.Value)).ToString("yyyy/MM/dd"));
-            string fechaFin = Convert.ToString((Convert.ToDateTime(dteFechaFin.Value)).ToString("yyyy/MM/dd"));
+            fechaInicio = Convert.ToString((Convert.ToDateTime(dteFechaInicio.Value)).ToString("yyyy/MM/dd"));
+            fechaFin = Convert.ToString((Convert.ToDateTime(dteFechaFin.Value)).ToString("yyyy/MM/dd"));
 
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
             SqlConnection Conexion = new SqlConnection(miConexion);
@@ -134,6 +141,59 @@ namespace Krystal3
             crystalReportViewer1.ParameterFieldInfo[0].DefaultValues.AddValue(DateTime.Today); // First Parameter value set to an Int value
 
             crystalReportViewer1.ParameterFieldInfo[1].DefaultValues.AddValue(DateTime.Today); // Second Parameter set to a DateTime value
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+
+            ReportDocument rdReport = new ReportDocument();
+            string dire2 = Path.Combine(Environment.CurrentDirectory, "reortebueno.rpt");
+            string direccion = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Reportes\\reportebueno.rpt");
+            rdReport.Load(direccion);
+            rdReport.SetDataSource(Product);
+            (rdReport.ReportDefinition.ReportObjects["startDate"] as TextObject).Text = fechaInicio;
+            (rdReport.ReportDefinition.ReportObjects["endDate"] as TextObject).Text = fechaFin;
+            ExportOptions exportOption;
+            DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (cbxDescarga.SelectedIndex == 0)
+            {
+                sfd.Filter = "Pdf Files|*.pdf";
+            } else
+            {
+                sfd.Filter = "Excel |*.xls";
+            }
+            
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                diskFileDestinationOptions.DiskFileName = sfd.FileName;
+            }
+            exportOption = rdReport.ExportOptions;
+            {
+                exportOption.ExportDestinationType = ExportDestinationType.DiskFile;
+
+                exportOption.DestinationOptions = diskFileDestinationOptions;
+
+                if (cbxDescarga.SelectedIndex == 0)
+                {
+                    exportOption.FormatOptions = new PdfRtfWordFormatOptions();
+                    exportOption.ExportFormatType = ExportFormatType.PortableDocFormat;
+                }
+                else
+                {
+                    exportOption.ExportFormatType = ExportFormatType.Excel;
+                    exportOption.FormatOptions = new ExcelFormatOptions();
+                }
+
+                
+                
+                
+
+
+            }
+            rdReport.Export();
         }
     }
 }
