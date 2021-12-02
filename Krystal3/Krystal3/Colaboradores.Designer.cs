@@ -284,6 +284,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Colaboradores";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colaboradores";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -635,49 +635,40 @@ namespace Krystal3
 
             else if (funcion == 1)
             {
-                if (estudios == "1")
+                if (estudios == "Ninguno")
                 {
-                    cbxNivelEstudios.Text = "Ninguno";
                     claveEstudios = "1";
                 }
-                else if (estudios == "2")
+                else if (estudios == "Primaria")
                 {
-                    cbxNivelEstudios.Text = "Primaria";
                     claveEstudios = "2";
                 }
-                else if (estudios == "3")
+                else if (estudios == "Secundaria")
                 {
-                    cbxNivelEstudios.Text = "Secundaria";
                     claveEstudios = "3";
                 }
-                else if (estudios == "4")
+                else if (estudios == "Bachillerato")
                 {
-                    cbxNivelEstudios.Text = "Bachillerato";
                     claveEstudios = "4";
                 }
-                else if (estudios == "5")
+                else if (estudios == "Carrera técnica")
                 {
-                    cbxNivelEstudios.Text = "Carrera técnica";
                     claveEstudios = "5";
                 }
-                else if (estudios == "6")
+                else if (estudios == "Licenciatura")
                 {
-                    cbxNivelEstudios.Text = "Licenciatura";
                     claveEstudios = "6";
                 }
-                else if (estudios == "7")
+                else if (estudios == "Especialidad")
                 {
-                    cbxNivelEstudios.Text = "Especialidad";
                     claveEstudios = "7";
                 }
-                else if (estudios == "8")
+                else if (estudios == "Maestría")
                 {
-                    cbxNivelEstudios.Text = "Maestría";
                     claveEstudios = "8";
                 }
-                else if (estudios == "9")
+                else if (estudios == "Doctorado")
                 {
-                    cbxNivelEstudios.Text = "Doctorado";
                     claveEstudios = "9";
                 }
             }
@@ -775,7 +766,7 @@ namespace Krystal3
                     CargarMunicipios(2, cbxMunicipios.Text);
                     CargarOcupaciones(1, cbxOcupaciones.Text);
                     CargarNivelesEstudio(1, cbxNivelEstudios.Text);
-                    CargarDocProb(1, cbxNivelEstudios.Text);
+                    CargarDocProb(1, cbxDocProb.Text);
                     CargarInstituciones(1, cbxInstitucion.Text);
 
                     String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
