@@ -333,5 +333,10 @@ namespace Krystal3
             return clave;
 
         }
+
+        private void RegistrarCursos_Deactivate(object sender, EventArgs e)
+        {
+            Cursos.modificar = false;
+        }
     }
 }

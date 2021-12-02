@@ -366,6 +366,7 @@ namespace Krystal3
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RegistrarCursos";
+            this.Deactivate += new System.EventHandler(this.RegistrarCursos_Deactivate);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrarCursos_FormClosed);
             this.Load += new System.EventHandler(this.RegistrarCursos_Load);
             this.Leave += new System.EventHandler(this.RegistrarCursos_Leave);
