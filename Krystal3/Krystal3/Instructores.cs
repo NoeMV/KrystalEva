@@ -15,19 +15,11 @@ namespace Krystal3
 {
     public partial class Instructores : Form
     {
-        private int instructorID = -1;
-        /*{
-            get
-            {
-                return instructorID;
-            }
-            set
-            {
-                instructorID = value;
-            }
-        }*/
+        private int instructorID { get; set; }
+
         public Instructores()
         {
+            instructorID = -1;
             InitializeComponent();
             consultarInstructores();
         }
