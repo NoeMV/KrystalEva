@@ -28,6 +28,8 @@ namespace Krystal3
         }
 
         private static String colaboradorID = "";
+        private static String tabla1ID = "";
+        private static String tabla2ID = "";
         private static String colaboradorCURP = "";
         private static int row = -1;
         private static String[,] arrayMunicipios = new String[2460, 2];
@@ -54,7 +56,7 @@ namespace Krystal3
 
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
             SqlConnection Conexion = new SqlConnection(miConexion);
-            String sql = "SELECT * FROM Colaboradores WHERE status = 1 and colaborador_id IN (SELECT colaborador_id FROM Registros WHERE curso_id = "+ Cursos.cursoID +");";
+            String sql = "SELECT * FROM Colaboradores WHERE status = 1 and colaborador_id IN (SELECT colaborador_id FROM Registros WHERE curso_id = "+ Cursos.cursoID +" AND status = 1);";
 
             try
             {
@@ -249,12 +251,78 @@ namespace Krystal3
 
         private void btnUp_Click(object sender, EventArgs e)
         {
+            if (!tabla2ID.Equals(""))
+            {
+                int n = Convert.ToInt32(tabla2ID);
 
+                if (n < dataGridView2.RowCount)
+                {
+                    DataGridViewRow fila = new DataGridViewRow();
+                    fila.CreateCells(dataGridView2);
+
+                    fila.Cells[0].Value = dataGridView2.Rows[n].Cells[0].Value.ToString();
+                    fila.Cells[1].Value = dataGridView2.Rows[n].Cells[1].Value.ToString();
+                    fila.Cells[2].Value = dataGridView2.Rows[n].Cells[2].Value.ToString();
+                    fila.Cells[3].Value = dataGridView2.Rows[n].Cells[3].Value.ToString();
+                    fila.Cells[4].Value = dataGridView2.Rows[n].Cells[4].Value.ToString();
+                    fila.Cells[5].Value = dataGridView2.Rows[n].Cells[5].Value.ToString();
+                    fila.Cells[6].Value = dataGridView2.Rows[n].Cells[6].Value.ToString();
+                    fila.Cells[7].Value = dataGridView2.Rows[n].Cells[7].Value.ToString();
+                    fila.Cells[8].Value = dataGridView2.Rows[n].Cells[8].Value.ToString();
+                    fila.Cells[9].Value = dataGridView2.Rows[n].Cells[9].Value.ToString();
+                    fila.Cells[10].Value = dataGridView2.Rows[n].Cells[10].Value.ToString();
+
+                    dataGridView1.Rows.Add(fila);
+
+                    dataGridView2.Rows.RemoveAt(n);
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un campo para añadir al curso");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un campo para añadir al curso");
+            }
         }
 
         private void btnDown_Click(object sender, EventArgs e)
         {
+            if (!tabla1ID.Equals(""))
+            {
+                int n = Convert.ToInt32(tabla1ID);
 
+                if (n < dataGridView1.RowCount)
+                {
+                    DataGridViewRow fila = new DataGridViewRow();
+                    fila.CreateCells(dataGridView1);
+
+                    fila.Cells[0].Value = dataGridView1.Rows[n].Cells[0].Value.ToString();
+                    fila.Cells[1].Value = dataGridView1.Rows[n].Cells[1].Value.ToString();
+                    fila.Cells[2].Value = dataGridView1.Rows[n].Cells[2].Value.ToString();
+                    fila.Cells[3].Value = dataGridView1.Rows[n].Cells[3].Value.ToString();
+                    fila.Cells[4].Value = dataGridView1.Rows[n].Cells[4].Value.ToString();
+                    fila.Cells[5].Value = dataGridView1.Rows[n].Cells[5].Value.ToString();
+                    fila.Cells[6].Value = dataGridView1.Rows[n].Cells[6].Value.ToString();
+                    fila.Cells[7].Value = dataGridView1.Rows[n].Cells[7].Value.ToString();
+                    fila.Cells[8].Value = dataGridView1.Rows[n].Cells[8].Value.ToString();
+                    fila.Cells[9].Value = dataGridView1.Rows[n].Cells[9].Value.ToString();
+                    fila.Cells[10].Value = dataGridView1.Rows[n].Cells[10].Value.ToString();
+
+                    dataGridView2.Rows.Add(fila);
+
+                    dataGridView1.Rows.RemoveAt(n);
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un campo para eliminar del curso");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un campo para eliminar del curso");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -264,7 +332,135 @@ namespace Krystal3
             if (n != -1)
             {
                 colaboradorID = dataGridView1.Rows[n].Cells[0].Value.ToString();
+                tabla1ID = n.ToString();
+            }
+        }
 
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int n = e.RowIndex;
+
+            if (n != -1)
+            {
+                colaboradorID = dataGridView2.Rows[n].Cells[0].Value.ToString();
+                tabla2ID = n.ToString();
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            int n = 0, m = 0;
+            int read = 0;
+            bool existe = false;
+
+            ArrayList colaborador_id = new ArrayList();
+
+            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+            SqlConnection Conexion = new SqlConnection(miConexion);
+            String sql = "SELECT * FROM Registros WHERE status = 1 AND curso_id = " + Cursos.cursoID + ";";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, Conexion);
+                Conexion.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        colaborador_id.Add(reader["colaborador_id"].ToString());
+                    }
+                    Conexion.Close();
+                    while (n < dataGridView1.RowCount)
+                    {
+                        existe = false;
+                        m = 0;
+                        while (m < colaborador_id.Count)
+                        {
+                            if (colaborador_id[m].ToString().Equals(dataGridView1.Rows[n].Cells[0].Value.ToString()))
+                            {
+                                existe = true;
+                                m = colaborador_id.Count;
+                            }
+                            else
+                                m++;
+                        }
+                        if (!existe)
+                        {
+                            sql = $"INSERT INTO Registros (curso_id, colaborador_id, status) VALUES ({Cursos.cursoID}, {dataGridView1.Rows[n].Cells[0].Value.ToString()}, 1);";
+                            command = new SqlCommand(sql, Conexion);
+                            Conexion.Open();
+                            read = command.ExecuteNonQuery();
+                            Conexion.Close();
+
+                            if (read == 0)
+                            {
+                                MessageBox.Show("Ocurrió un error al registrar.\nInténtelo de nuevo más tarde.");
+                                n = dataGridView1.RowCount;
+                            }
+                        }
+                        n++;
+                    }
+                    n = 0;
+                    while(n < dataGridView2.RowCount)
+                    {
+                        if(Convert.ToInt32(dataGridView2.Rows[n].Cells[0].Value.ToString()) == 12)
+                        {
+                            String holi = dataGridView2.Rows[n].Cells[0].Value.ToString();
+                        }
+                        existe = false;
+                        m = 0;
+                        while(m < colaborador_id.Count)
+                        {
+                            String hola = colaborador_id[m].ToString();
+                            if (colaborador_id[m].ToString().Equals(dataGridView2.Rows[n].Cells[0].Value.ToString()))
+                            {
+                                existe = true;
+                                m = colaborador_id.Count;
+                            }
+                            else
+                                m++;
+                        }
+                        if (existe)
+                        {
+                            sql = $"UPDATE Registros SET status = 0 WHERE colaborador_id = {dataGridView2.Rows[n].Cells[0].Value.ToString()} AND status = 1";
+                            command = new SqlCommand(sql, Conexion);
+                            Conexion.Open();
+                            read = command.ExecuteNonQuery();
+                            Conexion.Close();
+
+                            if (read == 0)
+                            {
+                                MessageBox.Show("Ocurrió un error al registrar.\nInténtelo de nuevo más tarde.");
+                                n = dataGridView1.RowCount;
+                            }
+                        }
+                        n++;
+                    }
+                    Conexion.Close();
+                }
+                else
+                {
+                    while (n < dataGridView1.RowCount)
+                    {
+                        sql = $"INSERT INTO Registros (curso_id, colaborador_id, status) VALUES ({Cursos.cursoID}, {dataGridView1.Rows[n].Cells[0].Value.ToString()}, 1);";
+                        command = new SqlCommand(sql, Conexion);
+                        read = command.ExecuteNonQuery();
+                        n++;
+                        if(read == 0)
+                        {
+                            MessageBox.Show("Ocurrió un error al registrar.\nInténtelo de nuevo más tarde.");
+                            n = dataGridView1.RowCount;
+                        }
+                    }
+                    Conexion.Close();
+                }
+                MessageBox.Show("Se han registrado exitosamente.");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No se pudo establecer conexion.\n" + ex.Message);
             }
         }
     }
