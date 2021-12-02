@@ -61,7 +61,7 @@ namespace Krystal3
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
             SqlConnection Conexion = new SqlConnection(miConexion);
             String sql = "SELECT Colaboradores.curp, Colaboradores.nombre, Colaboradores.primerApellido as 'Primer_Apellido', Colaboradores.segundoApellido as 'Segundo_Apellido', Colaboradores.claveEstado as 'Clave_Estado', Municipios.clave as 'Clave_Municipio', Ocupaciones.clave as 'Clave_Ocupacion', Colaboradores.claveNivelEstudios as 'Clave_Niv_Estudios', Colaboradores.claveDocProbatorio as 'Clave_Doc_Probatorio', Colaboradores.claveInstitucion as 'Clave_Institucion', Cursos.claveCurso as 'Clave_Curso', Cursos.nombreCurso as 'Nombre_Curso', Cursos.claveAreaTema as 'Clave_Area_Tema', Cursos.duracion, Cursos.fechaInicio, Cursos.fechaFin, Instructores.rfcAgente as 'RFC_Agente_STPS', Instructores.claveTipoAgente as 'Clave_Tipo_Agente', Cursos.claveModalidad as 'Clave_Modalidad' FROM Registros INNER JOIN Colaboradores ON Registros.colaborador_id = Colaboradores.colaborador_id INNER JOIN Cursos ON Registros.curso_id = Cursos.curso_id INNER JOIN Instructores ON Cursos.instructor_id = Instructores.instructor_id INNER JOIN Municipios ON Colaboradores.municipio_id = Municipios.municipio_id INNER JOIN Ocupaciones ON Colaboradores.ocupacion_id = Ocupaciones.ocupacion_id " +
-            "WHERE Cursos.fechaInicio >= '"+ fechaInicio + "' and Cursos.fechaFin <= '" + fechaFin + "';";
+            "WHERE Cursos.fechaInicio >= '"+ fechaInicio + "' and Cursos.fechaFin <= '" + fechaFin + "' and Registros.status = 1;";
 
 
             try
