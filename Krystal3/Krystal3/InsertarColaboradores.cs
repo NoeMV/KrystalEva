@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Krystal3
 {
     public partial class InsertarColaboradores : Form
     {
-
+        private string claveEstado, claveMunicipio, claveOcupacion, claveEstudios, claveDoc, claveInstitucion;
         private String[,] arrayOcupaciones = new String[4737, 3];
         private String[,] arrayMunicipios = new String[2460, 3];
 
@@ -22,66 +15,198 @@ namespace Krystal3
         {
 
             InitializeComponent();
-            CargarEstados();
-            CargarMunicipios(0);
-            CargarMunicipios(1);
-            CargarOcupaciones();
-            CargarNivelesEstudio();
-            CargarDocProb();
-            CargarInstituciones();
+            CargarEstados(0, "");
+            CargarMunicipios(0, "");
+            CargarOcupaciones(0, "");
+            CargarNivelesEstudio(0, "");
+            CargarDocProb(0, "");
+            CargarInstituciones(0, "");
             cbxOcupaciones.DropDownWidth = CbxAncho(cbxOcupaciones);
 
         }
 
-        private void CargarEstados()
+        private void CargarEstados(int funcion, String estado)
         {
+            if (funcion == 0)
+            {
+                cbxEstados.Items.Add("AGUASCALIENTES");
+                cbxEstados.Items.Add("BAJA CALIFORNIA");
+                cbxEstados.Items.Add("BAJA CALIFORNIA SUR");
+                cbxEstados.Items.Add("CAMPECHE");
+                cbxEstados.Items.Add("COAHUILA");
+                cbxEstados.Items.Add("COLIMA");
+                cbxEstados.Items.Add("CHIAPAS");
+                cbxEstados.Items.Add("CHIHUAHUA");
+                cbxEstados.Items.Add("DISTRITO FEDERAL");
+                cbxEstados.Items.Add("DURANGO");
+                cbxEstados.Items.Add("GUANAJUATO");
+                cbxEstados.Items.Add("GUERRERO");
+                cbxEstados.Items.Add("HIDALGO");
+                cbxEstados.Items.Add("JALISCO");
+                cbxEstados.Items.Add("MEXICO");
+                cbxEstados.Items.Add("MICHOACAN");
+                cbxEstados.Items.Add("MORELOS");
+                cbxEstados.Items.Add("NAYARIT");
+                cbxEstados.Items.Add("NUEVO LEON");
+                cbxEstados.Items.Add("OAXACA");
+                cbxEstados.Items.Add("PUEBLA");
+                cbxEstados.Items.Add("QUERETARO");
+                cbxEstados.Items.Add("QUINTANA ROO");
+                cbxEstados.Items.Add("SAN LUIS POTOSI");
+                cbxEstados.Items.Add("SINALOA");
+                cbxEstados.Items.Add("SONORA");
+                cbxEstados.Items.Add("TABASCO");
+                cbxEstados.Items.Add("TAMAULIPAS");
+                cbxEstados.Items.Add("TLAXCALA");
+                cbxEstados.Items.Add("VERACRUZ DE IGNACIO DE LA LLAVE");
+                cbxEstados.Items.Add("YUCATAN");
+                cbxEstados.Items.Add("ZACATECAS");
 
-            cbxEstados.Items.Add("AGUASCALIENTES");
-            cbxEstados.Items.Add("BAJA CALIFORNIA");
-            cbxEstados.Items.Add("BAJA CALIFORNIA SUR");
-            cbxEstados.Items.Add("CAMPECHE");
-            cbxEstados.Items.Add("COAHUILA");
-            cbxEstados.Items.Add("COLIMA");
-            cbxEstados.Items.Add("CHIAPAS");
-            cbxEstados.Items.Add("CHIHUAHUA");
-            cbxEstados.Items.Add("DISTRITO FEDERAL");
-            cbxEstados.Items.Add("DURANGO");
-            cbxEstados.Items.Add("GUANAJUATO");
-            cbxEstados.Items.Add("GUERRERO");
-            cbxEstados.Items.Add("HIDALGO");
-            cbxEstados.Items.Add("JALISCO");
-            cbxEstados.Items.Add("MEXICO");
-            cbxEstados.Items.Add("MICHOACAN");
-            cbxEstados.Items.Add("MORELOS");
-            cbxEstados.Items.Add("NAYARIT");
-            cbxEstados.Items.Add("NUEVO LEON");
-            cbxEstados.Items.Add("OAXACA");
-            cbxEstados.Items.Add("PUEBLA");
-            cbxEstados.Items.Add("QUERETARO");
-            cbxEstados.Items.Add("QUINTANA ROO");
-            cbxEstados.Items.Add("SAN LUIS POTOSI");
-            cbxEstados.Items.Add("SINALOA");
-            cbxEstados.Items.Add("SONORA");
-            cbxEstados.Items.Add("TABASCO");
-            cbxEstados.Items.Add("TAMAULIPAS");
-            cbxEstados.Items.Add("TLAXCALA");
-            cbxEstados.Items.Add("VERACRUZ DE IGNACIO DE LA LLAVE");
-            cbxEstados.Items.Add("YUCATAN");
-            cbxEstados.Items.Add("ZACATECAS");
+                cbxEstados.SelectedIndex = 0;
+            }
 
-            cbxEstados.SelectedIndex = 0;
-
+            else if (funcion == 1)
+            {
+                if (estado == "AGUASCALIENTES")
+                {
+                    claveEstado = "1";
+                }
+                else if (estado == "BAJA CALIFORNIA")
+                {
+                    claveEstado = "2";
+                }
+                else if (estado == "BAJA CALIFORNIA SUR")
+                {
+                    claveEstado = "3";
+                }
+                else if (estado == "CAMPECHE")
+                {
+                    claveEstado = "4";
+                }
+                else if (estado == "COAHUILA")
+                {
+                    claveEstado = "5";
+                }
+                else if (estado == "COLIMA")
+                {
+                    claveEstado = "6";
+                }
+                else if (estado == "CHIAPAS")
+                {
+                    claveEstado = "7";
+                }
+                else if (estado == "CHIHUAHUA")
+                {
+                    claveEstado = "8";
+                }
+                else if (estado == "DISTRITO FEDERAL")
+                {
+                    claveEstado = "9";
+                }
+                else if (estado == "DURANGO")
+                {
+                    claveEstado = "10";
+                }
+                else if (estado == "GUANAJUATO")
+                {
+                    claveEstado = "11";
+                }
+                else if (estado == "GUERRERO")
+                {
+                    claveEstado = "12";
+                }
+                else if (estado == "HIDALGO")
+                {
+                    claveEstado = "13";
+                }
+                else if (estado == "JALISCO")
+                {
+                    claveEstado = "14";
+                }
+                else if (estado == "MEXICO")
+                {
+                    claveEstado = "15";
+                }
+                else if (estado == "MICHOACAN")
+                {
+                    claveEstado = "16";
+                }
+                else if (estado == "MORELOS")
+                {
+                    claveEstado = "17";
+                }
+                else if (estado == "NAYARIT")
+                {
+                    claveEstado = "18";
+                }
+                else if (estado == "NUEVO LEON")
+                {
+                    claveEstado = "19";
+                }
+                else if (estado == "OAXACA")
+                {
+                    claveEstado = "20";
+                }
+                else if (estado == "PUEBLA")
+                {
+                    claveEstado = "21";
+                }
+                else if (estado == "QUERETARO")
+                {
+                    claveEstado = "22";
+                }
+                else if (estado == "QUINTANA ROO")
+                {
+                    claveEstado = "23";
+                }
+                else if (estado == "SAN LUIS POTOSI")
+                {
+                    claveEstado = "24";
+                }
+                else if (estado == "SINALOA")
+                {
+                    claveEstado = "25";
+                }
+                else if (estado == "SONORA")
+                {
+                    claveEstado = "26";
+                }
+                else if (estado == "TABASCO")
+                {
+                    claveEstado = "27";
+                }
+                else if (estado == "TAMAULIPAS")
+                {
+                    claveEstado = "28";
+                }
+                else if (estado == "TLAXCALA")
+                {
+                    claveEstado = "29";
+                }
+                else if (estado == "VERACRUZ DE IGNACIO DE LA LLAVE")
+                {
+                    claveEstado = "30";
+                }
+                else if (estado == "YUCATAN")
+                {
+                    claveEstado = "31";
+                }
+                else if (estado == "ZACATECAS")
+                {
+                    claveEstado = "32";
+                }
+            }
         }
 
-        private void CargarMunicipios(int funcion)
+        private void CargarMunicipios(int funcion, String municipio)
         {
-
-            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-            SqlConnection Conexion = new SqlConnection(miConexion);
-            String sql = "SELECT * FROM municipios";
 
             if (funcion == 0)
             {
+                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                SqlConnection Conexion = new SqlConnection(miConexion);
+                String sql = "SELECT * FROM municipios";
+
                 try
                 {
 
@@ -123,7 +248,7 @@ namespace Krystal3
                 }
             }
 
-            if (funcion == 1)
+            else if (funcion == 1)
             {
                 if (cbxEstados.SelectedIndex == 0)
                 {
@@ -414,52 +539,87 @@ namespace Krystal3
                     }
                 }
             }
-        }
 
-        private void CargarOcupaciones()
-        {
-
-            String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-            SqlConnection Conexion = new SqlConnection(miConexion);
-            String sql = "SELECT descripcion FROM ocupaciones";
-
-            try
+            else if (funcion == 2)
             {
-
-                SqlCommand command = new SqlCommand(sql, Conexion);
-                Conexion.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
+                for (int x = 0; x < 2460; x++)
                 {
-
-                    while (reader.Read())
+                    if (arrayMunicipios[x, 2] == municipio)
                     {
-                        cbxOcupaciones.Items.Add(reader["descripcion"].ToString());
+                        cbxMunicipios.Text = arrayMunicipios[x, 2];
+                        claveMunicipio = arrayMunicipios[x, 0];
+                        break;
                     }
-
-                    cbxOcupaciones.SelectedIndex = 0;
                 }
-                else
+            }
+        }
+
+        private void CargarOcupaciones(int funcion, String ocupacion)
+        {
+
+            if (funcion == 0)
+            {
+                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                SqlConnection Conexion = new SqlConnection(miConexion);
+                String sql = "SELECT * FROM ocupaciones";
+
+                try
                 {
 
-                    MessageBox.Show("Error al cargar datos de ocupaciones, si el problema persiste contacte al administrador.");
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        int x = 0;
+                        while (reader.Read())
+                        {
+                            arrayOcupaciones[x, 0] = reader["ocupacion_id"].ToString();
+                            arrayOcupaciones[x, 1] = reader["clave"].ToString();
+                            arrayOcupaciones[x, 2] = reader["descripcion"].ToString();
+
+                            cbxOcupaciones.Items.Add(reader["descripcion"].ToString());
+                            x++;
+                        }
+
+                        cbxOcupaciones.SelectedIndex = 0;
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Error al cargar datos de ocupaciones, si el problema persiste contacte al administrador.");
+
+                    }
+                    Conexion.Close();
+                }
+                catch (Exception e)
+                {
+
+                    MessageBox.Show("No se pudo establecer conexión con la base de datos, contacte al administrador.\n" + e.Message);
 
                 }
-                Conexion.Close();
             }
-            catch (Exception e)
+
+            else if (funcion == 1)
             {
-
-                MessageBox.Show("No se pudo establecer conexión con la base de datos, contacte al administrador.\n" + e.Message);
-
+                for (int x = 0; x < 4737; x++)
+                {
+                    if (arrayOcupaciones[x, 2] == ocupacion)
+                    {
+                        cbxOcupaciones.Text = arrayOcupaciones[x, 2];
+                        claveOcupacion = arrayOcupaciones[x, 0];
+                        break;
+                    }
+                }
             }
 
         }
 
-        private void CargarNivelesEstudio()
+        private void CargarNivelesEstudio(int funcion, String estudios)
         {
-
+            if (funcion == 0)
+            { 
             cbxNivelEstudios.Items.Add("Ninguno");
             cbxNivelEstudios.Items.Add("Primaria");
             cbxNivelEstudios.Items.Add("Secundaria");
@@ -471,30 +631,127 @@ namespace Krystal3
             cbxNivelEstudios.Items.Add("Doctorado");
 
             cbxNivelEstudios.SelectedIndex = 0;
+            }
 
+            else if (funcion == 1)
+            {
+                if (estudios == "1")
+                {
+                    cbxNivelEstudios.Text = "Ninguno";
+                    claveEstudios = "1";
+                }
+                else if (estudios == "2")
+                {
+                    cbxNivelEstudios.Text = "Primaria";
+                    claveEstudios = "2";
+                }
+                else if (estudios == "3")
+                {
+                    cbxNivelEstudios.Text = "Secundaria";
+                    claveEstudios = "3";
+                }
+                else if (estudios == "4")
+                {
+                    cbxNivelEstudios.Text = "Bachillerato";
+                    claveEstudios = "4";
+                }
+                else if (estudios == "5")
+                {
+                    cbxNivelEstudios.Text = "Carrera técnica";
+                    claveEstudios = "5";
+                }
+                else if (estudios == "6")
+                {
+                    cbxNivelEstudios.Text = "Licenciatura";
+                    claveEstudios = "6";
+                }
+                else if (estudios == "7")
+                {
+                    cbxNivelEstudios.Text = "Especialidad";
+                    claveEstudios = "7";
+                }
+                else if (estudios == "8")
+                {
+                    cbxNivelEstudios.Text = "Maestría";
+                    claveEstudios = "8";
+                }
+                else if (estudios == "9")
+                {
+                    cbxNivelEstudios.Text = "Doctorado";
+                    claveEstudios = "9";
+                }
+            }
         }
 
-        private void CargarDocProb()
+        private void CargarDocProb(int funcion, String doc)
         {
+            if (funcion == 0)
+            {
+                cbxDocProb.Items.Add("Título");
+                cbxDocProb.Items.Add("Certificado");
+                cbxDocProb.Items.Add("Diploma");
+                cbxDocProb.Items.Add("Otro");
+                cbxDocProb.Items.Add("Ninguno");
 
-            cbxDocProb.Items.Add("Título");
-            cbxDocProb.Items.Add("Certificado");
-            cbxDocProb.Items.Add("Diploma");
-            cbxDocProb.Items.Add("Otro");
-            cbxDocProb.Items.Add("Ninguno");
-
-            cbxDocProb.SelectedIndex = 0;
-
+                cbxDocProb.SelectedIndex = 0;
+            }
+            
+            else if (funcion == 1)
+            {
+                if (doc == "Título")
+                {
+                    cbxDocProb.Text = "1";
+                    claveDoc = "1";
+                }
+                else if (doc == "Certificado")
+                {
+                    cbxDocProb.Text = "2";
+                    claveDoc = "2";
+                }
+                else if (doc == "Diploma")
+                {
+                    cbxDocProb.Text = "3";
+                    claveDoc = "3";
+                }
+                else if (doc == "Otro")
+                {
+                    cbxDocProb.Text = "4";
+                    claveDoc = "4";
+                }
+                else if (doc == "Ninguno")
+                {
+                    cbxDocProb.Text = "5";
+                    claveDoc = "5";
+                }
+            }
         }
 
-        private void CargarInstituciones()
+        private void CargarInstituciones(int funcion, String institucion)
         {
+            if (funcion == 0)
+            {
+                cbxInstitucion.Items.Add("Pública");
+                cbxInstitucion.Items.Add("Privada");
+                cbxInstitucion.Items.Add("Ninguna");
 
-            cbxInstitucion.Items.Add("Pública");
-            cbxInstitucion.Items.Add("Privada");
-            cbxInstitucion.Items.Add("Ninguna");
+                cbxInstitucion.SelectedIndex = 0;
+            }
 
-            cbxInstitucion.SelectedIndex = 0;
+            else if (funcion == 1)
+            {
+                if (institucion == "Pública")
+                {
+                    claveInstitucion = "1";
+                }
+                else if (institucion == "Privada")
+                {
+                    claveInstitucion = "2";
+                }
+                else if (institucion == "Ninguna")
+                {
+                    claveInstitucion = "3";
+                }
+            }
 
         }
 
@@ -512,52 +769,33 @@ namespace Krystal3
 
             if (dialogResult == DialogResult.Yes)
             {
-                String ocupacion = "";
-                String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-                SqlConnection Conexion = new SqlConnection(miConexion);
-                String sql = $"SELECT clave FROM ocupaciones WHERE descripcion = '" + cbxOcupaciones.Text + "';";
-                SqlCommand command = new SqlCommand(sql, Conexion);
-                Conexion.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
+                try
                 {
-                    ocupacion = reader["clave"].ToString();
+                    CargarEstados(1, cbxEstados.Text);
+                    CargarMunicipios(2, cbxMunicipios.Text);
+                    CargarOcupaciones(1, cbxOcupaciones.Text);
+                    CargarNivelesEstudio(1, cbxNivelEstudios.Text);
+                    CargarDocProb(1, cbxNivelEstudios.Text);
+                    CargarInstituciones(1, cbxInstitucion.Text);
+
+                    String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
+                    SqlConnection Conexion = new SqlConnection(miConexion);
+                    String sql = $"INSERT INTO COLABORADORES (curp, nombre, primerApellido, segundoApellido, claveEstado, municipio_id, ocupacion_id, claveNivelEstudios, claveDocProbatorio, claveInstitucion, status) "
+                    + "VALUES ('" + txtCURP.Text + "','" + txtNombre.Text + "','" + txtPrimerApellido.Text + "','" + txtSegundoApellido.Text + "','" + claveEstado + "','" +  claveMunicipio + "','" + claveOcupacion
+                    + "','" + claveEstudios + "','" + claveDoc + "','" + claveInstitucion + "','" + Convert.ToString(1) + "');";
+                    SqlCommand command = new SqlCommand(sql, Conexion);
+                    Conexion.Open();
+                    SqlDataReader reader = command.ExecuteReader();
                     Conexion.Close();
 
-                    MessageBox.Show("Clave de ocupación: " + ocupacion);
+                    MessageBox.Show("Registro exitoso.");
+                    this.Dispose();
 
-                    int IDclaveEstudio = cbxNivelEstudios.SelectedIndex + 1;
-                    int IDclaveDoc = cbxDocProb.SelectedIndex + 1;
-                    int IDclaveInst = cbxInstitucion.SelectedIndex + 1;
-
-                    try
-                    {
-
-                        miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
-                        Conexion = new SqlConnection(miConexion);
-                        sql = $"INSERT INTO COLABORADORES (curp, nombre, primerApellido, segundoApellido, claveEstado, municipio_id, ocupacion_id, claveNivelEstudios, claveDocProbatorio, claveInstitucion, status) "
-                        + "VALUES ('" + txtCURP.Text + "','" + txtNombre.Text + "','" + txtPrimerApellido.Text + "','" + txtSegundoApellido.Text + "','" + Convert.ToString(cbxMunicipios.SelectedIndex) + "','" + ocupacion
-                        + "','" + Convert.ToString(IDclaveEstudio) + "','" + Convert.ToString(IDclaveDoc) + "','" + Convert.ToString(IDclaveInst) + "','" + Convert.ToString(1) + "');";
-                        command = new SqlCommand(sql, Conexion);
-                        Conexion.Open();
-                        reader = command.ExecuteReader();
-                        Conexion.Close();
-
-                        MessageBox.Show("Registro exitoso.");
-
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("No se pudo establecer conexión con la base de datos, contacte al administrador.");
-                    }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Error al tratar de obtener el ID de la ocupación, favor de contactar al administrador.");
+                    MessageBox.Show("No se pudo establecer conexión con la base de datos, contacte al administrador.");
                 }
-                Conexion.Close();
-
             }
 
         }
@@ -566,7 +804,7 @@ namespace Krystal3
         {
             if (arrayMunicipios[0, 0] != null)
             {
-                CargarMunicipios(1);
+                CargarMunicipios(1, "");
             }
         }
 
