@@ -358,7 +358,6 @@ namespace Krystal3
             String miConexion = ConfigurationManager.ConnectionStrings["NombreConexion"].ConnectionString;
             SqlConnection Conexion = new SqlConnection(miConexion);
             String sql = "SELECT * FROM Registros WHERE status = 1 AND curso_id = " + Cursos.cursoID + ";";
-
             try
             {
                 SqlCommand command = new SqlCommand(sql, Conexion);
@@ -442,11 +441,14 @@ namespace Krystal3
                 }
                 else
                 {
+                    Conexion.Close();
                     while (n < dataGridView1.RowCount)
                     {
                         sql = $"INSERT INTO Registros (curso_id, colaborador_id, status) VALUES ({Cursos.cursoID}, {dataGridView1.Rows[n].Cells[0].Value.ToString()}, 1);";
                         command = new SqlCommand(sql, Conexion);
+                        Conexion.Open();
                         read = command.ExecuteNonQuery();
+                        Conexion.Close();
                         n++;
                         if(read == 0)
                         {

@@ -165,7 +165,7 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Outfit", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(215)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -183,7 +183,7 @@
             this.colaborador_id.Name = "colaborador_id";
             this.colaborador_id.ReadOnly = true;
             this.colaborador_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colaborador_id.Width = 44;
+            this.colaborador_id.Width = 53;
             // 
             // curp
             // 
@@ -192,7 +192,7 @@
             this.curp.Name = "curp";
             this.curp.ReadOnly = true;
             this.curp.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.curp.Width = 75;
+            this.curp.Width = 94;
             // 
             // nombre
             // 
@@ -201,7 +201,7 @@
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
             this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nombre.Width = 94;
+            this.nombre.Width = 116;
             // 
             // primerApellido
             // 
@@ -210,7 +210,7 @@
             this.primerApellido.Name = "primerApellido";
             this.primerApellido.ReadOnly = true;
             this.primerApellido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.primerApellido.Width = 134;
+            this.primerApellido.Width = 182;
             // 
             // segundoApellido
             // 
@@ -219,7 +219,7 @@
             this.segundoApellido.Name = "segundoApellido";
             this.segundoApellido.ReadOnly = true;
             this.segundoApellido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.segundoApellido.Width = 146;
+            this.segundoApellido.Width = 199;
             // 
             // claveEstado
             // 
@@ -228,7 +228,7 @@
             this.claveEstado.Name = "claveEstado";
             this.claveEstado.ReadOnly = true;
             this.claveEstado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveEstado.Width = 119;
+            this.claveEstado.Width = 161;
             // 
             // municipio_id
             // 
@@ -237,7 +237,7 @@
             this.municipio_id.Name = "municipio_id";
             this.municipio_id.ReadOnly = true;
             this.municipio_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.municipio_id.Width = 137;
+            this.municipio_id.Width = 185;
             // 
             // ocupacion_id
             // 
@@ -246,7 +246,7 @@
             this.ocupacion_id.Name = "ocupacion_id";
             this.ocupacion_id.ReadOnly = true;
             this.ocupacion_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ocupacion_id.Width = 141;
+            this.ocupacion_id.Width = 192;
             // 
             // claveNivelEstudios
             // 
@@ -255,7 +255,7 @@
             this.claveNivelEstudios.Name = "claveNivelEstudios";
             this.claveNivelEstudios.ReadOnly = true;
             this.claveNivelEstudios.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveNivelEstudios.Width = 127;
+            this.claveNivelEstudios.Width = 248;
             // 
             // claveDocProbatorio
             // 
@@ -264,7 +264,7 @@
             this.claveDocProbatorio.Name = "claveDocProbatorio";
             this.claveDocProbatorio.ReadOnly = true;
             this.claveDocProbatorio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveDocProbatorio.Width = 173;
+            this.claveDocProbatorio.Width = 238;
             // 
             // claveInstitucion
             // 
@@ -273,7 +273,7 @@
             this.claveInstitucion.Name = "claveInstitucion";
             this.claveInstitucion.ReadOnly = true;
             this.claveInstitucion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.claveInstitucion.Width = 140;
+            this.claveInstitucion.Width = 192;
             // 
             // Colaboradores
             // 

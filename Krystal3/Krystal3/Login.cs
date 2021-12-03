@@ -17,8 +17,8 @@ namespace Krystal3
         public Login()
         {
             InitializeComponent();
-            txt_usuario.Text = "admin";
-            txt_contraseña.Text = "hola123";
+            //txt_usuario.Text = "admin";
+            //txt_contraseña.Text = "hola123";
         }
 
         private void button1_Click(object sender, EventArgs e)

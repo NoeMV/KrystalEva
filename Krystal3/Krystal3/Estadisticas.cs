@@ -18,6 +18,8 @@ namespace Krystal3
         public Estadisticas()
         {
             InitializeComponent();
+            chartCursos.Series[0].Color = Color.Coral;
+            chartHoras.Series[0].Color = Color.Coral;
         }
 
         private void Estadisticas_Load(object sender, EventArgs e)
